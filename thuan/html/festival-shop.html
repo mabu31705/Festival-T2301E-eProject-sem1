@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" ng-app="myApp">
 <head>
     <!-- META DATA -->
     <meta charset="UTF-8">
@@ -10,12 +10,15 @@
     <link id="style" href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- STYLE CSS -->
     <link href="../css/style.css" rel="stylesheet" />
+    <script src="../js/angularjs-min-1.69.js"></script>
+    <script src="../js/angularjs-route-1.69.js"></script>
+    <script src="../js/function.js"></script>
 
 </head>
 
 <body class="app">
     <!-- PAGE -->
-    <div class="page">
+    <div class="page" ng-controller="firstController">
         <div class="page-main">
             <!--app-content open-->
             <div class="app-content mt-0">
@@ -25,6 +28,7 @@
                         <!-- PAGE-HEADER END -->
                         <!-- ROW-1 OPEN -->
                         <div class="row">
+                            <!--side bar left top books -->
                             <div class="col-xl-3 col-lg-4">
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12">
@@ -34,9 +38,9 @@
                                             </div>
                                             <div class="card-body">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item border-0 p-0"> <a href="javascript:void(0)" class="cn"><i class="fe fe-chevron-right"></i> Christian </a><span class="product-label">22</span> </li>
-                                                    <li class="list-group-item border-0 p-0"> <a href="javascript:void(0)" class="cn"><i class="fe fe-chevron-right"></i> Hindu </a><span class="product-label">15</span> </li>
-                                                    <li class="list-group-item border-0 p-0"> <a href="javascript:void(0)" class="cn"><i class="fe fe-chevron-right"></i> Islam </a><span class="product-label">10</span> </li>
+                                                    <li class="list-group-item border-0 p-0"> <a href="#tab-20" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Christian </a><span class="product-label">3</span> </li>
+                                                    <li class="list-group-item border-0 p-0"> <a href="#tab-21" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Hindu </a><span class="product-label">3</span> </li>
+                                                    <li class="list-group-item border-0 p-0"> <a href="#tab-22" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Islam </a><span class="product-label">3</span> </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -44,44 +48,40 @@
                                             <div class="card-header">
                                                 <div class="card-title">Price Range</div>
                                             </div>
-                                            <div class="card-body">
-                                                <label class="custom-control custom-radio mb-0 mt-1">
-                                                    <input type="radio" class="custom-control-input" name="example-radios"
-                                                        value="option1" checked>
-                                                    <span class="custom-control-label">Upto $500</span>
-                                                </label>
-                                                <label class="custom-control custom-radio mb-0 mt-1">
-                                                    <input type="radio" class="custom-control-input" name="example-radios"
-                                                        value="option1">
-                                                    <span class="custom-control-label">$500 - $1000</span>
-                                                </label>
-                                                <label class="custom-control custom-radio mb-0 mt-1">
-                                                    <input type="radio" class="custom-control-input" name="example-radios"
-                                                        value="option1">
-                                                    <span class="custom-control-label">$1000 - $1500</span>
-                                                </label>
-                                                <label class="custom-control custom-radio mb-0 mt-1">
-                                                    <input type="radio" class="custom-control-input" name="example-radios"
-                                                        value="option1">
-                                                    <span class="custom-control-label">Over $2000</span>
-                                                </label>
-                                                <div class="d-flex">
-                                                    <div class="card-body px-0">
-                                                        <div id="mySlider"></div>
-                                                    </div>
+                                                <div class="card-body">
+                                                        <label class="custom-control custom-radio mb-0 mt-1">
+                                                            <input type="radio" class="custom-control-input" name="example-radios" value="option1"  checked>
+                                                            <span class="custom-control-label">
+                                                         Upto $500
+                                                    </span>
+                                                        </label>
+                                                        <label  class="custom-control custom-radio mb-0 mt-1">
+                                                            <input type="radio" class="custom-control-input" name="example-radios"
+                                                                   value="option2" >
+                                                            <span class="custom-control-label">$500 - $1000</span>
+                                                        </label>
+                                                        <label  class="custom-control custom-radio mb-0 mt-1">
+                                                            <input type="radio" class="custom-control-input" name="example-radios"
+                                                                   value="option3" >
+                                                            <span class="custom-control-label">$1000 - $1500</span>
+                                                        </label>
+                                                        <label  class="custom-control custom-radio mb-0 mt-1">
+                                                            <input type="radio" class="custom-control-input" name="example-radios"
+                                                                   value="option4" >
+                                                            <span class="custom-control-label">Over $2000</span>
+                                                        </label>
                                                 </div>
-                                            </div>
                                         </div>
                                         <div class="card">
                                             <div class="card-header">
-                                                <div class="card-title">Top Products</div>
+                                                <div class="card-title">Top Books</div>
                                             </div>
                                             <div class="card-body">
                                                 <div class="">
                                                     <div class="d-flex overflow-visible">
-                                                        <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" src="../images/pngs/8.png" alt="avatar-img">
+                                                        <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="../images/books/{{books[0].image}}" alt="avatar-img">
                                                         <div class="media-body valign-middle">
-                                                            <a href="javascript:void(0)" class="fw-semibold text-dark">Hand Bag</a>
+                                                            <a href="javascript:void(0)" class="fw-semibold text-dark">{{books[0].bookName}}</a>
                                                             <div class="mb-1 text-warning">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -89,13 +89,13 @@
                                                                 <i class="fa fa-star-half-o"></i>
                                                                 <i class="fa fa-star-o"></i>
                                                             </div>
-                                                            <h5 class="fw-bold">$345</h5>
+                                                            <h5 class="fw-bold">${{books[0].price}}</h5>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex overflow-visible mt-5">
-                                                        <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" src="../images/pngs/5.png" alt="avatar-img">
+                                                        <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="../images/books/{{books[1].image}}" alt="avatar-img">
                                                         <div class="media-body valign-middle">
-                                                            <a href="javascript:void(0)" class="fw-semibold text-dark">Chair</a>
+                                                            <a href="javascript:void(0)" class="fw-semibold text-dark">{{books[1].bookName}}</a>
                                                             <div class="mb-1 text-warning">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -103,13 +103,13 @@
                                                                 <i class="fa fa-star-half-o"></i>
                                                                 <i class="fa fa-star-o"></i>
                                                             </div>
-                                                            <h5 class="fw-bold">$345</h5>
+                                                            <h5 class="fw-bold">${{books[1].price}}</h5>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex overflow-visible mt-5">
-                                                        <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" src="../images/pngs/1.png" alt="avatar-img">
+                                                        <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="../images/books/{{books[2].image}}" alt="avatar-img">
                                                         <div class="media-body valign-middle">
-                                                            <a href="javascript:void(0)" class="fw-semibold text-dark">Laptop Bag</a>
+                                                            <a href="javascript:void(0)" class="fw-semibold text-dark">{{books[2].bookName}}</a>
                                                             <div class="mb-1 text-warning">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -117,21 +117,7 @@
                                                                 <i class="fa fa-star-half-o"></i>
                                                                 <i class="fa fa-star-o"></i>
                                                             </div>
-                                                            <h5 class="fw-bold">$345</h5>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex overflow-visible mt-5">
-                                                        <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" src="../images/pngs/6.png" alt="avatar-img">
-                                                        <div class="media-body valign-middle">
-                                                            <a href="javascript:void(0)" class="fw-semibold text-dark">Watch</a>
-                                                            <div class="mb-1 text-warning">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-half-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <h5 class="fw-bold">$345</h5>
+                                                            <h5 class="fw-bold">${{books[2].price}}</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -142,6 +128,7 @@
                             </div>
                             <!-- COL-END -->
                             <div class="col-xl-7 col-lg-8">
+                                <!--search bar -->
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="card p-0">
@@ -166,27 +153,28 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-content">
+                                <!--content display books -->
+                                <div class="tab-content"  >
                                     <div class="tab-pane active" id="tab-11">
-                                        <div class="row">
-                                            <div class="col-md-6 col-xl-4 col-sm-6">
+                                        <div class="row" >
+                                            <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in books">
                                                 <div class="card">
-                                                    <div class="product-grid6">
-                                                        <div class="product-image6 p-5">
+                                                    <div class="product-grid6" >
+                                                        <div class="product-image6 p-5" >
                                                             <ul class="icons">
                                                                 <li>
-                                                                    <a href="festival-shop-description.html" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                                                                    <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                                                                 </li>
                                                                 <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                                                                 <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                                                             </ul>
-                                                            <a href="festival-shop-description.html" >
-                                                                <img class="img-fluid br-7 w-100" src="../images/pngs/9.jpg" alt="img">
+                                                            <a href="#!/detail" >
+                                                                <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
                                                             </a>
                                                         </div>
                                                         <div class="card-body pt-0">
                                                             <div class="product-content text-center">
-                                                                <h1 class="title fw-bold fs-20"><a href="festival-shop-description.html">Candy Pure Rose Water</a></h1>
+                                                                <h1 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h1>
                                                                 <div class="mb-2 text-warning">
                                                                     <i class="fa fa-star text-warning"></i>
                                                                     <i class="fa fa-star text-warning"></i>
@@ -194,7 +182,7 @@
                                                                     <i class="fa fa-star-half-o text-warning"></i>
                                                                     <i class="fa fa-star-o text-warning"></i>
                                                                 </div>
-                                                                <div class="price">$599<span class="ms-4">$799</span>
+                                                                <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -205,294 +193,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-xl-4 col-sm-6">
-                                                <div class="card">
-                                                    <div class="product-grid6">
-                                                        <div class="product-image6 p-5">
-                                                            <ul class="icons">
-                                                                <li>
-                                                                    <a href="festival-shop-description.html" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
-                                                                </li>
-                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
-                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
-                                                            </ul>
-                                                            <a href="festival-shop-description.html" >
-                                                                <img class="img-fluid br-7 w-100" src="../images/pngs/10.jpg" alt="img">
-                                                            </a>
-                                                        </div>
-                                                        <div class="card-body pt-0">
-                                                            <div class="product-content text-center">
-                                                                <h1 class="title fw-bold fs-20"><a href="festival-shop-description.html">White Tshirt for Men</a></h1>
-                                                                <div class="mb-2 text-warning">
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star-half-o text-warning"></i>
-                                                                    <i class="fa fa-star-o text-warning"></i>
-                                                                </div>
-                                                                <div class="price">$1,399<span class="ms-4">$1,599</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center">
-                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
-                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-4 col-sm-6">
-                                                <div class="card">
-                                                    <div class="product-grid6">
-                                                        <div class="product-image6 p-5">
-                                                            <ul class="icons">
-                                                                <li>
-                                                                    <a href="festival-shop-description.html" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
-                                                                </li>
-                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
-                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
-                                                            </ul>
-                                                            <a href="festival-shop-description.html" >
-                                                                <img class="img-fluid br-7 w-100" src="../images/pngs/4.jpg" alt="img">
-                                                            </a>
-                                                        </div>
-                                                        <div class="card-body pt-0">
-                                                            <div class="product-content text-center">
-                                                                <h1 class="title fw-bold fs-20"><a href="festival-shop-description.html">Flower Pot for Home Decor</a></h1>
-                                                                <div class="mb-2 text-warning">
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star-half-o text-warning"></i>
-                                                                    <i class="fa fa-star-o text-warning"></i>
-                                                                </div>
-                                                                <div class="price">$1,299<span class="ms-4">$1,899</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center">
-                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
-                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-4 col-sm-6">
-                                                <div class="card">
-                                                    <div class="product-grid6">
-                                                        <div class="product-image6 p-5">
-                                                            <ul class="icons">
-                                                                <li>
-                                                                    <a href="festival-shop-description.html" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
-                                                                </li>
-                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
-                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
-                                                            </ul>
-                                                            <a href="festival-shop-description.html" >
-                                                                <img class="img-fluid br-7 w-100" src="../images/pngs/8.jpg" alt="img">
-                                                            </a>
-                                                        </div>
-                                                        <div class="card-body pt-0">
-                                                            <div class="product-content text-center">
-                                                                <h1 class="title fw-bold fs-20"><a href="festival-shop-description.html">Stylish Rockerz 255 Ear Pods</a></h1>
-                                                                <div class="mb-2 text-warning">
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star-half-o text-warning"></i>
-                                                                    <i class="fa fa-star-o text-warning"></i>
-                                                                </div>
-                                                                <div class="price">$16,599<span class="ms-4">$19,799</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center">
-                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
-                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-4 col-sm-6">
-                                                <div class="card">
-                                                    <div class="product-grid6">
-                                                        <div class="product-image6 p-5">
-                                                            <ul class="icons">
-                                                                <li>
-                                                                    <a href="festival-shop-description.html" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
-                                                                </li>
-                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
-                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
-                                                            </ul>
-                                                            <a href="festival-shop-description.html" >
-                                                                <img class="img-fluid br-7 w-100" src="../images/pngs/1.jpg" alt="img">
-                                                            </a>
-                                                        </div>
-                                                        <div class="card-body pt-0">
-                                                            <div class="product-content text-center">
-                                                                <h1 class="title fw-bold fs-20"><a href="festival-shop-description.html">Women Party Wear Dress</a></h1>
-                                                                <div class="mb-2 text-warning">
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star-half-o text-warning"></i>
-                                                                    <i class="fa fa-star-o text-warning"></i>
-                                                                </div>
-                                                                <div class="price">$2,299<span class="ms-4">$1,599</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center">
-                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
-                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-4 col-sm-6">
-                                                <div class="card">
-                                                    <div class="product-grid6">
-                                                        <div class="product-image6 p-5">
-                                                            <ul class="icons">
-                                                                <li>
-                                                                    <a href="festival-shop-description.html" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
-                                                                </li>
-                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
-                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
-                                                            </ul>
-                                                            <a href="festival-shop-description.html" >
-                                                                <img class="img-fluid br-7 w-100" src="../images/pngs/6.jpg" alt="img">
-                                                            </a>
-                                                        </div>
-                                                        <div class="card-body pt-0">
-                                                            <div class="product-content text-center">
-                                                                <h1 class="title fw-bold fs-20"><a href="festival-shop-description.html">Black Digital Camera</a></h1>
-                                                                <div class="mb-2 text-warning">
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star-half-o text-warning"></i>
-                                                                    <i class="fa fa-star-o text-warning"></i>
-                                                                </div>
-                                                                <div class="price">$56,599<span class="ms-4">$59,799</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center">
-                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
-                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-4 col-sm-6">
-                                                <div class="card">
-                                                    <div class="product-grid6">
-                                                        <div class="product-image6 p-5">
-                                                            <ul class="icons">
-                                                                <li>
-                                                                    <a href="festival-shop-description.html" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
-                                                                </li>
-                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
-                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
-                                                            </ul>
-                                                            <a href="festival-shop-description.html" >
-                                                                <img class="img-fluid br-7 w-100" src="../images/pngs/5.jpg" alt="img">
-                                                            </a>
-                                                        </div>
-                                                        <div class="card-body pt-0">
-                                                            <div class="product-content text-center">
-                                                                <h1 class="title fw-bold fs-20"><a href="festival-shop-description.html">Men shirt for party wear</a></h1>
-                                                                <div class="mb-2 text-warning">
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star-half-o text-warning"></i>
-                                                                    <i class="fa fa-star-o text-warning"></i>
-                                                                </div>
-                                                                <div class="price">$3,599<span class="ms-4">$3,799</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center">
-                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
-                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-4 col-sm-6">
-                                                <div class="card">
-                                                    <div class="product-grid6">
-                                                        <div class="product-image6 p-5">
-                                                            <ul class="icons">
-                                                                <li>
-                                                                    <a href="festival-shop-description.html" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
-                                                                </li>
-                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
-                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
-                                                            </ul>
-                                                            <a href="festival-shop-description.html" >
-                                                                <img class="img-fluid br-7 w-100" src="../images/pngs/7.jpg" alt="img">
-                                                            </a>
-                                                        </div>
-                                                        <div class="card-body pt-0">
-                                                            <div class="product-content text-center">
-                                                                <h1 class="title fw-bold fs-20"><a href="festival-shop-description.html">Light pink nail polish</a></h1>
-                                                                <div class="mb-2 text-warning">
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star-half-o text-warning"></i>
-                                                                    <i class="fa fa-star-o text-warning"></i>
-                                                                </div>
-                                                                <div class="price">$399<span class="ms-4">499</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center">
-                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
-                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-xl-4 col-sm-6">
-                                                <div class="card">
-                                                    <div class="product-grid6">
-                                                        <div class="product-image6 p-5">
-                                                            <ul class="icons">
-                                                                <li>
-                                                                    <a href="festival-shop-description.html" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
-                                                                </li>
-                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
-                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
-                                                            </ul>
-                                                            <a href="festival-shop-description.html" >
-                                                                <img class="img-fluid br-7 w-100" src="../images/pngs/3.jpg" alt="img">
-                                                            </a>
-                                                        </div>
-                                                        <div class="card-body pt-0">
-                                                            <div class="product-content text-center">
-                                                                <h1 class="title fw-bold fs-20"><a href="festival-shop-description.html">Running Shoes for men</a></h1>
-                                                                <div class="mb-2 text-warning">
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star text-warning"></i>
-                                                                    <i class="fa fa-star-half-o text-warning"></i>
-                                                                    <i class="fa fa-star-o text-warning"></i>
-                                                                </div>
-                                                                <div class="price">$6,599<span class="ms-4">$9,799</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center">
-                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
-                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                             <div class="mb-5">
                                                 <div class="float-end">
                                                     <ul class="pagination ">
@@ -514,7 +215,7 @@
                                     </div>
                                     <div class="tab-pane" id="tab-12">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12">
+                                            <div class="col-xl-12 col-lg-12 col-md-12" ng-repeat="b in books">
                                                 <div class="card overflow-hidden">
                                                     <div class="card-body">
                                                         <div class="row g-0">
@@ -522,14 +223,14 @@
                                                                 <div class="product-list">
                                                                     <div class="product-image">
                                                                         <ul class="icons">
-                                                                            <li><a href="festival-shop-description.html" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
+                                                                            <li><a href="#!/detail" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
                                                                             <li><a href="add-product.html" class="btn btn-success"><i class="fe fe-edit text-white "></i></a></li>
                                                                             <li><a href="wishlist.html" class="btn btn-danger"><i class="fe fe-x text-white"></i></a></li>
                                                                         </ul>
                                                                     </div>
                                                                     <div class="br-be-0 br-te-0">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <img src="../images/pngs/9.jpg" alt="img" class="cover-image br-7 w-100">
+                                                                        <a href="#!/detail" class="">
+                                                                            <img ng-src="../images/books/{{b.image}}" alt="img" class="cover-image br-7 w-100">
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -537,8 +238,8 @@
                                                             <div class="col-xl-6 col-lg-12 col-md-12 border-end my-auto">
                                                                 <div class="card-body">
                                                                     <div class="mb-3">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <h3 class="fw-bold fs-30 mb-3">Candy Pure Rose Water</h3>
+                                                                        <a href="#!/detail" class="">
+                                                                            <h3 class="fw-bold fs-30 mb-3">{{b.bookName}}</h3>
                                                                             <div class="mb-2 text-warning">
                                                                                 <i class="fa fa-star fs-18 text-warning"></i>
                                                                                 <i class="fa fa-star fs-18 text-warning"></i>
@@ -547,14 +248,14 @@
                                                                                 <i class="fa fa-star-o fs-18 text-warning"></i>
                                                                             </div>
                                                                         </a>
-                                                                        <p class="fs-16">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat,quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat </p>
+                                                                        <p class="fs-16">{{b.description}} </p>
 
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-3 col-lg-12 col-md-12 my-auto">
                                                                 <div class="card-body p-0">
-                                                                    <div class="price h3 text-center mb-5 fw-bold">$599</div>
+                                                                    <div class="price h3 text-center mb-5 fw-bold">${{b.price}}</div>
                                                                     <a href="cart.html" class="btn btn-primary btn-block "><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
                                                                     <a href="wishlist.html" class="btn btn-outline-primary btn-block mt-2"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                                                                 </div>
@@ -563,202 +264,416 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12">
-                                                <div class="card overflow-hidden">
-                                                    <div class="card-body">
-                                                        <div class="row g-0">
-                                                            <div class="col-xl-3 col-lg-12 col-md-12">
-                                                                <div class="product-list">
-                                                                    <div class="product-image">
-                                                                        <ul class="icons">
-                                                                            <li><a href="festival-shop-description.html" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
-                                                                            <li><a href="add-product.html" class="btn btn-success"><i class="fe fe-edit text-white "></i></a></li>
-                                                                            <li><a href="wishlist.html" class="btn btn-danger"><i class="fe fe-x text-white"></i></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="br-be-0 br-te-0">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <img src="../images/pngs/10.jpg" alt="img" class="cover-image br-7 w-100">
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-6 col-lg-12 col-md-12 border-end my-auto">
-                                                                <div class="card-body">
-                                                                    <div class="mb-3">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <h3 class="fw-bold fs-30 mb-3">White Tshirt for Men</h3>
-                                                                            <div class="mb-2 text-warning">
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star-half-o fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star-o fs-18 text-warning"></i>
-                                                                            </div>
-                                                                        </a>
-                                                                        <p class="fs-16">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat,quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat </p>
 
-                                                                    </div>
+                                            <div class="mb-5">
+                                                <div class="float-end">
+                                                    <ul class="pagination ">
+                                                        <li class="page-item page-prev disabled">
+                                                            <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                                                        </li>
+                                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                                                        <li class="page-item page-next">
+                                                            <a class="page-link" href="javascript:void(0)">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane" id="tab-20">
+                                        <div class="row" >
+                                            <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in christian">
+                                                <div class="card">
+                                                    <div class="product-grid6" >
+                                                        <div class="product-image6 p-5" >
+                                                            <ul class="icons">
+                                                                <li>
+                                                                    <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                                                                </li>
+                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                                                            </ul>
+                                                            <a href="#!/detail" >
+                                                                <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-body pt-0">
+                                                            <div class="product-content text-center">
+                                                                <h1 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h1>
+                                                                <div class="mb-2 text-warning">
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                                    <i class="fa fa-star-o text-warning"></i>
+                                                                </div>
+                                                                <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-xl-3 col-lg-12 col-md-12 my-auto">
-                                                                <div class="card-body p-0">
-                                                                    <div class="price h3 text-center mb-5 fw-bold">$1,399</div>
-                                                                    <a href="cart.html" class="btn btn-primary btn-block"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
-                                                                    <a href="wishlist.html" class="btn btn-outline-primary btn-block mt-2"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
-                                                                </div>
-                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer text-center">
+                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12">
-                                                <div class="card overflow-hidden">
-                                                    <div class="card-body">
-                                                        <div class="row g-0">
-                                                            <div class="col-xl-3 col-lg-12 col-md-12">
-                                                                <div class="product-list">
-                                                                    <div class="product-image">
-                                                                        <ul class="icons">
-                                                                            <li><a href="festival-shop-description.html" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
-                                                                            <li><a href="add-product.html" class="btn btn-success"><i class="fe fe-edit text-white "></i></a></li>
-                                                                            <li><a href="wishlist.html" class="btn btn-danger"><i class="fe fe-x text-white"></i></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="br-be-0 br-te-0">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <img src="../images/pngs/8.jpg" alt="img" class="cover-image br-7 w-100">
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-6 col-lg-12 col-md-12 border-end my-auto">
-                                                                <div class="card-body">
-                                                                    <div class="mb-3">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <h3 class="fw-bold fs-30 mb-3">Stylish Rockerz 255 Ear Pods</h3>
-                                                                            <div class="mb-2 text-warning">
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star-half-o fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star-o fs-18 text-warning"></i>
-                                                                            </div>
-                                                                        </a>
-                                                                        <p class="fs-16">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat,quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat </p>
 
-                                                                    </div>
+                                            <div class="mb-5">
+                                                <div class="float-end">
+                                                    <ul class="pagination ">
+                                                        <li class="page-item page-prev disabled">
+                                                            <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                                                        </li>
+                                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                                                        <li class="page-item page-next">
+                                                            <a class="page-link" href="javascript:void(0)">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab-21">
+                                        <div class="row" >
+                                            <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in hindu">
+                                                <div class="card">
+                                                    <div class="product-grid6" >
+                                                        <div class="product-image6 p-5" >
+                                                            <ul class="icons">
+                                                                <li>
+                                                                    <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                                                                </li>
+                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                                                            </ul>
+                                                            <a href="#!/detail" >
+                                                                <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-body pt-0">
+                                                            <div class="product-content text-center">
+                                                                <h1 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h1>
+                                                                <div class="mb-2 text-warning">
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                                    <i class="fa fa-star-o text-warning"></i>
+                                                                </div>
+                                                                <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-xl-3 col-lg-12 col-md-12 my-auto">
-                                                                <div class="card-body p-0">
-                                                                    <div class="price h3 text-center mb-5 fw-bold">$16,599</div>
-                                                                    <a href="cart.html"><span  class="btn btn-primary btn-block"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</span></a>
-                                                                    <a href="wishlist.html"><span  class="btn btn-outline-primary btn-block mt-2"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</span></a>
-                                                                </div>
-                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer text-center">
+                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12">
-                                                <div class="card overflow-hidden">
-                                                    <div class="card-body">
-                                                        <div class="row g-0">
-                                                            <div class="col-xl-3 col-lg-12 col-md-12">
-                                                                <div class="product-list">
-                                                                    <div class="product-image">
-                                                                        <ul class="icons">
-                                                                            <li><a href="festival-shop-description.html" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
-                                                                            <li><a href="add-product.html" class="btn btn-success"><i class="fe fe-edit text-white "></i></a></li>
-                                                                            <li><a href="wishlist.html" class="btn btn-danger"><i class="fe fe-x text-white"></i></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="br-be-0 br-te-0">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <img src="../images/pngs/4.jpg" alt="img" class="cover-image br-7 w-100">
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-6 col-lg-12 col-md-12 border-end my-auto">
-                                                                <div class="card-body">
-                                                                    <div class="mb-3">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <h3 class="fw-bold fs-30 mb-3">Flower Pot for Home Decor</h3>
-                                                                            <div class="mb-2 text-warning">
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star-half-o fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star-o fs-18 text-warning"></i>
-                                                                            </div>
-                                                                        </a>
-                                                                        <p class="fs-16">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat,quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat </p>
 
-                                                                    </div>
+                                            <div class="mb-5">
+                                                <div class="float-end">
+                                                    <ul class="pagination ">
+                                                        <li class="page-item page-prev disabled">
+                                                            <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                                                        </li>
+                                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                                                        <li class="page-item page-next">
+                                                            <a class="page-link" href="javascript:void(0)">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab-22">
+                                        <div class="row" >
+                                            <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in islam">
+                                                <div class="card">
+                                                    <div class="product-grid6" >
+                                                        <div class="product-image6 p-5" >
+                                                            <ul class="icons">
+                                                                <li>
+                                                                    <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                                                                </li>
+                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                                                            </ul>
+                                                            <a href="#!/detail" >
+                                                                <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-body pt-0">
+                                                            <div class="product-content text-center">
+                                                                <h1 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h1>
+                                                                <div class="mb-2 text-warning">
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                                    <i class="fa fa-star-o text-warning"></i>
+                                                                </div>
+                                                                <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-xl-3 col-lg-12 col-md-12 my-auto">
-                                                                <div class="card-body p-0">
-                                                                    <div class="price h3 text-center mb-5 fw-bold">$1,299</div>
-                                                                    <a href="cart.html"><span class="btn btn-primary btn-block"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</span></a>
-                                                                    <a href="wishlist.html"><span class="btn btn-outline-primary btn-block mt-2"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</span></a>
-                                                                </div>
-                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer text-center">
+                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12">
-                                                <div class="card overflow-hidden">
-                                                    <div class="card-body">
-                                                        <div class="row g-0">
-                                                            <div class="col-xl-3 col-lg-12 col-md-12">
-                                                                <div class="product-list">
-                                                                    <div class="product-image">
-                                                                        <ul class="icons">
-                                                                            <li><a href="festival-shop-description.html" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
-                                                                            <li><a href="add-product.html" class="btn btn-success"><i class="fe fe-edit text-white "></i></a></li>
-                                                                            <li><a href="wishlist.html" class="btn btn-danger"><i class="fe fe-x text-white"></i></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="br-be-0 br-te-0">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <img src="../images/pngs/3.jpg" alt="img" class="cover-image br-7 w-100">
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-6 col-lg-12 col-md-12 border-end my-auto">
-                                                                <div class="card-body">
-                                                                    <div class="mb-3">
-                                                                        <a href="festival-shop-description.html" class="">
-                                                                            <h3 class="fw-bold fs-30 mb-3">Running Shoes for men</h3>
-                                                                            <div class="mb-2 text-warning">
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star-half-o fs-18 text-warning"></i>
-                                                                                <i class="fa fa-star-o fs-18 text-warning"></i>
-                                                                            </div>
-                                                                        </a>
-                                                                        <p class="fs-16">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat,quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat </p>
 
-                                                                    </div>
+                                            <div class="mb-5">
+                                                <div class="float-end">
+                                                    <ul class="pagination ">
+                                                        <li class="page-item page-prev disabled">
+                                                            <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                                                        </li>
+                                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                                                        <li class="page-item page-next">
+                                                            <a class="page-link" href="javascript:void(0)">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="tab-pane" id="tab-23">
+                                        <div class="row" >
+                                            <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in p1">
+                                                <div class="card">
+                                                    <div class="product-grid6" >
+                                                        <div class="product-image6 p-5" >
+                                                            <ul class="icons">
+                                                                <li>
+                                                                    <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                                                                </li>
+                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                                                            </ul>
+                                                            <a href="#!/detail" >
+                                                                <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-body pt-0">
+                                                            <div class="product-content text-center">
+                                                                <h1 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h1>
+                                                                <div class="mb-2 text-warning">
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                                    <i class="fa fa-star-o text-warning"></i>
+                                                                </div>
+                                                                <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-xl-3 col-lg-12 col-md-12 my-auto">
-                                                                <div class="card-body p-0">
-                                                                    <div class="price h3 text-center mb-5 fw-bold">$6,599</div>
-                                                                    <a href="cart.html"><span class="btn btn-primary btn-block"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</span></a>
-                                                                    <a href="wishlist.html"><span class="btn btn-outline-primary btn-block mt-2"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</span></a>
-                                                                </div>
-                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer text-center">
+                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="mb-5">
+                                                <div class="float-end">
+                                                    <ul class="pagination ">
+                                                        <li class="page-item page-prev disabled">
+                                                            <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                                                        </li>
+                                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                                                        <li class="page-item page-next">
+                                                            <a class="page-link" href="javascript:void(0)">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab-24">
+                                        <div class="row" >
+                                            <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in p2">
+                                                <div class="card">
+                                                    <div class="product-grid6" >
+                                                        <div class="product-image6 p-5" >
+                                                            <ul class="icons">
+                                                                <li>
+                                                                    <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                                                                </li>
+                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                                                            </ul>
+                                                            <a href="#!/detail" >
+                                                                <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-body pt-0">
+                                                            <div class="product-content text-center">
+                                                                <h1 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h1>
+                                                                <div class="mb-2 text-warning">
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                                    <i class="fa fa-star-o text-warning"></i>
+                                                                </div>
+                                                                <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer text-center">
+                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-5">
+                                                <div class="float-end">
+                                                    <ul class="pagination ">
+                                                        <li class="page-item page-prev disabled">
+                                                            <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                                                        </li>
+                                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                                                        <li class="page-item page-next">
+                                                            <a class="page-link" href="javascript:void(0)">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab-25">
+                                        <div class="row" >
+                                            <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in p3">
+                                                <div class="card">
+                                                    <div class="product-grid6" >
+                                                        <div class="product-image6 p-5" >
+                                                            <ul class="icons">
+                                                                <li>
+                                                                    <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                                                                </li>
+                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                                                            </ul>
+                                                            <a href="#!/detail" >
+                                                                <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-body pt-0">
+                                                            <div class="product-content text-center">
+                                                                <h1 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h1>
+                                                                <div class="mb-2 text-warning">
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                                    <i class="fa fa-star-o text-warning"></i>
+                                                                </div>
+                                                                <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer text-center">
+                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-5">
+                                                <div class="float-end">
+                                                    <ul class="pagination ">
+                                                        <li class="page-item page-prev disabled">
+                                                            <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                                                        </li>
+                                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                                                        <li class="page-item page-next">
+                                                            <a class="page-link" href="javascript:void(0)">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab-26">
+                                        <div class="row" >
+                                            <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in p4">
+                                                <div class="card">
+                                                    <div class="product-grid6" >
+                                                        <div class="product-image6 p-5" >
+                                                            <ul class="icons">
+                                                                <li>
+                                                                    <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                                                                </li>
+                                                                <li><a href="add-product.html" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                                                            </ul>
+                                                            <a href="#!/detail" >
+                                                                <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-body pt-0">
+                                                            <div class="product-content text-center">
+                                                                <h1 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h1>
+                                                                <div class="mb-2 text-warning">
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star text-warning"></i>
+                                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                                    <i class="fa fa-star-o text-warning"></i>
+                                                                </div>
+                                                                <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer text-center">
+                                                            <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                                                            <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <div class="mb-5">
                                                 <div class="float-end">
                                                     <ul class="pagination ">
@@ -795,9 +710,11 @@
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
     <!-- JQUERY JS -->
     <script src="../js/jquery.min.js"></script>
+
     <!-- BOOTSTRAP JS -->
     <script src="../css/bootstrap/js/popper.min.js"></script>
     <script src="../css/bootstrap/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>

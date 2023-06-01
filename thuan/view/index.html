@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script src="../../js/lib-angularjs-1.6.9.js"></script>
+    <script src="../../js/lib-angularjs.route-1.6.9.js"></script>
+    <script src="../js/index.js"></script>
+    <style>
+        input.ng-invalid{
+            background-color: red;
+        }
+        input.ng-valid{
+            background-color: green;
+        }
+    </style>
+
+</head>
+<body>
+<!--<div ng-controller="firstController">-->
+<!--    name in controller: {{name}}-->
+<!--    </br>-->
+<!--    {{5+6}}-->
+<!--    </br>-->
+<!--    {{name + " "+ className}}-->
+<!--    </br>-->
+<!--    <p ng-bind="name"></p>-->
+<!--    <p ng-bind="className"></p>-->
+<!--    <input type="text" ng-model="className" required>-->
+<!--    </br>-->
+<!--    <p ng-click="count = count + 1">Click me</p>-->
+<!--    <p>{{count}}</p>-->
+<!--    <ul ng-repeat="std in students">-->
+<!--        <li>{{std}}</li>-->
+<!--    </ul>-->
+
+<!--    <table border="1">-->
+<!--        <tr>-->
+<!--            <th>STT</th>-->
+<!--            <th>Name</th>-->
+<!--            <th>Price</th>-->
+<!--            <th>CreatedAt</th>-->
+<!--        </tr>-->
+
+<!--        <tr ng-repeat="product in products | orderBy:'price' | limitTo:4:startOffset | filter:{name:searchKey}">-->
+<!--            <td>{{$index + 1}}</td>-->
+<!--            <td>{{product.name | myFilter}}</td>-->
+<!--            <td>{{product.price | currency:"VND":4}}</td>-->
+<!--            <td>{{product.createdAt | date:"yyyy-MM-dd"}}</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--    <button ng-click="pre()">Pre</button>-->
+<!--    <button ng-click="next()">Next</button>-->
+<!--    <input ng-model="searchKey">-->
+<!--</div>-->
+<div>
+    <ng-view></ng-view>
+</div>
+<a href="#!/about">About</a>
+<a href="#!/contact">Contact</a>
+<my-directive></my-directive>
+<div my-attribute-directive></div>
+<div class="myClassDirective"></div>
+<!-- directive:cmd -->
+<div>color : {{color}}</div>
+<div ng-controller="topController">
+    color topController :{{color}}
+    <div ng-controller="firstController">
+        color firstController :{{color}}
+    </div>
+</div>
+<div ng-controller="secondController">
+        <table border="1">
+            <tr>
+                <th>STT</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>CreatedAt</th>
+            </tr>
+
+            <tr ng-repeat="product in products | orderBy:'price' | limitTo:4:startOffset | filter:{name:searchKey}">
+                <td>{{$index + 1}}</td>
+                <td>{{product.name | myFilter}}</td>
+                <td>{{product.price | currency:"VND":4}}</td>
+                <td>{{product.createdAt | date:"yyyy-MM-dd"}}</td>
+            </tr>
+        </table>
+</div>
+</body>
+</html>
