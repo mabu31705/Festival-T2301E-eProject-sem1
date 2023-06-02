@@ -13,16 +13,52 @@
   <script src="../js/angularjs-min-1.69.js"></script>
   <script src="../js/angularjs-route-1.69.js"></script>
   <script src="../js/function.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"></script>
+  <style>
+    *,
+    :after,
+    :before {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
 
+    html {
+      height: 100%;
+    }
+
+    body,
+    html,
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      position: relative;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+    }
+  </style>
 </head>
-<body ng-controller="firstController">
-<div ng-view></div>
-<div>
-  <a href="#!/detail">Detail</a>
+<body>
+<div ng-controller="firstController">
+  <div ng-view></div>
+  <div>
+    <a href="#!/detail">Detail</a>
+  </div>
+  <div>
+    <a href="#!/books">Shop</a>
+  </div>
 </div>
-<div>
-  <a href="#!/books">Shop</a>
-</div>
+<div id="map"></div>
+
+
+
+
 
 <!-- BACK-TO-TOP -->
 <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
