@@ -1,4 +1,3 @@
-
 if (typeof(Storage) !== 'undefined') {
     //Nếu có hỗ trợ
     //Thực hiện thao tác với Storage
@@ -8,7 +7,8 @@ if (typeof(Storage) !== 'undefined') {
     console.log('Trình duyệt của bạn không hỗ trợ Storage');
 }
 let app = angular.module("myApp",["ngRoute"]);
-app.controller("firstController", myController);
+app.controller("firstController",myController );
+const container = document.getElementById('map')
 function myController($scope,$http){
     $http.get("../data/data.json").
     then(function (response){
@@ -57,34 +57,47 @@ function myController($scope,$http){
         $scope.startOffset = offset;
     }
     $scope.searchKey = "";
+
+    // map
+
+    // let lat= 21.028694544996597;
+    // let lng= 105.78178303933102;
+    // let map = L.map('map').setView([lat, lng], 13);
+    // let markers = [
+    //     { lat: lat, lng: lng, text: 'Company HeadQuarter' },
+    // ];
+    //
+    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+    //     maxZoom: 18,
+    // }).addTo(map);
+    // markers.forEach(function(marker) {
+    //     L.marker([marker.lat, marker.lng]).addTo(map)
+    //         .bindPopup(marker.text)
+    //         .openPopup();
+    // });
+
 }
 app.config(function ($routeProvider){
-    $routeProvider.when("/detail",{
+    $routeProvider
+        .when("/detail",{
         templateUrl: "festival-shop-description.html"
-    }).when("/books",{
+    })
+        .when("/books",{
         templateUrl: "festival-shop.html"
     })
+        .when("/abouts",{
+            templateUrl:"map.html"
+    })
+
 })
 
+$(document).ready(function(){
+    $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+    });
+});
 
 
-// config map
-let config = {
-    minZoom: 7,
-    maxZoom: 18,
-};
-// magnification with which the map will start
-const zoom = 18;
-const lat = 21.028694544996597;
-const lng = 105.78178303933102;
-// calling map
-const map = L.map("map", config).setView([lat, lng], zoom);
-
-// Used to load and display tile layers on the map
-// Most tile servers require attribution, which you can set under `Layer`
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
-
-L.marker([lat, lng]).addTo(map).bindPopup("T2301E - Headquarter");

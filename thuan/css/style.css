@@ -1,9 +1,9 @@
 @charset "UTF-8";
-@import url("./iconfonts/bootstrapicons/bootstrap-icons.css");
-@import url("./iconfonts/font-awesome/css/font-awesome.min.css");
-@import url("./iconfonts/glyphicons/glyphicon.css");
-@import url("./iconfonts/ionicons/ionicons.css");
-@import url("./iconfonts/feather/feather.css");
+@import url("./lib/iconfonts/bootstrapicons/bootstrap-icons.css");
+@import url("./lib/iconfonts/font-awesome/css/font-awesome.min.css");
+@import url("./lib/iconfonts/glyphicons/glyphicon.css");
+@import url("./lib/iconfonts/ionicons/ionicons.css");
+@import url("./lib/iconfonts/feather/feather.css");
 
 :root {
     --primary-bg-color: #6c5ffc;
@@ -2767,4 +2767,57 @@ a:hover {
 
 .product-grid6 .icons li a:hover {
     color: #fff;
+}
+
+@media (max-width: 1439px ){
+    .nav1{
+        margin:0 15% 0 21%;
+    }
+}
+@media (max-width: 1279px ){
+    .nav1{
+        margin:0 4% 0 23%;
+    }
+}
+@media (max-width: 985px ){
+    .nav1{
+        margin:0 4% 0 5%;
+    }
+}
+@media (min-width: 986px ){
+    .nav1{
+        margin:0 4% 0 30%;
+    }
+}
+@media (min-width: 1440px ){
+    .nav1{
+        margin:0 15% 0 17%;
+    }
+}
+
+.pad5{
+    padding: 10px;
+}
+.pad5 a{
+    color: #212529;;
+
+}
+.maz{
+  margin-top: 5000px;
+}
+.fixed{
+    background-color: white;
+    overflow: hidden;
+    position: fixed;
+    border-radius: 0 0 5px 5px;
+    right: 0;
+    left: auto;
+    z-index: 9999;
+    box-shadow: 5px 5px 5px #b9b9b9;
+    min-width: 69%;
+    border: 1px solid #f0f0f8;
+    top: -5px;
+    text-decoration: none;
+    color: #7b8191;
+    font-weight: 400;
 }
