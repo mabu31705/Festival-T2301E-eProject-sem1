@@ -2802,9 +2802,6 @@ a:hover {
     color: #212529;;
 
 }
-.maz{
-  margin-top: 5000px;
-}
 .fixed{
     background-color: white;
     overflow: hidden;
@@ -2820,9 +2817,4 @@ a:hover {
     text-decoration: none;
     color: #7b8191;
     font-weight: 400;
-}
-.zi{
-    z-index: 9;
-    height: 0px;
-    overflow: visible;
 }
