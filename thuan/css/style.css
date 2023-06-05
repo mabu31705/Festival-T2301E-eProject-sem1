@@ -2809,7 +2809,7 @@ a:hover {
     border-radius: 0 0 5px 5px;
     right: 0;
     left: auto;
-    z-index: 9999;
+    /*z-index: 9999;*/
     box-shadow: 5px 5px 5px #b9b9b9;
     min-width: 69%;
     border: 1px solid #f0f0f8;
