@@ -84,17 +84,43 @@ app.config(function ($routeProvider) {
         .when("/books", {
             templateUrl: "festival-shop.html"
         })
-        // .when("/abouts", {
-        //     templateUrl: "map.html"
-        // })
         .when("/christ", {
             templateUrl: "../../huy/html/ChristianFes.html"
+        })
+        .when("/christ1", {
+            templateUrl: "../../huy/html/ChristFes/Christmas.html"
+        })
+        .when("/christ2", {
+            templateUrl: "../../huy/html/ChristFes/Easter.html"
+        })
+        .when("/christ3", {
+            templateUrl: "../../huy/html/ChristFes/Lent.html"
         })
         .when("/hindu", {
             templateUrl: "../../huy/html/HinduFes.html"
         })
+        .when("/hindu1", {
+            templateUrl: "../../huy/html/HinduFes/Holi.html"
+        })
+        .when("/hindu2", {
+            templateUrl: "../../huy/html/HinduFes/Diwali.html"
+        })
+        .when("/hindu3", {
+            templateUrl: "../../huy/html/HinduFes/KumbhMela.html"
+        })
+        .when("/hindu4", {
+            templateUrl: "../../huy/html/HinduFes/MahaShivaratri.html"
+        })
         .when("/islam", {
             templateUrl: "../../huy/html/IslamFes.html"
         })
-
+        .when("/islam1", {
+            templateUrl: "../../huy/html/IslamFes/EidAlAdha.html"
+        })
+        .when("/islam2", {
+            templateUrl: "../../huy/html/IslamFes/EidAlFitr.html"
+        })
+        .when("/islam3", {
+            templateUrl: "../../huy/html/IslamFes/Ramadan.html"
+        })
 })

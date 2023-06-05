@@ -34,7 +34,6 @@
       <!--app-content open-->
       <div class="main-content app-content mt-0 ">
         <div class="side-app">
-
           <!-- CONTAINER -->
           <div class="main-container container-fluid fixed-header">
             <div class="row">
@@ -46,13 +45,31 @@
                         <a class="nav-link active px-4 py-2" href="#!/books">Home</a>
                       </li>
                       <li class="nav-item dropdown m-2">
-                        <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Religion</a>
+                            <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Christian</a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#!/christ1">Christmas</a>
+                              <a class="dropdown-item" href="#!/christ2">Easter</a>
+                              <a class="dropdown-item" href="#!/christ3">Lent</a>
+                            </div>
+                      </li>
+                      <li class="nav-item dropdown m-2">
+                        <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Hindu</a>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#!/christ">Christian</a>
-                          <a class="dropdown-item" href="#/hindu">Hindu</a>
-                          <a class="dropdown-item" href="#/islam">Islam</a>
+                          <a class="dropdown-item" href="#!/hindu1">Diwali</a>
+                          <a class="dropdown-item" href="#!/hindu2">Holi</a>
+                          <a class="dropdown-item" href="#!/hindu3">KumbhMela</a>
+                          <a class="dropdown-item" href="#!/hindu4">MahaShivaratri</a>
                         </div>
                       </li>
+                      <li class="nav-item dropdown m-2">
+                        <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Islam</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#!/islam1">EidAlAdha</a>
+                          <a class="dropdown-item" href="#!/islam2">EidAlFitr</a>
+                          <a class="dropdown-item" href="#!/islam3">Ramadan</a>
+                        </div>
+                      </li>
+
                       <li class="nav-item m-2">
                         <a class="nav-link px-4 py-2" href="#!/books">Books</a>
                       </li>
@@ -65,6 +82,7 @@
 
               </div>
             </div>
+
             <div ng-view class="mt-lg-5"></div>
             <!-- BACK-TO-TOP -->
 
