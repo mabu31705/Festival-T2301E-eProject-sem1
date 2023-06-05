@@ -35,11 +35,11 @@ h1{
 #demo{
     margin: 0 0;
 }
-img{
-    width: 50%;
-    height: 300px;
-    margin: 11px auto;
-}
+/*img{*/
+/*    width: 50%;*/
+/*    height: 300px;*/
+/*    margin: 11px auto;*/
+/*}*/
 .js{
     background-image: url("./../../images/christianFes/ChristFes/Easter/easterCD.jpg");
     color: white;
