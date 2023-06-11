@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <title>Religion around the world</title>
+    <link rel="stylesheet" href="./lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./app.css">
+    <script src="./lib/angular/angularjs-min-1.69.js"></script>
+    <script src="./lib/angular/angularjs-route-1.69.js"></script>
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/bootstrap/bootstrap.js"></script>
+    <script src="./lib/bootstrap/popper.min.js"></script>
+    <script src="./js/function.js"></script>
+    <script src="./app.module.js"></script>
+    <script src="./app.config.js"></script>
+    <script src="./module/store/store.module.js"></script>
+    <script src="./module/store/store.component.js"></script>
+
+
+</head>
+<body class="app">
+    <div class="page">
+        <div class="page-main">
+            <!--app-content open-->
+            <div class="main-content app-content mt-0 ">
+                <div class="side-app">
+                    <!-- CONTAINER -->
+                    <div class="main-container container-fluid fixed-header">
+
+                        <!-- navigation-->
+                        <div class="row">
+                            <div class="col-10">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-pills">
+                                            <li class="nav-item m-2">
+                                                <a class="nav-link active px-4 py-2" href="#!/store">Home</a>
+                                            </li>
+                                            <li class="nav-item dropdown m-2">
+                                                <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Christian</a>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#!/christ1">Christmas</a>
+                                                    <a class="dropdown-item" href="#!/christ2">Easter</a>
+                                                    <a class="dropdown-item" href="#!/christ3">Lent</a>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item dropdown m-2">
+                                                <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Hindu</a>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#!/hindu1">Holi</a>
+                                                    <a class="dropdown-item" href="#!/hindu2">Diwali</a>
+                                                    <a class="dropdown-item" href="#!/hindu3">KumbhMela</a>
+                                                    <a class="dropdown-item" href="#!/hindu4">MahaShivaratri</a>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item dropdown m-2">
+                                                <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Islam</a>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#!/islam1">EidAlAdha</a>
+                                                    <a class="dropdown-item" href="#!/islam2">EidAlFitr</a>
+                                                    <a class="dropdown-item" href="#!/islam3">Ramadan</a>
+                                                </div>
+                                            </li>
+
+                                            <li class="nav-item m-2">
+                                                <a class="nav-link px-4 py-2" href="#!/store">Books</a>
+                                            </li>
+                                            <li class="nav-item m-2">
+                                                <a class="nav-link px-4 py-2" href="../../thuan/html/map.html">About us</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div ng-view class="mt-lg-5"></div>
+                        <!-- BACK-TO-TOP -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
