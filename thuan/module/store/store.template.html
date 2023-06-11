@@ -1,0 +1,680 @@
+<title>Festival-Shop</title>
+<div class="page-header">
+  <h2 class="page-title">Book List</h2>
+</div>
+<!-- ROW-1 OPEN -->
+<div class="row">
+  <!--side bar left top books -->
+  <div class="col-xl-3 col-lg-4">
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Categories</div>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item border-0 p-0"> <a href="#tab-20" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Christian </a><span class="product-label">{{$}}</span> </li>
+              <li class="list-group-item border-0 p-0"> <a href="#tab-21" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Hindu </a><span class="product-label">3</span> </li>
+              <li class="list-group-item border-0 p-0"> <a href="#tab-22" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Islam </a><span class="product-label">3</span> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Price Range</div>
+          </div>
+          <div class="card-body">
+            <label class="custom-control custom-radio mb-0 mt-1">
+              <input type="radio" class="custom-control-input" name="example-radios" value="option1"  checked>
+              <span class="custom-control-label">
+                                                         Upto $500
+                                                    </span>
+            </label>
+            <label  class="custom-control custom-radio mb-0 mt-1">
+              <input type="radio" class="custom-control-input" name="example-radios"
+                     value="option2" >
+              <span class="custom-control-label">$500 - $1000</span>
+            </label>
+            <label  class="custom-control custom-radio mb-0 mt-1">
+              <input type="radio" class="custom-control-input" name="example-radios"
+                     value="option3" >
+              <span class="custom-control-label">$1000 - $1500</span>
+            </label>
+            <label  class="custom-control custom-radio mb-0 mt-1">
+              <input type="radio" class="custom-control-input" name="example-radios"
+                     value="option4" >
+              <span class="custom-control-label">Over $2000</span>
+            </label>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Top Books</div>
+          </div>
+          <div class="card-body">
+            <div class="">
+              <div class="d-flex overflow-visible">
+                <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="../images/books/{{books[0].image}}" alt="avatar-img">
+                <div class="media-body valign-middle">
+                  <a href="javascript:void(0)" class="fw-semibold text-dark">{{books[0].bookName}}</a>
+                  <div class="mb-1 text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                  </div>
+                  <h5 class="fw-bold">${{books[0].price}}</h5>
+                </div>
+              </div>
+              <div class="d-flex overflow-visible mt-5">
+                <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="../images/books/{{books[1].image}}" alt="avatar-img">
+                <div class="media-body valign-middle">
+                  <a href="javascript:void(0)" class="fw-semibold text-dark">{{books[1].bookName}}</a>
+                  <div class="mb-1 text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                  </div>
+                  <h5 class="fw-bold">${{books[1].price}}</h5>
+                </div>
+              </div>
+              <div class="d-flex overflow-visible mt-5">
+                <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="../images/books/{{books[2].image}}" alt="avatar-img">
+                <div class="media-body valign-middle">
+                  <a href="javascript:void(0)" class="fw-semibold text-dark">{{books[2].bookName}}</a>
+                  <div class="mb-1 text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                  </div>
+                  <h5 class="fw-bold">${{books[2].price}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- COL-END -->
+  <div class="col-xl-7 col-lg-8">
+    <!--search bar -->
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="card p-0">
+          <div class="card-body p-4">
+            <div class="row">
+              <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                <div class="input-group d-flex w-100 float-start">
+                  <input type="text" class="form-control border-end-0 my-2" placeholder="Search ..." id="searchInput" onkeyup="searchBook()">
+                  <ul id="searchResults"></ul>
+                  <button class="btn input-group-text bg-transparent border-start-0 text-muted my-2">
+                    <i class="fe fe-search text-muted" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <ul class="nav item2-gl-menu float-end my-2">
+                  <li class="border-end">
+                    <a href="#tab-11" class="show active" data-bs-toggle="tab" title="List style">
+                      <i class="fa fa-th"></i>
+                    </a>
+                  </li>
+                  <li><a href="#tab-12" data-bs-toggle="tab" class="" title="Grid"><i class="fa fa-list"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--content display books -->
+    <div class="tab-content"  >
+      <div class="tab-pane active" id="tab-11">
+        <div class="row" id="searchTextResults">
+          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in books" >
+            <div class="card">
+              <div class="product-grid6" >
+                <div class="product-image6 p-5" >
+                  <ul class="icons">
+                    <li>
+                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                    </li>
+                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                  </ul>
+                  <a href="#!/detail" >
+                    <img class="img-fluid br-7 w-100" ng-src="./images/books/{{b.image}}" alt="img">
+                  </a>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="product-content text-center">
+                    <h3 class=" fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h3>
+                    <div class="mb-2 text-warning">
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star-half-o text-warning"></i>
+                      <i class="fa fa-star-o text-warning"></i>
+                    </div>
+                    <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                  <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="float-end">
+              <ul class="pagination ">
+                <li class="page-item page-prev disabled">
+                  <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                <li class="page-item page-next">
+                  <a class="page-link" href="javascript:void(0)">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-12">
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12" ng-repeat="b in books">
+            <div class="card overflow-hidden">
+              <div class="card-body">
+                <div class="row g-0">
+                  <div class="col-xl-3 col-lg-12 col-md-12">
+                    <div class="product-list">
+                      <div class="product-image">
+                        <ul class="icons">
+                          <li><a href="#!/detail" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
+                          <li><a href="#!/detail" class="btn btn-success"><i class="fe fe-edit text-white "></i></a></li>
+                          <li><a href="wishlist.html" class="btn btn-danger"><i class="fe fe-x text-white"></i></a></li>
+                        </ul>
+                      </div>
+                      <div class="br-be-0 br-te-0">
+                        <a href="#!/detail" class="">
+                          <img ng-src="../images/books/{{b.image}}" alt="img" class="cover-image br-7 w-100">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-12 col-md-12 border-end my-auto">
+                    <div class="card-body">
+                      <div class="mb-3">
+                        <a href="#!/detail" class="">
+                          <h3 class="fw-bold fs-30 mb-3">{{b.bookName}}</h3>
+                          <div class="mb-2 text-warning">
+                            <i class="fa fa-star fs-18 text-warning"></i>
+                            <i class="fa fa-star fs-18 text-warning"></i>
+                            <i class="fa fa-star fs-18 text-warning"></i>
+                            <i class="fa fa-star-half-o fs-18 text-warning"></i>
+                            <i class="fa fa-star-o fs-18 text-warning"></i>
+                          </div>
+                        </a>
+                        <p class="fs-16">{{b.description}} </p>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-12 col-md-12 my-auto">
+                    <div class="card-body p-0">
+                      <div class="price h3 text-center mb-5 fw-bold">${{b.price}}</div>
+                      <a href="cart.html" class="btn btn-primary btn-block "><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                      <a href="wishlist.html" class="btn btn-outline-primary btn-block mt-2"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="float-end">
+              <ul class="pagination ">
+                <li class="page-item page-prev disabled">
+                  <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                <li class="page-item page-next">
+                  <a class="page-link" href="javascript:void(0)">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-20">
+        <div class="row" >
+          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in christian">
+            <div class="card">
+              <div class="product-grid6" >
+                <div class="product-image6 p-5" >
+                  <ul class="icons">
+                    <li>
+                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                    </li>
+                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                  </ul>
+                  <a href="#!/detail" >
+                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  </a>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="product-content text-center">
+                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <div class="mb-2 text-warning">
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star-half-o text-warning"></i>
+                      <i class="fa fa-star-o text-warning"></i>
+                    </div>
+                    <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                  <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="float-end">
+              <ul class="pagination ">
+                <li class="page-item page-prev disabled">
+                  <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                <li class="page-item page-next">
+                  <a class="page-link" href="javascript:void(0)">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-21">
+        <div class="row" >
+          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in hindu">
+            <div class="card">
+              <div class="product-grid6" >
+                <div class="product-image6 p-5" >
+                  <ul class="icons">
+                    <li>
+                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                    </li>
+                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                  </ul>
+                  <a href="#!/detail" >
+                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  </a>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="product-content text-center">
+                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <div class="mb-2 text-warning">
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star-half-o text-warning"></i>
+                      <i class="fa fa-star-o text-warning"></i>
+                    </div>
+                    <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                  <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="float-end">
+              <ul class="pagination ">
+                <li class="page-item page-prev disabled">
+                  <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                <li class="page-item page-next">
+                  <a class="page-link" href="javascript:void(0)">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-22">
+        <div class="row" >
+          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in islam">
+            <div class="card">
+              <div class="product-grid6" >
+                <div class="product-image6 p-5" >
+                  <ul class="icons">
+                    <li>
+                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                    </li>
+                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                  </ul>
+                  <a href="#!/detail" >
+                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  </a>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="product-content text-center">
+                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <div class="mb-2 text-warning">
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star-half-o text-warning"></i>
+                      <i class="fa fa-star-o text-warning"></i>
+                    </div>
+                    <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                  <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="float-end">
+              <ul class="pagination ">
+                <li class="page-item page-prev disabled">
+                  <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                <li class="page-item page-next">
+                  <a class="page-link" href="javascript:void(0)">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-23">
+        <div class="row" >
+          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in p1">
+            <div class="card">
+              <div class="product-grid6" >
+                <div class="product-image6 p-5" >
+                  <ul class="icons">
+                    <li>
+                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                    </li>
+                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                  </ul>
+                  <a href="#!/detail" >
+                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  </a>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="product-content text-center">
+                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <div class="mb-2 text-warning">
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star-half-o text-warning"></i>
+                      <i class="fa fa-star-o text-warning"></i>
+                    </div>
+                    <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                  <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="float-end">
+              <ul class="pagination ">
+                <li class="page-item page-prev disabled">
+                  <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                <li class="page-item page-next">
+                  <a class="page-link" href="javascript:void(0)">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-24">
+        <div class="row" >
+          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in p2">
+            <div class="card">
+              <div class="product-grid6" >
+                <div class="product-image6 p-5" >
+                  <ul class="icons">
+                    <li>
+                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                    </li>
+                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                  </ul>
+                  <a href="#!/detail" >
+                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  </a>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="product-content text-center">
+                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <div class="mb-2 text-warning">
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star-half-o text-warning"></i>
+                      <i class="fa fa-star-o text-warning"></i>
+                    </div>
+                    <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                  <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="float-end">
+              <ul class="pagination ">
+                <li class="page-item page-prev disabled">
+                  <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                <li class="page-item page-next">
+                  <a class="page-link" href="javascript:void(0)">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-25">
+        <div class="row" >
+          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in p3">
+            <div class="card">
+              <div class="product-grid6" >
+                <div class="product-image6 p-5" >
+                  <ul class="icons">
+                    <li>
+                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                    </li>
+                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                  </ul>
+                  <a href="#!/detail" >
+                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  </a>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="product-content text-center">
+                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <div class="mb-2 text-warning">
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star-half-o text-warning"></i>
+                      <i class="fa fa-star-o text-warning"></i>
+                    </div>
+                    <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                  <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="float-end">
+              <ul class="pagination ">
+                <li class="page-item page-prev disabled">
+                  <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                <li class="page-item page-next">
+                  <a class="page-link" href="javascript:void(0)">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-26">
+        <div class="row" >
+          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in p4">
+            <div class="card">
+              <div class="product-grid6" >
+                <div class="product-image6 p-5" >
+                  <ul class="icons">
+                    <li>
+                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                    </li>
+                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
+                  </ul>
+                  <a href="#!/detail" >
+                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  </a>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="product-content text-center">
+                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <div class="mb-2 text-warning">
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star text-warning"></i>
+                      <i class="fa fa-star-half-o text-warning"></i>
+                      <i class="fa fa-star-o text-warning"></i>
+                    </div>
+                    <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                  <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="float-end">
+              <ul class="pagination ">
+                <li class="page-item page-prev disabled">
+                  <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                <li class="page-item page-next">
+                  <a class="page-link" href="javascript:void(0)">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- COL-END -->
+  </div>
+  <!-- ROW-1 CLOSED -->
+</div>
+<!-- ROW-1 END -->
+<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
