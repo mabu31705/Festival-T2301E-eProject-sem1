@@ -1,3 +1,8 @@
-// Define the `phonecatApp` module
-
-let app = angular.module("myApp", ["ngRoute","store"]);
+let app = angular.module("myApp",
+    ["ngRoute",
+        "store",
+        "storeDetail",
+        "LocalStorageModule",
+        "landing",
+        "ui.bootstrap"
+    ]);

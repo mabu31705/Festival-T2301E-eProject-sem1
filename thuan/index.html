@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
 <head>
+    <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Religion around the world</title>
-    <link rel="stylesheet" href="./lib/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="./app.css">
-    <script src="./lib/angular/angularjs-min-1.69.js"></script>
-    <script src="./lib/angular/angularjs-route-1.69.js"></script>
+    <link href="./lib/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="./app.css" rel="stylesheet">
+    <script src="./lib/angular/angularjs.js"></script>
+    <script src="./lib/angular/angularRoute.js"></script>
+    <script src="./lib/angular/angular-resource.js"></script>
+    <script src="./lib/angular/angularLocalStorage.js"></script>
+    <script src="./lib/angular/angularUiBootstrap.js"></script>
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/bootstrap.js"></script>
     <script src="./lib/bootstrap/popper.min.js"></script>
@@ -15,73 +20,155 @@
     <script src="./app.config.js"></script>
     <script src="./module/store/store.module.js"></script>
     <script src="./module/store/store.component.js"></script>
+    <script src="./module/storedt/storedt.module.js"></script>
+    <script src="./module/storedt/storedt.component.js"></script>
+    <script src="./module/landing/landing.module.js"></script>
+    <script src="./module/landing/landing.component.js"></script>
+    <script src="./lib/owlcarousel/owlCarousel.js"></script>
 
 
 </head>
 <body class="app">
-    <div class="page">
-        <div class="page-main">
-            <!--app-content open-->
-            <div class="main-content app-content mt-0 ">
-                <div class="side-app">
-                    <!-- CONTAINER -->
-                    <div class="main-container container-fluid fixed-header">
+<div class="page">
+    <div class="page-main">
+        <!--app-content open-->
+        <div class="main-content app-content mt-0 ">
+            <div class="side-app">
+                <!-- CONTAINER -->
+                <div class="main-container container-fluid">
 
-                        <!-- navigation-->
-                        <div class="row">
-                            <div class="col-10">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <ul class="nav nav-pills">
-                                            <li class="nav-item m-2">
-                                                <a class="nav-link active px-4 py-2" href="#!/store">Home</a>
-                                            </li>
-                                            <li class="nav-item dropdown m-2">
-                                                <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Christian</a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#!/christ1">Christmas</a>
-                                                    <a class="dropdown-item" href="#!/christ2">Easter</a>
-                                                    <a class="dropdown-item" href="#!/christ3">Lent</a>
-                                                </div>
-                                            </li>
-                                            <li class="nav-item dropdown m-2">
-                                                <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Hindu</a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#!/hindu1">Holi</a>
-                                                    <a class="dropdown-item" href="#!/hindu2">Diwali</a>
-                                                    <a class="dropdown-item" href="#!/hindu3">KumbhMela</a>
-                                                    <a class="dropdown-item" href="#!/hindu4">MahaShivaratri</a>
-                                                </div>
-                                            </li>
-                                            <li class="nav-item dropdown m-2">
-                                                <a class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Islam</a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#!/islam1">EidAlAdha</a>
-                                                    <a class="dropdown-item" href="#!/islam2">EidAlFitr</a>
-                                                    <a class="dropdown-item" href="#!/islam3">Ramadan</a>
-                                                </div>
-                                            </li>
+                    <!-- navigation-->
+                    <div class="row">
+                        <div class="fixed col-xl-9 col-lg-12">
+                            <div class="card bsd">
+                                <div class="card-body ">
+                                    <ul class="nav nav-pill ">
+                                        <li class="nav-item">
+                                            <a href="#!/home"><img alt="logo"
+                                                                   class="pngLogo" src="./images/pngs/logo.png"></a>
+                                        </li>
+                                        <li class="nav-item m-2">
+                                            <a class="nav-link active px-4 py-2" href="#!/home">Home</a>
+                                        </li>
+                                        <li class="nav-item dropdown m-2">
+                                            <a aria-expanded="false" aria-haspopup="true"
+                                               class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)"
+                                               role="button">Christian</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#!/christ1">Christmas</a>
+                                                <a class="dropdown-item" href="#!/christ2">Easter</a>
+                                                <a class="dropdown-item" href="#!/christ3">Lent</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown m-2">
+                                            <a aria-expanded="false" aria-haspopup="true"
+                                               class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)"
+                                               role="button">Hindu</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#!/hindu1">Holi</a>
+                                                <a class="dropdown-item" href="#!/hindu2">Diwali</a>
+                                                <a class="dropdown-item" href="#!/hindu3">KumbhMela</a>
+                                                <a class="dropdown-item" href="#!/hindu4">MahaShivaratri</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown m-2">
+                                            <a aria-expanded="false" aria-haspopup="true"
+                                               class="nav-link dropdown-toggle px-4 py-2" data-bs-toggle="dropdown" href="javascript:void(0)"
+                                               role="button">Islam</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#!/islam1">EidAlAdha</a>
+                                                <a class="dropdown-item" href="#!/islam2">EidAlFitr</a>
+                                                <a class="dropdown-item" href="#!/islam3">Ramadan</a>
+                                            </div>
+                                        </li>
 
-                                            <li class="nav-item m-2">
-                                                <a class="nav-link px-4 py-2" href="#!/store">Books</a>
-                                            </li>
-                                            <li class="nav-item m-2">
-                                                <a class="nav-link px-4 py-2" href="../../thuan/html/map.html">About us</a>
-                                            </li>
-                                        </ul>
+                                        <li class="nav-item m-2">
+                                            <a class="nav-link px-4 py-2" href="#!/store">Books</a>
+                                        </li>
+                                        <li class="nav-item m-2">
+                                            <a class="nav-link px-4 py-2" href="../../thuan/html/map.html">About us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mt-lg-5 pad50" ng-view></div>
+                    </div>
+                    <div class="row col-10" style="width: 1280px">
+                        <div class="card">
+                            <div class="card-body ">
+                                <div class="top-footer">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-12 col-md-12 reveal revealleft">
+                                            <h6>About</h6>
+                                            <p class="mb-5 mb-lg-2">Hello World
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-6 col-md-4 reveal revealleft">
+                                            <h6>Information</h6>
+                                            <ul class="list-unstyled mb-5 mb-lg-0">
+                                                <li><a href="#" ng-click="scrollToSection('home')">Home</a></li>
+                                                <li><a href="#" ng-click="scrollToSection('book')">Book</a></li>
+                                                <li><a href="#" ng-click="scrollToSection('religion')">Religion</a></li>
+                                                <li><a href="#" ng-click="scrollToSection('about')">About Us</a></li>
+                                                <li><a href="#" ng-click="scrollToSection('gallery')">Gallery</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-6 col-md-4 reveal revealleft">
+                                            <h6>Pages</h6>
+                                            <ul class="list-unstyled mb-5 mb-lg-0">
+                                                <li><a href="#!/home" >Home</a></li>
+                                                <li><a href="#!/store">Book</a></li>
+                                                <li><a href="#!/religion">Religion</a></li>
+                                                <li><a href="#!/about">About Us</a></li>
+                                                <li><a href="#!/gallery">Gallery</a></li>
+                                              
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-12 col-md-4 reveal revealleft">
+                                            <div class="">
+                                                <a href="#!/home"><img alt="logo"
+                                                                          class="logo-3" src="./images/pngs/logo.png"></a>
+                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                                    dolore eu fugiat nulla pariatur Excepteur sint occaecat.</p>
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input aria-describedby="button-addon1" aria-label="Example text with button addon"
+                                                               class="form-control"
+                                                               placeholder="Enter your email"
+                                                               type="text">
+                                                        <button class="btn btn-primary" id="button-addon2"
+                                                                type="button">Submit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="btn-list mt-6">
+                                                <button class="btn btn-icon rounded-pill" type="button"><i
+                                                        class="fa fa-facebook"></i></button>
+                                                <button class="btn btn-icon rounded-pill" type="button"><i
+                                                        class="fa fa-youtube"></i></button>
+                                                <button class="btn btn-icon rounded-pill" type="button"><i
+                                                        class="fa fa-twitter"></i></button>
+                                                <button class="btn btn-icon rounded-pill" type="button"><i
+                                                        class="fa fa-instagram"></i></button>
+                                            </div>
+                                            <hr>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
-                        <div ng-view class="mt-lg-5"></div>
-                        <!-- BACK-TO-TOP -->
-
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+</div>
+
 </body>
 </html>

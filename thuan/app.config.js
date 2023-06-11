@@ -4,6 +4,12 @@ angular.module('myApp').config(['$routeProvider',
         when('/store', {
             template: '<store></store>'
         }).
-        otherwise('/home');
+        when('/store/:bookId',{
+            template: '<store-detail></store-detail>'
+        }).
+        when('/landing',{
+            template: '<landing></landing>'
+        }).
+        otherwise('/landing');
     }
 ]);
