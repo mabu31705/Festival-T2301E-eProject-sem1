@@ -3,6 +3,6 @@ let app = angular.module("myApp",
         "store",
         "storeDetail",
         "LocalStorageModule",
-        "landing",
-        "ui.bootstrap"
+        "landing"
     ]);
+

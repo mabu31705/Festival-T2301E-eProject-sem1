@@ -5,7 +5,6 @@ angular.module('storeDetail').component('storeDetail', {
         function storeDetail($routeParams,$scope,$window,$http) {
             $scope.books=  angular.fromJson($window.localStorage.getItem('books'));
             $scope.bookId = $routeParams.bookId;
-
         }
     ]
 });

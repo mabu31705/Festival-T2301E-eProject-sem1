@@ -13,7 +13,9 @@ angular.module('store').component('store', {
                 $scope.numC = numC;
                 $scope.numH = numH;
                 $scope.numI = numI;
-
+                $scope.christian=christian;
+                $scope.hindu=hindu;
+                $scope.islam=islam;
                 //save data to localstorage
                 let jsonData = angular.toJson($scope.books)
                 $window.localStorage.setItem('books', jsonData);

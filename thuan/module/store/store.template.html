@@ -114,14 +114,15 @@
               <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                 <div class="input-group d-flex w-100 float-start">
                   <input type="text" class="form-control border-end-0 my-2" placeholder="Search ..."  ng-model="searchText"  ng-value="{{buttonText}}" ng-change="updateSuggestions()">
-                  <ul ng-show="showSuggestions" class="d-flex row">
-                    <li class="text-dark dropdown-item" ng-repeat="suggestion in suggestions"  >
-                     <span ng-click="insertC({suggestion})"> {{suggestion}}</span>
-                      </input>
-                  </ul>
                   <button class="btn input-group-text bg-transparent border-start-0 text-muted my-2"  value="{{buttonText}}">
                     <i class="fe fe-search text-muted" aria-hidden="true"></i>
                   </button>
+                  <ul ng-show="showSuggestions" class="d-flex row">
+                    <li class="text-dark dropdown-item btn btn-outline-light " ng-repeat="suggestion in suggestions"  >
+                     <span ng-click="insertC({suggestion})"> {{suggestion}}</span>
+                      </input>
+                  </ul>
+
                 </div>
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
