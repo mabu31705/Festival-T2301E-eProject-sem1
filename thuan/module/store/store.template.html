@@ -3,7 +3,7 @@
   <h2 class="page-title">Book List</h2>
 </div>
 <!-- ROW-1 OPEN -->
-<div class="row">
+<div class="row ">
   <!--side bar left top books -->
   <div class="col-xl-3 col-lg-4">
     <div class="row">
@@ -14,9 +14,9 @@
           </div>
           <div class="card-body">
             <ul class="list-group">
-              <li class="list-group-item border-0 p-0"> <a href="#tab-20" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Christian </a><span class="product-label">{{$}}</span> </li>
-              <li class="list-group-item border-0 p-0"> <a href="#tab-21" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Hindu </a><span class="product-label">3</span> </li>
-              <li class="list-group-item border-0 p-0"> <a href="#tab-22" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Islam </a><span class="product-label">3</span> </li>
+              <li class="list-group-item border-0 p-0"> <a href="#tab-20" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Christian </a><span class="product-label">{{numC}}</span> </li>
+              <li class="list-group-item border-0 p-0"> <a href="#tab-21" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Hindu </a><span class="product-label">{{numH}}</span> </li>
+              <li class="list-group-item border-0 p-0"> <a href="#tab-22" data-bs-toggle="tab" class="cn"><i class="fe fe-chevron-right"></i> Islam </a><span class="product-label">{{numI}}</span> </li>
             </ul>
           </div>
         </div>
@@ -26,7 +26,8 @@
           </div>
           <div class="card-body">
             <label class="custom-control custom-radio mb-0 mt-1">
-              <input type="radio" class="custom-control-input" name="example-radios" value="option1"  checked>
+              <input type="radio" class="custom-control-input" name="example-radios" value="option1"
+                      checked>
               <span class="custom-control-label">
                                                          Upto $500
                                                     </span>
@@ -55,7 +56,7 @@
           <div class="card-body">
             <div class="">
               <div class="d-flex overflow-visible">
-                <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="../images/books/{{books[0].image}}" alt="avatar-img">
+                <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="./images/books/{{books[0].image}}" alt="avatar-img">
                 <div class="media-body valign-middle">
                   <a href="javascript:void(0)" class="fw-semibold text-dark">{{books[0].bookName}}</a>
                   <div class="mb-1 text-warning">
@@ -69,7 +70,7 @@
                 </div>
               </div>
               <div class="d-flex overflow-visible mt-5">
-                <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="../images/books/{{books[1].image}}" alt="avatar-img">
+                <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="./images/books/{{books[1].image}}" alt="avatar-img">
                 <div class="media-body valign-middle">
                   <a href="javascript:void(0)" class="fw-semibold text-dark">{{books[1].bookName}}</a>
                   <div class="mb-1 text-warning">
@@ -83,7 +84,7 @@
                 </div>
               </div>
               <div class="d-flex overflow-visible mt-5">
-                <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="../images/books/{{books[2].image}}" alt="avatar-img">
+                <img class="avatar bradius avatar-xl me-4 p-2 bg-white border" ng-src="./images/books/{{books[2].image}}" alt="avatar-img">
                 <div class="media-body valign-middle">
                   <a href="javascript:void(0)" class="fw-semibold text-dark">{{books[2].bookName}}</a>
                   <div class="mb-1 text-warning">
@@ -112,11 +113,16 @@
             <div class="row">
               <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                 <div class="input-group d-flex w-100 float-start">
-                  <input type="text" class="form-control border-end-0 my-2" placeholder="Search ..." id="searchInput" onkeyup="searchBook()">
-                  <ul id="searchResults"></ul>
-                  <button class="btn input-group-text bg-transparent border-start-0 text-muted my-2">
+                  <input type="text" class="form-control border-end-0 my-2" placeholder="Search ..."  ng-model="searchText"  ng-value="{{buttonText}}" ng-change="updateSuggestions()">
+                  <button class="btn input-group-text bg-transparent border-start-0 text-muted my-2"  value="{{buttonText}}">
                     <i class="fe fe-search text-muted" aria-hidden="true"></i>
                   </button>
+                  <ul ng-show="showSuggestions" class="d-flex row">
+                    <li class="text-dark dropdown-item btn btn-outline-light " ng-repeat="suggestion in suggestions"  >
+                     <span ng-click="insertC({suggestion})"> {{suggestion}}</span>
+                      </input>
+                  </ul>
+
                 </div>
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
@@ -137,25 +143,25 @@
     <!--content display books -->
     <div class="tab-content"  >
       <div class="tab-pane active" id="tab-11">
-        <div class="row" id="searchTextResults">
-          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in books" >
+        <div class="row">
+          <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in books | filter:{bookName: searchText}" >
             <div class="card">
               <div class="product-grid6" >
                 <div class="product-image6 p-5" >
                   <ul class="icons">
                     <li>
-                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                      <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                     </li>
-                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                     <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                   </ul>
-                  <a href="#!/detail" >
-                    <img class="img-fluid br-7 w-100" ng-src="./images/books/{{b.image}}" alt="img">
+                  <a ng-href="#!/store/{{b.bookId}}" >
+                    <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}" alt="img" sizes="50px">
                   </a>
                 </div>
                 <div class="card-body pt-0">
                   <div class="product-content text-center">
-                    <h3 class=" fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h3>
+                    <h3 class=" fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h3>
                     <div class="mb-2 text-warning">
                       <i class="fa fa-star text-warning"></i>
                       <i class="fa fa-star text-warning"></i>
@@ -173,6 +179,10 @@
                 </div>
               </div>
             </div>
+
+
+
+          </div>
           </div>
 
           <div class="mb-5">
@@ -192,11 +202,11 @@
               </ul>
             </div>
           </div>
-        </div>
+
       </div>
       <div class="tab-pane" id="tab-12">
         <div class="row">
-          <div class="col-xl-12 col-lg-12 col-md-12" ng-repeat="b in books">
+          <div class="col-xl-12 col-lg-12 col-md-12" ng-repeat="b in books | filter:{bookName: searchText}">
             <div class="card overflow-hidden">
               <div class="card-body">
                 <div class="row g-0">
@@ -204,14 +214,14 @@
                     <div class="product-list">
                       <div class="product-image">
                         <ul class="icons">
-                          <li><a href="#!/detail" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
-                          <li><a href="#!/detail" class="btn btn-success"><i class="fe fe-edit text-white "></i></a></li>
+                          <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
+                          <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i class="fe fe-edit text-white "></i></a></li>
                           <li><a href="wishlist.html" class="btn btn-danger"><i class="fe fe-x text-white"></i></a></li>
                         </ul>
                       </div>
                       <div class="br-be-0 br-te-0">
-                        <a href="#!/detail" class="">
-                          <img ng-src="../images/books/{{b.image}}" alt="img" class="cover-image br-7 w-100">
+                        <a ng-href="#!/store/{{b.bookId}}" class="">
+                          <img ng-src="./images/books/{{b.image}}" alt="img" class="cover-image br-7 w-100">
                         </a>
                       </div>
                     </div>
@@ -219,7 +229,7 @@
                   <div class="col-xl-6 col-lg-12 col-md-12 border-end my-auto">
                     <div class="card-body">
                       <div class="mb-3">
-                        <a href="#!/detail" class="">
+                        <a ng-href="#!/store/{{b.bookId}}" class="">
                           <h3 class="fw-bold fs-30 mb-3">{{b.bookName}}</h3>
                           <div class="mb-2 text-warning">
                             <i class="fa fa-star fs-18 text-warning"></i>
@@ -273,18 +283,18 @@
                 <div class="product-image6 p-5" >
                   <ul class="icons">
                     <li>
-                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                      <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                     </li>
-                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                     <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                   </ul>
-                  <a href="#!/detail" >
-                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  <a ng-href="#!/store/{{b.bookId}}" >
+                    <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}" alt="img">
                   </a>
                 </div>
                 <div class="card-body pt-0">
                   <div class="product-content text-center">
-                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
                     <div class="mb-2 text-warning">
                       <i class="fa fa-star text-warning"></i>
                       <i class="fa fa-star text-warning"></i>
@@ -331,18 +341,18 @@
                 <div class="product-image6 p-5" >
                   <ul class="icons">
                     <li>
-                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                      <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                     </li>
-                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                     <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                   </ul>
-                  <a href="#!/detail" >
-                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  <a ng-href="#!/store/{{b.bookId}}" >
+                    <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}" alt="img">
                   </a>
                 </div>
                 <div class="card-body pt-0">
                   <div class="product-content text-center">
-                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
                     <div class="mb-2 text-warning">
                       <i class="fa fa-star text-warning"></i>
                       <i class="fa fa-star text-warning"></i>
@@ -389,18 +399,18 @@
                 <div class="product-image6 p-5" >
                   <ul class="icons">
                     <li>
-                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                      <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                     </li>
-                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                     <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                   </ul>
-                  <a href="#!/detail" >
-                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  <a ng-href="#!/store/{{b.bookId}}" >
+                    <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}" alt="img">
                   </a>
                 </div>
                 <div class="card-body pt-0">
                   <div class="product-content text-center">
-                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
                     <div class="mb-2 text-warning">
                       <i class="fa fa-star text-warning"></i>
                       <i class="fa fa-star text-warning"></i>
@@ -447,18 +457,18 @@
                 <div class="product-image6 p-5" >
                   <ul class="icons">
                     <li>
-                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                      <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                     </li>
-                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                     <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                   </ul>
-                  <a href="#!/detail" >
-                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  <a ng-href="#!/store/{{b.bookId}}" >
+                    <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}" alt="img">
                   </a>
                 </div>
                 <div class="card-body pt-0">
                   <div class="product-content text-center">
-                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
                     <div class="mb-2 text-warning">
                       <i class="fa fa-star text-warning"></i>
                       <i class="fa fa-star text-warning"></i>
@@ -505,18 +515,18 @@
                 <div class="product-image6 p-5" >
                   <ul class="icons">
                     <li>
-                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                      <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                     </li>
-                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                     <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                   </ul>
-                  <a href="#!/detail" >
-                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  <a ng-href="#!/store/{{b.bookId}}" >
+                    <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}" alt="img">
                   </a>
                 </div>
                 <div class="card-body pt-0">
                   <div class="product-content text-center">
-                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
                     <div class="mb-2 text-warning">
                       <i class="fa fa-star text-warning"></i>
                       <i class="fa fa-star text-warning"></i>
@@ -563,18 +573,18 @@
                 <div class="product-image6 p-5" >
                   <ul class="icons">
                     <li>
-                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                      <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                     </li>
-                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                     <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                   </ul>
-                  <a href="#!/detail" >
-                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  <a ng-href="#!/store/{{b.bookId}}" >
+                    <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}" alt="img">
                   </a>
                 </div>
                 <div class="card-body pt-0">
                   <div class="product-content text-center">
-                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
                     <div class="mb-2 text-warning">
                       <i class="fa fa-star text-warning"></i>
                       <i class="fa fa-star text-warning"></i>
@@ -621,18 +631,18 @@
                 <div class="product-image6 p-5" >
                   <ul class="icons">
                     <li>
-                      <a href="#!/detail" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
+                      <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                     </li>
-                    <li><a href="#!/detail" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
+                    <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                     <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                   </ul>
-                  <a href="#!/detail" >
-                    <img class="img-fluid br-7 w-100" ng-src="../images/books/{{b.image}}" alt="img">
+                  <a ng-href="#!/store/{{b.bookId}}" >
+                    <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}" alt="img">
                   </a>
                 </div>
                 <div class="card-body pt-0">
                   <div class="product-content text-center">
-                    <h2 class="title fw-bold fs-20"><a href="#!/detail">{{b.bookName}}</a></h2>
+                    <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
                     <div class="mb-2 text-warning">
                       <i class="fa fa-star text-warning"></i>
                       <i class="fa fa-star text-warning"></i>

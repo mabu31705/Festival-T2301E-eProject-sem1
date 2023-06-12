@@ -1,3 +1,21 @@
-// Define the `phonecatApp` module
+let app = angular.module("myApp",
+    ["ngRoute",
+        "store",
+        "storeDetail",
+        "LocalStorageModule",
+        "landing",
+        "christian",
+        "hindu",
+        "islam",
+        "christmas",
+        "easter",
+        "lent",
+        "diwali",
+        "holi",
+        "kumbhmela",
+        "mahashivaratri",
+        "eidaladha",
+        "eidalfitr",
+        "ramadan"
+    ]);
 
-let app = angular.module("myApp", ["ngRoute","store"]);

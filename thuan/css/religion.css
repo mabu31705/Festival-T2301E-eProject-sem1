@@ -1,0 +1,114 @@
+.contenth{
+    font-family:'Times New Roman', Times, serif;
+    border-style: solid;
+    border: 5px solid black;
+    border-radius: 15px;
+}
+.christcontent{
+    background-image: url("../images/christianFes/christianBG.jpg");
+}
+.christh1{
+    background-image: url("../images/christianFes/christianBanner.jpg");
+}
+.christfes{
+    background-image: url("../images/christianFes/christianPattern.jpg");
+}
+.hinducontent{
+    background-image: url("../images/hinduFes/hinduBG.jpg");
+}
+.hinduh1{
+    background-image: url("../images/hinduFes/hinduBanner.jpg");
+}
+.hindufes{
+    background-image: url("../images/hinduFes/hinduPattern.jpg");
+}
+.islamcontent{
+    background-image: url("../images/IslamFes/islamBG.jpeg");
+}
+.islamh1{
+    background-image: url("../images/IslamFes/islamBanner.jpg");
+}
+.islamfes{
+    background-image: url("../images/IslamFes/islamPattern.jpg");
+}
+
+.h1h{
+    color:wheat;
+    font-size: 44px;
+    text-align: center;
+    padding: 5px 0;
+    margin: 0 auto;
+    border-bottom: 5px solid black;
+}
+
+.mainContainer{
+    display: flex;
+    align-items: center ;
+    margin: 0 auto;
+}
+.fesList{
+    width: 70%;
+    margin: 0 auto;
+}
+.fes{
+    height:359px;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 55px;
+    margin-bottom: 55px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+    border-radius: 10px;
+}
+.lefth{
+    width: 28%;
+    height: 100%;
+    float: left;
+    padding: 10px;
+}
+.imageh{
+    border-style: solid;
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 277px;
+    height: 333px;
+}
+.righth{
+    width: 67%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+.titleh{
+    float: left;
+    color: wheat;
+    font-style: italic;
+    text-decoration: none;
+    padding-bottom: 25px;
+}
+.ph{
+    padding-right: 50px;
+    color: white;
+    font-style: italic;
+    padding-bottom: 40px;
+}
+a:hover{
+    color: orange;
+}
+.moreh a {
+    background-color: darkslateblue;
+    color: #fff;
+    display: inline-block;
+    font-size: 17px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 60px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.1s all;
+    border-radius: 10px;
+  }
+.moreh a:hover {
+    background-color: orange;
+}
