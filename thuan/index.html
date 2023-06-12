@@ -7,6 +7,8 @@
     <title>Religion around the world</title>
     <link href="./lib/bootstrap/bootstrap.css" rel="stylesheet">
     <link href="./app.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/religion.css">
+    <link rel="stylesheet" type="text/css" href="./css/festival.css">
     <script src="./lib/angular/angularjs.js"></script>
     <script src="./lib/angular/angularRoute.js"></script>
     <script src="./lib/angular/angular-resource.js"></script>
@@ -24,6 +26,32 @@
     <script src="./module/storedt/storedt.component.js"></script>
     <script src="./module/landing/landing.module.js"></script>
     <script src="./module/landing/landing.component.js"></script>
+    <script src="./module/religion/christian/christian.module.js"></script>
+    <script src="./module/religion/christian/christian.component.js"></script>
+    <script src="./module/religion/hindu/hindu.module.js"></script>
+    <script src="./module/religion/hindu/hindu.component.js"></script>
+    <script src="./module/religion/islam/islam.module.js"></script>
+    <script src="./module/religion/islam/islam.component.js"></script>
+    <script src="./module/festival/christian/christmas/christmas.module.js"></script>
+    <script src="./module/festival/christian/christmas/christmas.component.js"></script>
+    <script src="./module/festival/christian/easter/easter.module.js"></script>
+    <script src="./module/festival/christian/easter/easter.component.js"></script>
+    <script src="./module/festival/christian/lent/lent.module.js"></script>
+    <script src="./module/festival/christian/lent/lent.component.js"></script>
+    <script src="./module/festival/hindu/diwali/diwali.module.js"></script>
+    <script src="./module/festival/hindu/diwali/diwali.component.js"></script>
+    <script src="./module/festival/hindu/holi/holi.module.js"></script>
+    <script src="./module/festival/hindu/holi/holi.component.js"></script>
+    <script src="./module/festival/hindu/kumbhmela/kumbhmela.module.js"></script>
+    <script src="./module/festival/hindu/kumbhmela/kumbhmela.component.js"></script>
+    <script src="./module/festival/hindu/mahashivaratri/mahashivaratri.module.js"></script>
+    <script src="./module/festival/hindu/mahashivaratri/mahashivaratri.component.js"></script>
+    <script src="./module/festival/islam/eidaladha/eidaladha.module.js"></script>
+    <script src="./module/festival/islam/eidaladha/eidaladha.component.js"></script>
+    <script src="./module/festival/islam/eidalfitr/eidalfitr.module.js"></script>
+    <script src="./module/festival/islam/eidalfitr/eidalfitr.component.js"></script>
+    <script src="./module/festival/islam/ramadan/ramadan.module.js"></script>
+    <script src="./module/festival/islam/ramadan/ramadan.component.js"></script>
 </head>
 <body class="app">
 <div class="page">
@@ -35,60 +63,59 @@
                 <div class="main-container container-fluid">
 
                     <!-- navigation-->
-                    <div class="row">
-                        <div class="fixed col-xl-9 col-lg-12">
-                            <div class="card bsd">
+                    <div class="row col-12" style="width: 1280px">
+                            <div class="card fixed" style="width: 1255px">
                                 <div class="card-body d-flex">
                                     <div class="col-sm-8">
                                         <ul class="nav nav-pill ">
-                                            <li class="nav-item m-2">
+                                            <li class="nav-item m-1">
                                                 <a href="#!/home"><img alt="logo"
                                                                        class="pngLogo" src="./images/pngs/logo.png"></a>
                                             </li>
-                                            <li class="nav-item m-2">
+                                            <li class="nav-item m-1">
                                                 <a class="nav-link active px-4 py-2 c" href="#!/home">Home</a>
                                             </li>
-                                            <li class="dropdown nav-item m-2">
+                                            <li class="dropdown nav-item m-1">
                                                 <a class="nav-link px-4 py-2" href="#">Religion</a>
                                                 <ul class="sub-menu dropdown-menu">
                                                     <li class="dropdown custom-dropdown">
-                                                        <a href="#">Christian <i
+                                                        <a href="#!/christian">Christian <i
                                                                 class="pl fa fa-solid fa-caret-right"></i></a>
                                                         <ul class="sub-menu">
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">Christmas</a></li>
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">Easter</a></li>
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">Lent</a></li>
+                                                            <li class="custom-dropdown"><a href="#!/christmas" class="custom-dropdown">Christmas</a></li>
+                                                            <li class="custom-dropdown"><a href="#!/easter" class="custom-dropdown">Easter</a></li>
+                                                            <li class="custom-dropdown"><a href="#!/lent" class="custom-dropdown">Lent</a></li>
                                                         </ul>
 
                                                     </li>
                                                     <li class="dropdown custom-dropdown">
-                                                        <a href="#">Hindu <i class="pl2 fa fa-solid fa-caret-right"></i></a>
+                                                        <a href="#!/hindu">Hindu <i class="pl2 fa fa-solid fa-caret-right"></i></a>
                                                         <ul class="sub-menu">
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">Diwali</a></li>
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">Holi</a></li>
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">KumbhMela</a></li>
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">Mahashivaratri</a>
+                                                            <li class="custom-dropdown"><a href="#!/diwali" class="custom-dropdown">Diwali</a></li>
+                                                            <li class="custom-dropdown"><a href="#!/holi" class="custom-dropdown">Holi</a></li>
+                                                            <li class="custom-dropdown"><a href="#!/kumbhmela" class="custom-dropdown">KumbhMela</a></li>
+                                                            <li class="custom-dropdown"><a href="#!/mahashivaratri" class="custom-dropdown">Mahashivaratri</a>
                                                             </li>
                                                         </ul>
                                                     </li>
                                                     <li class="dropdown custom-dropdown">
-                                                        <a href="#">Islam <i class="pl2 fa fa-solid fa-caret-right"></i></a>
+                                                        <a href="#!/islam">Islam <i class="pl2 fa fa-solid fa-caret-right"></i></a>
                                                         <ul class="sub-menu">
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">EidAlAdha</a></li>
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">EidAlFitr</a></li>
-                                                            <li class="custom-dropdown"><a href="#" class="custom-dropdown">Ranadam</a></li>
+                                                            <li class="custom-dropdown"><a href="#!/eidaladha" class="custom-dropdown">EidAlAdha</a></li>
+                                                            <li class="custom-dropdown"><a href="#!/eidalfitr" class="custom-dropdown">EidAlFitr</a></li>
+                                                            <li class="custom-dropdown"><a href="#!/ramadan" class="custom-dropdown">Ramadan</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="nav-item m-2">
+                                            <li class="nav-item m-1">
                                                 <a class="nav-link px-4 py-2 c" href="#!/store">Books</a>
                                             </li>
-                                            <li class="nav-item m-2">
+                                            <li class="nav-item m-1">
                                                 <a class="nav-link px-4 py-2 c" href="#"
                                                    ng-click="scrollToSection('gallery')">Gallery</a>
                                             </li>
-                                            <li class="nav-item m-2">
+                                            <li class="nav-item m-1">
                                                 <a class="nav-link px-4 py-2 c" href="#"
                                                    ng-click="scrollToSection('about')">About us</a>
                                             </li>
@@ -96,12 +123,22 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="nav nav-pill justify-content-end">
-                                            <div class="nav-item m-3">
-                                                <a href="#" ><i
-                                                        class="fa fa-shopping-cart cart-icon btn-primary-gradient">
-                                                </i>
-                                                </a>
-                                                <span class="number-icon">{{numCartItem}}</span>
+                                            <div class="nav-item m-1">
+                                                <div class="btn btn-outline-info">Login</div>
+                                            </div>
+                                            <div class="nav-item m-1">
+                                                <div class="btn btn-outline-info">Register</div>
+                                            </div>
+                                            <div class="nav-item m-1">
+                                                <div class="btn">
+                                                    <a href="#" ><i
+                                                            class="fa fa-shopping-cart cart-icon btn-primary-gradient">
+                                                    </i>
+                                                    </a>
+                                                    <span class="number-icon">{{numCartItem}}</span>
+                                                </div>
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +146,6 @@
                                 </div>
                             </div>
 
-                        </div>
                     </div>
                     <div class="row">
                         <div class="mt-lg-5 pad50" ng-view></div>

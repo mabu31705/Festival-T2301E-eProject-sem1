@@ -192,9 +192,6 @@ angular.module('landing').component('landing', {
                 let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Output the result in an element with id="demo"
-                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                    + minutes + "m " + seconds + "s ";
                 document.getElementById("days").innerHTML = days;
                 document.getElementById("hours").innerHTML = hours;
                 document.getElementById("minutes").innerHTML = minutes;
@@ -202,7 +199,10 @@ angular.module('landing').component('landing', {
                 // If the count down is over, write some text
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById("demo").innerHTML = "EXPIRED";
+                    document.getElementById("days").innerHTML = "Festival";
+                    document.getElementById("hours").innerHTML = "Has";
+                    document.getElementById("minutes").innerHTML = "Ended";
+                    document.getElementById("seconds").innerHTML = "";
                 }
             }, 1000);
 

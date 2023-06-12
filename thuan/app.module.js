@@ -3,6 +3,19 @@ let app = angular.module("myApp",
         "store",
         "storeDetail",
         "LocalStorageModule",
-        "landing"
+        "landing",
+        "christian",
+        "hindu",
+        "islam",
+        "christmas",
+        "easter",
+        "lent",
+        "diwali",
+        "holi",
+        "kumbhmela",
+        "mahashivaratri",
+        "eidaladha",
+        "eidalfitr",
+        "ramadan"
     ]);
 

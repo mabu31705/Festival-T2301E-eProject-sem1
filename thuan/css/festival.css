@@ -1,0 +1,96 @@
+.allh{
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    border: 5px solid black;
+    border-radius: 20px;
+}
+.h1hh{
+    color: white;
+    font-size: 300%;
+    text-align: center;
+    margin: 0 0;
+    border-bottom: 4px solid black;
+}
+.fesc1h1h{
+    background-image: url("../images/christianFes/christianBanner.jpg");
+}
+.fesc1exp{
+    background-image: url("../images/christianFes/christianBG.jpg");
+}
+.fesc1titleh{
+    background-image: url("../images/christianFes/christianPattern.jpg");
+}
+.fesc1jsc{
+    background-image: url("../images/christianFes/ChristFes/Christmas/ChristmasCD.jpeg");
+}
+.fesc1buttonh{
+    background-image: url("../images/christianFes/christianPattern.jpg");
+}
+
+.fesc2h1h{
+    background-image: url("../images/christianFes/christianBanner.jpg");
+}
+.fesc2exp{
+    background-image: url("../images/christianFes/christianBG.jpg");
+}
+.fesc2titleh{
+    background-image: url("../images/christianFes/christianPattern.jpg");
+}
+.fesc2jsc{
+    background-image: url("../images/christianFes/ChristFes/Easter/easterCD.jpg");
+}
+.fesc2buttonh{
+    background-image: url("../images/christianFes/christianPattern.jpg");
+}
+.contenthh{
+    width: 70%;
+    margin: 0 auto;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+}
+.titlehh{
+    color: white;
+    font-size: 250%;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+}
+.phh{
+    font-size: 62.5%;
+}
+#demoh{
+    margin: 0 0;
+}
+.imghh{
+    width: 50%;
+    height: 300px;
+    margin: 11px auto;
+}
+.jshh{
+    color: white;
+    font-size: 300%;
+    text-align: center;
+    margin: 0 0;
+    border-top: 4px solid black;
+}
+.buttonhh{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+.dlh a {
+    background-color: darkslateblue;
+    color: #fff;
+    display: inline-block;
+    font-size: 17px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 60px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.1s all;
+    border-radius: 10px;
+}
+.dlh a:hover {
+    background-color: orange;
+}
