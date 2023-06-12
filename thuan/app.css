@@ -2962,12 +2962,28 @@ a:hover {
 }
 .g{
     color: dodgerblue;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow:
+            0 0 3px 2px #fff,  /* inner white */
+            0 0 5px 3px dodgerblue, /* middle magenta */
+            0 0 7px 5px #0ff; /* outer cyan */
 }
 .f{
     color: coral;
+    background-color: #fff;
+    box-shadow:
+            0 0 3px 2px #fff,  /* inner white */
+            0 0 5px 3px coral, /* middle magenta */
+            0 0 7px 5px #0ff; /* outer cyan */
 }
 .t{
     color: dimgrey;
+    background-color: #fff;
+    box-shadow:
+            0 0 3px 2px #fff,  /* inner white */
+            0 0 5px 3px dimgrey, /* middle magenta */
+            0 0 7px 5px #0ff; /* outer cyan */
 }
 .z{
     background: #0c4128;
@@ -2977,3 +2993,83 @@ a:hover {
     height: 450px;
     position: relative;
 }
+
+/*Slide image*/
+#slideShow {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+
+#slideShow img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#dotContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #999;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.activeSlide {
+    background-color: #333;
+}
+
+#imageDescription {
+    position: absolute;
+    bottom: 26%;
+    left: 5%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    width: 90%;
+}
+#des{
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    color: #fff;
+    width: 90%;
+    font-size: small;
+    font-weight: lighter;
+}
+#prevBtn,
+#nextBtn {
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+}
+#prevBtn{
+    top: 35%;
+    left: -2%;
+}
+#nextBtn{
+    top: 35%;
+    left: 97.5%;
+}
+.ic{
+    position: absolute;
+    font-size: 100px;
+}
+

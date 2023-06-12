@@ -1,10 +1,29 @@
 <div>
     <div class="slide " ng-class="{ 'ng-enter': $index === activeSlide, 'ng-leave': $index === previousSlide }"
          ng-repeat="image in images">
-        <img alt="{{ image.alt }}" ng-src="{{ image.url }}">
+        <img alt="{{ image.alt }}" ng-src="{{image.url }}" class="mg-fluid img-thumbnail">
     </div>
 </div>
 
+<section id="gallery">
+    <div class="row col-10" style="width: 1280px">
+        <div class="card">
+            <div class="card-body ">
+                <div class="row">
+                    <div id="slideShow" class="col-12 h-100"></div>
+                    <div id="controls">
+                        <button id="prevBtn" onclick="prevSlide()"><i class="fa fa-caret-left ic"></i></button>
+                        <button id="nextBtn"  onclick="nextSlide()"><i class="fa fa-caret-right ic"></i></button>
+                    </div>
+                    <div id="dotContainer"></div>
+                    <div id="imageDescription">
+                    </div>
+                    <div id="des"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="about">
     <div class="row col-10" style="width: 1280px">
         <div class="card">
@@ -122,17 +141,7 @@
 
 </section>
 
-<section id="gallery">
-    <div class="row col-10" style="width: 1280px">
-        <div class="card">
-            <div class="card-body ">
-                <div class="row">
-                    <div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <section id="religion">
     <div class="row col-10" style="width: 1280px">
