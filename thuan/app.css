@@ -3072,4 +3072,47 @@ a:hover {
     position: absolute;
     font-size: 100px;
 }
+/**/
+.custom-dropdown{
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+.custom-dropdown:hover{
+    color: #1e2125;
+    background-color: #e9ecef;
+}
+.custom-dropdown.disabled{
+    color: #adb5bd;
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+
+}
+.countdown-number {
+    font-weight: bold;
+    color: #fff;
+    font-size: 32px;
+}
+.countdown-unit{
+    font-weight: bold;
+    color: #fff;
+    font-size: 32px;
+}
 
