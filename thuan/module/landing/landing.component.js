@@ -27,13 +27,10 @@ angular.module('landing').component('landing', {
             $http.get("./data/users.json").then(function (response) {
 
                 $scope.users = response.data;
+                $scope.numCartItem = $scope.users[0].listItem;
                 let jsonData = angular.toJson($scope.users)
                 $window.localStorage.setItem('users', jsonData);
             })
-            let getJsonData = $window.localStorage.getItem('users');
-            let numCartItem = angular.fromJson(getJsonData);
-            let user1ListItem = (numCartItem[0].listItem).length;
-            $scope.numCartItem = user1ListItem;
 
             // slideshow
             let images = [
@@ -161,8 +158,8 @@ angular.module('landing').component('landing', {
             createSlide(currentIndex);
             updateActiveDot(currentIndex);
 
-            prevBtn.addEventListener('click', prevSlide);
-            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide,{passive:true});
+            nextBtn.addEventListener('click', nextSlide,{passive:true});
 
             startSlideshow();
 
@@ -173,18 +170,13 @@ angular.module('landing').component('landing', {
             let month = date.getMonth() + 1;
             let year = date.getFullYear();
 
-            // This arrangement can be altered based on how we want the date's format to appear.
             let currentDate = `${day}-${month}-${year}`;
-            let countDownDate = new Date(currentDate).getTime();
+            let countDownDates = new Date("Dec 25, 2023 00:00:00").getTime();
 
             // Update the count down every 1 second
             let x = setInterval(function () {
-
-                // Get today's date and time
-                let now = new Date().getTime();
-
-                // Find the distance between now and the count down date
-                let distance = countDownDate - now;
+                let nows = new Date().getTime();
+                let distance = countDownDates - nows;
 
                 // Time calculations for days, hours, minutes and seconds
                 let days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -192,10 +184,10 @@ angular.module('landing').component('landing', {
                 let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                document.getElementById("days").innerHTML = days;
-                document.getElementById("hours").innerHTML = hours;
-                document.getElementById("minutes").innerHTML = minutes;
-                document.getElementById("seconds").innerHTML = seconds;
+                document.getElementById("dayss").innerHTML = days;
+                document.getElementById("hourss").innerHTML = hours+"";
+                document.getElementById("minutess").innerHTML = minutes+"";
+                document.getElementById("secondss").innerHTML = seconds+"";
                 // If the count down is over, write some text
                 if (distance < 0) {
                     clearInterval(x);

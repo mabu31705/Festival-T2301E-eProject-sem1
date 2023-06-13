@@ -1,4 +1,4 @@
 
 angular.module('eidaladha').component('eidaladha', {
-    templateUrl: './module/festival/islam/eidaladha/islam.template.html'
+    templateUrl: './module/festival/islam/eidaladha/eidaladha.template.html'
 });

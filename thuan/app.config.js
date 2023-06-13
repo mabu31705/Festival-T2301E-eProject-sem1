@@ -10,6 +10,9 @@ angular.module('myApp').config(['$routeProvider',
         when('/landing',{
             template: '<landing></landing>'
         }).
+        when('/about',{
+            template: '<about></about>'
+        }).
         when('/christian',{
             template: '<christian></christian>'
         }).

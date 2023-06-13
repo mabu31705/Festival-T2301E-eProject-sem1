@@ -8,10 +8,10 @@ angular.module('christmas').component('christmas', {
             // Update the count down every 1 second
             let x = setInterval(function () {
                 // Get today's date and time
-                let now = new Date().getTime();
+                let nows = new Date().getTime();
 
                 // Find the distance between now and the count down date
-                let distance = countDownDates - now;
+                let distance = countDownDates - nows;
 
                 // Time calculations for dayss, hourss, minutess and secondss
                 let dayss = Math.floor(distance / (1000 * 60 * 60 * 24));

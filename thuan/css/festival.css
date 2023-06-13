@@ -42,6 +42,138 @@
 .fesc2buttonh{
     background-image: url("../images/christianFes/christianPattern.jpg");
 }
+
+.fesc3h1h{
+    background-image: url("../images/christianFes/christianBanner.jpg");
+}
+.fesc3exp{
+    background-image: url("../images/christianFes/christianBG.jpg");
+}
+.fesc3titleh{
+    background-image: url("../images/christianFes/christianPattern.jpg");
+}
+.fesc3jsc{
+    background-image: url("../images/christianFes/ChristFes/Lent/LentCD.jpg");
+}
+.fesc3buttonh{
+    background-image: url("../images/christianFes/christianPattern.jpg");
+}
+
+
+/**/
+.fesh1h1h{
+    background-image: url("../images/hinduFes/hinduBanner.jpg");
+}
+.fesh1exp{
+    background-image: url("../images/hinduFes/hinduBG.jpg");
+}
+.fesh1titleh{
+    background-image: url("../images/hinduFes/hinduPattern.jpg");
+}
+.fesh1jsc{
+    background-image: url("../images/hinduFes/hinduFes/diwali/diwaliCD.jpeg");
+}
+.fesh1buttonh{
+    background-image: url("../images/hinduFes/hinduPattern.jpg");
+}
+/**/
+.fesh2h1h{
+    background-image: url("../images/hinduFes/hinduBanner.jpg");
+}
+.fesh2exp{
+    background-image: url("../images/hinduFes/hinduBG.jpg");
+}
+.fesh2titleh{
+    background-image: url("../images/hinduFes/hinduPattern.jpg");
+}
+.fesh2jsc{
+    background-image: url("../images/hinduFes/hinduFes/holi/HoliCD.jpeg");
+}
+.fesh2buttonh{
+    background-image: url("../images/hinduFes/hinduPattern.jpg");
+}
+/**/
+.fesh3h1h{
+    background-image: url("../images/hinduFes/hinduBanner.jpg");
+}
+.fesh3exp{
+    background-image: url("../images/hinduFes/hinduBG.jpg");
+}
+.fesh3titleh{
+    background-image: url("../images/hinduFes/hinduPattern.jpg");
+}
+.fesh3jsc{
+    background-image: url("../images/hinduFes/hinduFes/kumbhMela/KumbhMelaCD.jpeg");
+}
+.fesh3buttonh{
+    background-image: url("../images/hinduFes/hinduPattern.jpg");
+}
+/**/
+.fesh4h1h{
+    background-image: url("../images/hinduFes/hinduBanner.jpg");
+}
+.fesh4exp{
+    background-image: url("../images/hinduFes/hinduBG.jpg");
+}
+.fesh4titleh{
+    background-image: url("../images/hinduFes/hinduPattern.jpg");
+}
+.fesh4jsc{
+    background-image: url("../images/hinduFes/hinduFes/mahashivaratri/shivaratriCD.jpeg");
+}
+.fesh4buttonh{
+    background-image: url("../images/hinduFes/hinduPattern.jpg");
+}
+/**/
+.fesi1h1h{
+    background-image: url("../images/IslamFes/islamBanner.jpg");
+}
+.fesi1exp{
+    background-image: url("../images/IslamFes/islamBG.jpeg");
+}
+.fesi1titleh{
+    background-image: url("../images/IslamFes/islamPattern.jpg");
+}
+.fesi1jsc{
+    background-image: url("../images/IslamFes/IslamFes/EidAlAdha/EidAlAdhaCD.jpeg");
+}
+.fesi1buttonh{
+    background-image: url("../images/IslamFes/islamPattern.jpg");
+}
+/**/
+.fesi2h1h{
+    background-image: url("../images/IslamFes/islamBanner.jpg");
+}
+.fesi2exp{
+    background-image: url("../images/IslamFes/islamBG.jpeg");
+}
+.fesi2titleh{
+    background-image: url("../images/IslamFes/islamPattern.jpg");
+}
+.fesi2jsc{
+    background-image: url("../images/IslamFes/IslamFes/EidAlFitr/EidAlFitrCD.png");
+}
+.fesi2buttonh{
+    background-image: url("../images/IslamFes/islamPattern.jpg");
+}
+/**/
+.fesi3h1h{
+    background-image: url("../images/IslamFes/islamBanner.jpg");
+}
+.fesi3exp{
+    background-image: url("../images/IslamFes/islamBG.jpeg");
+}
+.fesi3titleh{
+    background-image: url("../images/IslamFes/islamPattern.jpg");
+}
+.fesi3jsc{
+    background-image: url("../images/IslamFes/IslamFes/Ramadan/ramadanCD.jpeg");
+}
+.fesi3buttonh{
+    background-image: url("../images/IslamFes/islamPattern.jpg");
+}
+/**/
+
 .contenthh{
     width: 70%;
     margin: 0 auto;
@@ -60,6 +192,7 @@
 }
 #demoh{
     margin: 0 0;
+    color: cyan;
 }
 .imghh{
     width: 50%;
