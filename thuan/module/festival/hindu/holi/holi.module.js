@@ -1,3 +1,0 @@
-angular.module('holi', [
-    'ngRoute'
-]);

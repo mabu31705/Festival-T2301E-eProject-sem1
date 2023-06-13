@@ -1,3 +1,0 @@
-angular.module('lent', [
-    'ngRoute'
-]);
