@@ -1,0 +1,22 @@
+let app = angular.module("myApp",
+    ["ngRoute",
+        "store",
+        "storeDetail",
+        "LocalStorageModule",
+        "landing",
+        "about",
+        "christian",
+        "hindu",
+        "islam",
+        "christmas",
+        "easter",
+        "lent",
+        "diwali",
+        "holi",
+        "kumbhmela",
+        "mahashivaratri",
+        "eidaladha",
+        "eidalfitr",
+        "ramadan"
+    ]);
+

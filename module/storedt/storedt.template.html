@@ -1,0 +1,612 @@
+<section id="storedetail">
+    <title>Festival-Shop-Details</title>
+    <!-- PAGE-HEADER -->
+    <div class="row justify-content-center">
+        <div class="card-header col-10">
+            <h2>{{books[bookId].bookName}}</h2>
+        </div>
+    </div>
+    <!-- PAGE-HEADER END -->
+    <!-- ROW-1 OPEN -->
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="card col-10">
+                <div class="card-body">
+                    <div class="row row-sm">
+                        <div class="col-xl-5 col-lg-12 col-md-12">
+                            <div class="row justify-content-center align-items-center">
+                                <img
+                                        ng-src="./images/books/{{books[bookId].image}}" alt="img"
+                                        class="col-6 img-fluid mx-auto mt-5 ">
+                            </div>
+                        </div>
+                        <div class="details col-xl-7 col-lg-12 col-md-12 mt-4 mt-xl-0">
+                            <div class="mt-2 mb-4">
+                                <h3 class="mb-3 fw-semibold">{{books[bookId].bookName}}</h3>
+                                <p class="text-muted float-start me-3">
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star-half-o text-warning"></span>
+                                    <span class="fa fa-star-o text-warning"></span>
+                                </p>
+                                <p class="text-muted mb-4">( {{books[bookId].review}} Customers Reviews) </p>
+                                <h4 class="mt-4"><b> Description</b></h4>
+                                <p>{{books[bookId].description}}</p>
+
+                                <h3 class="mb-4"><span class="me-2 fw-bold fs-25">${{books[bookId].price}}/</span><span><del
+                                        class="fs-18 text-muted">${{books[bookId].price}}0</del></span></h3>
+                                <div class=" mt-4 mb-5"><span class="fw-bold me-2">Offer :</span><span
+                                        class="fw-bold text-primary">15% Cashback </span>by using icici bank credit
+                                    card.<small class="text-muted">Terms and Conditions Applies!</small></div>
+                                <div class=" mt-4 mb-5"><span class="fw-bold me-2">Availability :</span><span
+                                        class="fw-bold text-success">In-stock</span></div>
+
+                                <div class="row row-sm">
+                                    <div class="col">
+                                        <div class="mb-2 me-2 sizes">
+                                            <span class="fw-bold me-4">Quantity:</span>
+                                            <div class="input-group input-indec input-indec1 w-30 w-sm-60 mt-3">
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button"
+                                                                                class="minus btn btn-white btn-number btn-icon br-7 ">
+                                                                            <i class="fa fa-minus text-muted"></i>
+                                                                        </button>
+                                                                    </span>
+                                                <input type="text" name="quantity" class="form-control text-center qty"
+                                                       value="1">
+                                                <span class="input-group-btn">
+                                                                        <button type="button"
+                                                                                class="quantity-right-plus btn btn-white btn-number btn-icon br-7 add">
+                                                                            <i class="fa fa-plus text-muted"></i>
+                                                                        </button>
+                                                                    </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class=" mt-4">
+                                    <a href="cart.html" class="btn btn-outline-primary "><i
+                                            class="fe fe-shopping-cart"> </i> Add to cart</a>
+                                    <a href="checkout.html" class="btn  btn-secondary"><i
+                                            class="fe fe-credit-card"> </i> Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-10 col-md-12">
+            <div class="card productdesc">
+                <div class="card-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-body tabs-menu-body">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab5">
+                                    <h4 class="mb-5 mt-3 fw-bold">Description :</h4>
+                                    <p class="mb-3 fs-15">{{books[bookId].description}}</p>
+
+                                    <h4 class="mb-5 mt-3 fw-bold">Specifications :</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <td class="fw-bold">Package Dimensions</td>
+                                                <td> {{books[bookId].size}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold">Manufacturer</td>
+                                                <td>{{books[bookId].supplier}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold">Item part number</td>
+                                                <td>{{books[bookId].bookId}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold">Best Sellers</td>
+                                                <td> {{books[bookId].sellerRank}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold">Customer Reviews</td>
+                                                <td>
+                                                    <p class="text-muted float-start me-3">
+                                                        <span class="fa fa-star text-warning"></span>
+                                                        <span class="fa fa-star text-warning"></span>
+                                                        <span class="fa fa-star text-warning"></span>
+                                                        <span class="fa fa-star-half-o text-warning"></span>
+                                                        <span class="fa fa-star-o text-warning"></span>
+                                                        <span class="text-success fw-semibold">(2,076 ratings)</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-10 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Customer Services</div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <div class="customer-services mb-2">
+                                <div class="icon-content">
+                                    <span><i class="bi bi-truck"></i></span>
+                                    <h4>Delivery Info</h4>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="customer-services mb-2">
+                                <div class="icon-content">
+                                    <span><i class="bi bi-arrow-repeat"></i></span>
+                                    <h4>30 days returns</h4>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="customer-services">
+                                <div class="icon-content">
+                                    <span><i class="bi bi-credit-card-2-front"></i></span>
+                                    <h4>15 years Warranty</h4>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-10">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Reviews</div>
+                </div>
+                <div class="card-body">
+                    <div class="media mb-5">
+                        <div class="me-3">
+                            <a href="javascript:void(0)"> <img class="media-object rounded-circle thumb-sm" alt="64x64"
+                                                               ng-src="./images/pngs/1.png"
+                                                               style="width: 50px;height: 50px"> </a>
+                        </div>
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-0">Gavin Murray</h5>
+                            <div class="text-warning mb-0">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <p class="font-13 text-muted">Good Looking.........</p>
+                            <a class="like" href="javascript:;">
+                                                    <span class="badge btn-danger-light rounded-pill py-2 px-3">
+                                                            <i class="fe fe-heart me-1"></i>56</span>
+                            </a>
+                            <span class="reply" id="6">
+                                                        <a href="javascript:;"><span
+                                                                class="badge btn-primary-light rounded-pill py-2 px-3"><i
+                                                                class="fe fe-corner-up-left me-1"></i>Reply</span></a>
+                                                </span>
+                        </div>
+                    </div>
+                    <div class="media mb-5">
+                        <div class=" me-3">
+                            <a href="javascript:void(0)"> <img class="media-object rounded-circle thumb-sm" alt="64x64"
+                                                               src="../images/pngs/1.png"
+                                                               style="width: 50px;height: 50px"> </a>
+                        </div>
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-0">Paul Smith</h5>
+                            <div class="text-warning mb-0">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <p class="font-13 text-muted">Very nice ! On the other hand, we denounce with righteous
+                                indignation and dislike men who are so beguiled and demoralized by the </p>
+                            <a class="like" href="javascript:;">
+                                                    <span class="badge btn-danger-light rounded-pill py-2 px-3">
+                                                            <i class="fe fe-heart me-1"></i>56</span>
+                            </a>
+                            <span class="reply" id="6">
+                                                        <a href="javascript:;"><span
+                                                                class="badge btn-primary-light rounded-pill py-2 px-3"><i
+                                                                class="fe fe-corner-up-left me-1"></i>Reply</span></a>
+                                                </span>
+                        </div>
+                    </div>
+                    <div class="media mb-0">
+                        <div class=" me-3">
+                            <a href="javascript:void(0)"> <img class="media-object rounded-circle thumb-sm" alt="64x64"
+                                                               src="./images/pngs/1.png"
+                                                               style="width: 50px;height: 50px"> </a>
+                        </div>
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-0">Mozelle Belt</h5>
+                            <div class="text-warning mb-0">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-10">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Add Review</div>
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal  m-t-20" action="index.html">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" required="" placeholder="Username*">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="email" required="" placeholder="Email*">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <textarea class="form-control" rows="5">Your Review*</textarea>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="javascript:void(0)" class="btn btn-primary btn-rounded  waves-effect waves-light">Submit</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="card-header col-10">
+                <h3 class="p-3 mb-5">Related Products</h3>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="card col-10">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="slideshow-container">
+                            <div class="slideStore ">
+                                <div class="d-flex justify-content-evenly">
+                                    <div class="product-grid6 col-3 justify-content-center">
+                                        <div class="product-image ">
+                                            <ul class="icons">
+                                                <li>
+                                                    <a ng-href="#!/store/{{books[0].bookId}}" class="btn btn-primary">
+                                                        <i class="fe fe-eye "> </i> </a>
+                                                </li>
+                                                <li><a href="add-product.html" class="btn btn-success"><i
+                                                        class="fe fe-edit"></i></a></li>
+                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i
+                                                        class="fe fe-x"></i></a></li>
+                                            </ul>
+                                            <a ng-href="#!/store/{{books[0].bookId}}"
+                                               class="bg-light row justify-content-center">
+                                                <img class="img-fluid br-7 product-detail-image1"
+                                                     ng-src="./images/books/{{books[0].image}}" alt="img">
+                                            </a>
+                                        </div>
+                                        <div class="card-body pt-1">
+                                            <div class="product-content text-center justify-content-center row ">
+                                                <h2 class="title fw-bold fs-20 tov justify-content-center row"><a
+                                                        ng-href="#!/store/{{books[0].bookId}}"
+                                                        class="justify-content-center row width25">{{books[0].bookName}}</a>
+                                                </h2>
+                                                <div class="mb-2 text-warning">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                                <div class="price justify-content-center row">${{books[0].price}}<span
+                                                        class="ms justify-content-center row">${{books[0].price}}0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center bg-white">
+                                            <a href="cart.html">
+                                                <button type="button" class="btn btn-primary mb-1"><i
+                                                        class="fe fe-shopping-cart mx-2"></i>Add to cart
+                                                </button>
+                                            </a>
+                                            <a href="wishlist.html">
+                                                <button type="button" class="btn btn-outline-primary mb-1"><i
+                                                        class="fe fe-heart mx-2"></i>Add to wishlist
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-grid6 col-3 justify-content-center">
+                                        <div class="product-image ">
+                                            <ul class="icons">
+                                                <li>
+                                                    <a ng-href="#!/store/{{books[1].bookId}}" class="btn btn-primary">
+                                                        <i class="fe fe-eye "> </i> </a>
+                                                </li>
+                                                <li><a href="add-product.html" class="btn btn-success"><i
+                                                        class="fe fe-edit"></i></a></li>
+                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i
+                                                        class="fe fe-x"></i></a></li>
+                                            </ul>
+                                            <a ng-href="#!/store/{{books[1].bookId}}"
+                                               class="bg-light row justify-content-center">
+                                                <img class="img-fluid br-7 product-detail-image1"
+                                                     ng-src="./images/books/{{books[1].image}}" alt="img">
+                                            </a>
+                                        </div>
+                                        <div class="card-body pt-1">
+                                            <div class="product-content text-center justify-content-center row ">
+                                                <h2 class="title fw-bold fs-20 tov justify-content-center row"><a
+                                                        ng-href="#!/store/{{books[1].bookId}}"
+                                                        class="justify-content-center row width25">{{books[1].bookName}}</a>
+                                                </h2>
+                                                <div class="mb-2 text-warning">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                                <div class="price justify-content-center row">${{books[1].price}}<span
+                                                        class="ms justify-content-center row">${{books[1].price}}0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center bg-white">
+                                            <a href="cart.html">
+                                                <button type="button" class="btn btn-primary mb-1"><i
+                                                        class="fe fe-shopping-cart mx-2"></i>Add to cart
+                                                </button>
+                                            </a>
+                                            <a href="wishlist.html">
+                                                <button type="button" class="btn btn-outline-primary mb-1"><i
+                                                        class="fe fe-heart mx-2"></i>Add to wishlist
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-grid6 col-3 justify-content-center">
+                                        <div class="product-image ">
+                                            <ul class="icons">
+                                                <li>
+                                                    <a ng-href="#!/store/{{books[2].bookId}}" class="btn btn-primary">
+                                                        <i class="fe fe-eye "> </i> </a>
+                                                </li>
+                                                <li><a href="add-product.html" class="btn btn-success"><i
+                                                        class="fe fe-edit"></i></a></li>
+                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i
+                                                        class="fe fe-x"></i></a></li>
+                                            </ul>
+                                            <a ng-href="#!/store/{{books[2].bookId}}"
+                                               class="bg-light row justify-content-center">
+                                                <img class="img-fluid br-7 product-detail-image1"
+                                                     ng-src="./images/books/{{books[2].image}}" alt="img">
+                                            </a>
+                                        </div>
+                                        <div class="card-body pt-1">
+                                            <div class="product-content text-center justify-content-center row ">
+                                                <h2 class="title fw-bold fs-20 tov justify-content-center row"><a
+                                                        ng-href="#!/store/{{books[2].bookId}}"
+                                                        class="justify-content-center row width25">{{books[2].bookName}}</a>
+                                                </h2>
+                                                <div class="mb-2 text-warning">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                                <div class="price justify-content-center row">${{books[2].price}}<span
+                                                        class="ms justify-content-center row">${{books[2].price}}0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center bg-white">
+                                            <a href="cart.html">
+                                                <button type="button" class="btn btn-primary mb-1"><i
+                                                        class="fe fe-shopping-cart mx-2"></i>Add to cart
+                                                </button>
+                                            </a>
+                                            <a href="wishlist.html">
+                                                <button type="button" class="btn btn-outline-primary mb-1"><i
+                                                        class="fe fe-heart mx-2"></i>Add to wishlist
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="slideStore">
+                                <div class=" d-flex justify-content-evenly">
+                                    <div class="product-grid6 col-3 justify-content-center">
+                                        <div class="product-image ">
+                                            <ul class="icons">
+                                                <li>
+                                                    <a ng-href="#!/store/{{books[4].bookId}}" class="btn btn-primary">
+                                                        <i class="fe fe-eye "> </i> </a>
+                                                </li>
+                                                <li><a href="add-product.html" class="btn btn-success"><i
+                                                        class="fe fe-edit"></i></a></li>
+                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i
+                                                        class="fe fe-x"></i></a></li>
+                                            </ul>
+                                            <a ng-href="#!/store/{{books[4].bookId}}"
+                                               class="bg-light row justify-content-center">
+                                                <img class="img-fluid br-7 product-detail-image1"
+                                                     ng-src="./images/books/{{books[4].image}}" alt="img">
+                                            </a>
+                                        </div>
+                                        <div class="card-body pt-1">
+                                            <div class="product-content text-center justify-content-center row ">
+                                                <h2 class="title fw-bold fs-20 tov justify-content-center row"><a
+                                                        ng-href="#!/store/{{books[4].bookId}}"
+                                                        class="justify-content-center row width25">{{books[4].bookName}}</a>
+                                                </h2>
+                                                <div class="mb-2 text-warning">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                                <div class="price justify-content-center row">${{books[4].price}}<span
+                                                        class="ms justify-content-center row">${{books[4].price}}0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center bg-white">
+                                            <a href="cart.html">
+                                                <button type="button" class="btn btn-primary mb-1"><i
+                                                        class="fe fe-shopping-cart mx-2"></i>Add to cart
+                                                </button>
+                                            </a>
+                                            <a href="wishlist.html">
+                                                <button type="button" class="btn btn-outline-primary mb-1"><i
+                                                        class="fe fe-heart mx-2"></i>Add to wishlist
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-grid6 col-3 justify-content-center">
+                                        <div class="product-image ">
+                                            <ul class="icons">
+                                                <li>
+                                                    <a ng-href="#!/store/{{books[5].bookId}}" class="btn btn-primary">
+                                                        <i class="fe fe-eye "> </i> </a>
+                                                </li>
+                                                <li><a href="add-product.html" class="btn btn-success"><i
+                                                        class="fe fe-edit"></i></a></li>
+                                                <li><a href="javascript:void(5)" class="btn btn-danger"><i
+                                                        class="fe fe-x"></i></a></li>
+                                            </ul>
+                                            <a ng-href="#!/store/{{books[5].bookId}}"
+                                               class="bg-light row justify-content-center">
+                                                <img class="img-fluid br-7 product-detail-image1"
+                                                     ng-src="./images/books/{{books[5].image}}" alt="img">
+                                            </a>
+                                        </div>
+                                        <div class="card-body pt-1">
+                                            <div class="product-content text-center justify-content-center row ">
+                                                <h2 class="title fw-bold fs-20 tov justify-content-center row"><a
+                                                        ng-href="#!/store/{{books[5].bookId}}"
+                                                        class="justify-content-center row width25">{{books[5].bookName}}</a>
+                                                </h2>
+                                                <div class="mb-2 text-warning">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                                <div class="price justify-content-center row">${{books[5].price}}<span
+                                                        class="ms justify-content-center row">${{books[5].price}}0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center bg-white">
+                                            <a href="cart.html">
+                                                <button type="button" class="btn btn-primary mb-1"><i
+                                                        class="fe fe-shopping-cart mx-2"></i>Add to cart
+                                                </button>
+                                            </a>
+                                            <a href="wishlist.html">
+                                                <button type="button" class="btn btn-outline-primary mb-1"><i
+                                                        class="fe fe-heart mx-2"></i>Add to wishlist
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-grid6 col-3 justify-content-center">
+                                        <div class="product-image ">
+                                            <ul class="icons">
+                                                <li>
+                                                    <a ng-href="#!/store/{{books[6].bookId}}" class="btn btn-primary">
+                                                        <i class="fe fe-eye "> </i> </a>
+                                                </li>
+                                                <li><a href="add-product.html" class="btn btn-success"><i
+                                                        class="fe fe-edit"></i></a></li>
+                                                <li><a href="javascript:void(0)" class="btn btn-danger"><i
+                                                        class="fe fe-x"></i></a></li>
+                                            </ul>
+                                            <a ng-href="#!/store/{{books[6].bookId}}"
+                                               class="bg-light row justify-content-center">
+                                                <img class="img-fluid br-7 product-detail-image1"
+                                                     ng-src="./images/books/{{books[6].image}}" alt="img">
+                                            </a>
+                                        </div>
+                                        <div class="card-body pt-1">
+                                            <div class="product-content text-center justify-content-center row ">
+                                                <h2 class="title fw-bold fs-20 tov justify-content-center row"><a
+                                                        ng-href="#!/store/{{books[6].bookId}}"
+                                                        class="justify-content-center row width25">{{books[6].bookName}}</a>
+                                                </h2>
+                                                <div class="mb-2 text-warning">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-half-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                                <div class="price justify-content-center row">${{books[6].price}}<span
+                                                        class="ms justify-content-center row">${{books[6].price}}0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center bg-white">
+                                            <a href="cart.html">
+                                                <button type="button" class="btn btn-primary mb-1"><i
+                                                        class="fe fe-shopping-cart mx-2"></i>Add to cart
+                                                </button>
+                                            </a>
+                                            <a href="wishlist.html">
+                                                <button type="button" class="btn btn-outline-primary mb-1"><i
+                                                        class="fe fe-heart mx-2"></i>Add to wishlist
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- ROW-1 CLOSED -->
+        <a href="#storedetail" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+</section>
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, user-scalable=0' name='viewport'>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Religion around the world</title>
+    <link href="./lib/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="./app.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/religion.css">
+    <link rel="stylesheet" type="text/css" href="./css/festival.css">
+    <script src="./lib/angular/angularjs.js"></script>
+    <script src="./lib/angular/angularRoute.js"></script>
+    <script src="./lib/angular/angular-resource.js"></script>
+    <script src="./lib/angular/angularLocalStorage.js"></script>
+    <script src="./lib/angular/angularUiBootstrap.js"></script>
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/bootstrap/bootstrap.js"></script>
+    <script src="./lib/bootstrap/popper.min.js"></script>
+    <script src="./js/function.js"></script>
+    <script src="./app.module.js"></script>
+    <script src="./app.config.js"></script>
+    <script src="./module/store/store.module.js"></script>
+    <script src="./module/store/store.component.js"></script>
+    <script src="./module/storedt/storedt.module.js"></script>
+    <script src="./module/storedt/storedt.component.js"></script>
+    <script src="./module/landing/landing.module.js"></script>
+    <script src="./module/landing/landing.component.js"></script>
+    <script src="./module/about/about.module.js"></script>
+    <script src="./module/about/about.component.js"></script>
+    <script src="./module/religion/christian/christian.module.js"></script>
+    <script src="./module/religion/christian/christian.component.js"></script>
+    <script src="./module/religion/hindu/hindu.module.js"></script>
+    <script src="./module/religion/hindu/hindu.component.js"></script>
+    <script src="./module/religion/islam/islam.module.js"></script>
+    <script src="./module/religion/islam/islam.component.js"></script>
+    <script src="./module/festival/christian/christmas/christmas.module.js"></script>
+    <script src="./module/festival/christian/christmas/christmas.component.js"></script>
+    <script src="./module/festival/christian/easter/easter.module.js"></script>
+    <script src="./module/festival/christian/easter/easter.component.js"></script>
+    <script src="./module/festival/christian/lent/lent.module.js"></script>
+    <script src="./module/festival/christian/lent/lent.component.js"></script>
+    <script src="./module/festival/hindu/diwali/diwali.module.js"></script>
+    <script src="./module/festival/hindu/diwali/diwali.component.js"></script>
+    <script src="./module/festival/hindu/holi/holi.module.js"></script>
+    <script src="./module/festival/hindu/holi/holi.component.js"></script>
+    <script src="./module/festival/hindu/kumbhmela/kumbhmela.module.js"></script>
+    <script src="./module/festival/hindu/kumbhmela/kumbhmela.component.js"></script>
+    <script src="./module/festival/hindu/mahashivaratri/mahashivaratri.module.js"></script>
+    <script src="./module/festival/hindu/mahashivaratri/mahashivaratri.component.js"></script>
+    <script src="./module/festival/islam/eidaladha/eidaladha.module.js"></script>
+    <script src="./module/festival/islam/eidaladha/eidaladha.component.js"></script>
+    <script src="./module/festival/islam/eidalfitr/eidalfitr.module.js"></script>
+    <script src="./module/festival/islam/eidalfitr/eidalfitr.component.js"></script>
+    <script src="./module/festival/islam/ramadan/ramadan.module.js"></script>
+    <script src="./module/festival/islam/ramadan/ramadan.component.js"></script>
+</head>
+<body>
+<div class="row justify-content-center">
+    <div ng-include="'./html/header.html'" class="fixed-top"></div>
+</div>
+
+<div class="row justify-content-center pad50">
+    <div ng-view></div>
+</div>
+
+<div class="row justify-content-center">
+    <div ng-include="'./html/footer.html'"></div>
+</div>
+
+
+</body>
+</html>
