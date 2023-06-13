@@ -1706,6 +1706,11 @@ a:hover {
     font-size: 16px;
     margin-right: 5px;
 }
+.notification-cart{
+    position: absolute;
+    top:50px;
+    right: 30px;
+}
 .cart-icon{
     font-size: 24px;
 }
@@ -1988,4 +1993,14 @@ a:hover {
 
 .slideStore.activeStore {
     display: block;
+}
+.content-offcanvas{
+    font-size: medium;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.title-offcanvas{
+    font-size: 16px;
+    font-weight: bold;
 }
