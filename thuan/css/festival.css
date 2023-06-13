@@ -189,10 +189,12 @@
 }
 .phh{
     font-size: 62.5%;
+    color: cyan;
 }
 #demoh{
     margin: 0 0;
     color: cyan;
+    font-size: 32px;
 }
 .imghh{
     width: 50%;
