@@ -79,6 +79,7 @@
         </div>
       </div>
     </div>
+
     <!-- COL-END -->
     <div class="col-xl-7 col-lg-8">
       <!--search bar -->
@@ -90,8 +91,8 @@
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                   <div class="input-group d-flex w-100 float-start">
                     <input type="text" class="form-control border-end-0 my-2" placeholder="Search ..."  ng-model="searchText"  ng-value="{{buttonText}}" ng-change="updateSuggestions()">
-                    <button class="btn input-group-text bg-transparent border-start-0 text-muted my-2"  value="{{buttonText}}">
-                      <i class="fe fe-search text-muted" aria-hidden="true"></i>
+                    <button class="btn input-group-text"  value="{{buttonText}}">
+                      <i class="fe fe-search btn btn-outline-info" aria-hidden="true"></i>
                     </button>
                     <ul ng-show="showSuggestions" class="d-flex row">
                       <li class="text-dark dropdown-item btn btn-outline-light " ng-repeat="suggestion in suggestions"  >
@@ -103,14 +104,15 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                   <ul class="nav item2-gl-menu float-end my-2">
-                    <li class="border-end">
-                      <a href="#tab-11" class="show active" data-bs-toggle="tab" title="List style">
+                    <li class="">
+                      <a href="#tab-11" class="active btn btn-outline-info" data-bs-toggle="tab" title="List style">
                         <i class="fa fa-th"></i>
                       </a>
                     </li>
-                    <li><a href="#tab-12" data-bs-toggle="tab" class="" title="Grid"><i class="fa fa-list"></i></a></li>
+                    <li><a href="#tab-12" data-bs-toggle="tab" class="btn btn-outline-info" title="Grid"><i class="fa fa-list"></i></a></li>
                   </ul>
                 </div>
+
               </div>
             </div>
           </div>
@@ -122,22 +124,22 @@
           <div class="row">
             <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in books | filter:{bookName: searchText}" >
               <div class="card">
-                <div class="product-grid6" >
-                  <div class="product-image6 p-5" >
-                    <ul class="icons">
+                <div class="product-list">
+                  <div class="product-image p-4" >
+                    <ul class="icons position-absolute p-tab-11">
                       <li>
                         <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i class="fe fe-eye">  </i> </a>
                       </li>
                       <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i  class="fe fe-edit"></i></a></li>
                       <li><a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-x"></i></a></li>
                     </ul>
-                    <a ng-href="#!/store/{{b.bookId}}" >
-                      <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}" alt="img" sizes="50px">
+                    <a ng-href="#!/store/{{b.bookId}}" class="p-5" >
+                      <img class="img-fluid br-7  wov p-1" ng-src="./images/books/{{b.image}}" alt="img" sizes="50px">
                     </a>
                   </div>
                   <div class="card-body pt-0">
                     <div class="product-content text-center">
-                      <h3 class=" fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h3>
+                      <h3 class=" fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}" >{{b.bookName}}</a></h3>
                       <div class="mb-2 text-warning">
                         <i class="fa fa-star text-warning"></i>
                         <i class="fa fa-star text-warning"></i>
@@ -145,12 +147,14 @@
                         <i class="fa fa-star-half-o text-warning"></i>
                         <i class="fa fa-star-o text-warning"></i>
                       </div>
-                      <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                      <div class="price d-flex flex-column justify-content-center">
+                        <span>${{b.price}}</span>
+                        <span style="text-decoration: line-through">${{b.price}}0</span>
                       </div>
                     </div>
                   </div>
                   <div class="card-footer text-center cart-hover">
-                    <a href="cart.html" class="btn btn-outline-primary mb-1 "><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                    <button ng-click="addToCart(b)" class="btn btn-outline-primary mb-1 "><i class="fe fe-shopping-cart mx-2"></i>Add to cart</button>
                     <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                   </div>
                 </div>
@@ -183,20 +187,20 @@
         <div class="tab-pane" id="tab-12">
           <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12" ng-repeat="b in books | filter:{bookName: searchText}">
-              <div class="card overflow-hidden">
+              <div class="card ">
                 <div class="card-body">
                   <div class="row g-0">
                     <div class="col-xl-3 col-lg-12 col-md-12">
                       <div class="product-list">
                         <div class="product-image">
-                          <ul class="icons">
+                          <ul class="icons position-absolute p-tab-12">
                             <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"><i class="fe fe-eye text-white "></i></a></li>
                             <li><a ng-href="#!/store/{{b.bookId}}" class="btn btn-success"><i class="fe fe-edit text-white "></i></a></li>
                             <li><a href="wishlist.html" class="btn btn-danger"><i class="fe fe-x text-white"></i></a></li>
                           </ul>
                         </div>
-                        <div class="br-be-0 br-te-0">
-                          <a ng-href="#!/store/{{b.bookId}}" class="">
+                        <div class="br-be-0 br-te-0 p-4">
+                          <a ng-href="#!/store/{{b.bookId}}">
                             <img ng-src="./images/books/{{b.image}}" alt="img" class="cover-image br-7 w-100">
                           </a>
                         </div>
@@ -223,7 +227,7 @@
                     <div class="col-xl-3 col-lg-12 col-md-12 my-auto">
                       <div class="card-body p-0">
                         <div class="price h3 text-center mb-5 fw-bold">${{b.price}}</div>
-                        <a href="cart.html" class="btn btn-primary btn-block "><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                        <button ng-click="addToCart(b)" class="btn btn-primary btn-block "><i class="fe fe-shopping-cart mx-2"></i>Add to cart</button>
                         <a href="wishlist.html" class="btn btn-outline-primary btn-block mt-2"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                       </div>
                     </div>
@@ -283,7 +287,7 @@
                     </div>
                   </div>
                   <div class="card-footer text-center">
-                    <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                    <button ng-click="addToCart(b)" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</button>
                     <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                   </div>
                 </div>
@@ -341,7 +345,7 @@
                     </div>
                   </div>
                   <div class="card-footer text-center">
-                    <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                    <button ng-click="addToCart(b)" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</button>
                     <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                   </div>
                 </div>
@@ -399,7 +403,7 @@
                     </div>
                   </div>
                   <div class="card-footer text-center">
-                    <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                    <button ng-click="addToCart(b)" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</button>
                     <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                   </div>
                 </div>
@@ -457,7 +461,7 @@
                     </div>
                   </div>
                   <div class="card-footer text-center">
-                    <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                    <button ng-click="addToCart(b)" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</button>
                     <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                   </div>
                 </div>
@@ -515,7 +519,7 @@
                     </div>
                   </div>
                   <div class="card-footer text-center">
-                    <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                    <button ng-click="addToCart(b)" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</button>
                     <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                   </div>
                 </div>
@@ -573,7 +577,7 @@
                     </div>
                   </div>
                   <div class="card-footer text-center">
-                    <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                    <button ng-click="addToCart(b)" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</button>
                     <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                   </div>
                 </div>
@@ -631,7 +635,7 @@
                     </div>
                   </div>
                   <div class="card-footer text-center">
-                    <a href="cart.html" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</a>
+                    <button ng-click="addToCart(b)" class="btn btn-primary mb-1"><i class="fe fe-shopping-cart mx-2"></i>Add to cart</button>
                     <a href="wishlist.html" class="btn btn-outline-primary mb-1"><i class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                   </div>
                 </div>
@@ -657,13 +661,15 @@
             </div>
           </div>
         </div>
+
       </div>
       <!-- COL-END -->
+
     </div>
     <!-- ROW-1 CLOSED -->
   </div>
   <!-- ROW-1 END -->
-  <a href="#store" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
 </section>
 
 

@@ -17,7 +17,6 @@
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/bootstrap.js"></script>
     <script src="./lib/bootstrap/popper.min.js"></script>
-    <script src="./js/function.js"></script>
     <script src="./app.module.js"></script>
     <script src="./app.config.js"></script>
     <script src="./module/store/store.module.js"></script>
@@ -25,7 +24,6 @@
     <script src="./module/storedt/storedt.module.js"></script>
     <script src="./module/storedt/storedt.component.js"></script>
     <script src="./module/landing/landing.module.js"></script>
-    <script src="./module/landing/landing.component.js"></script>
     <script src="./module/about/about.module.js"></script>
     <script src="./module/about/about.component.js"></script>
     <script src="./module/religion/christian/christian.module.js"></script>
@@ -54,10 +52,11 @@
     <script src="./module/festival/islam/eidalfitr/eidalfitr.component.js"></script>
     <script src="./module/festival/islam/ramadan/ramadan.module.js"></script>
     <script src="./module/festival/islam/ramadan/ramadan.component.js"></script>
+
 </head>
 <body>
 <div class="row justify-content-center">
-    <div ng-include="'./html/header.html'" class="fixed-top"></div>
+    <div ng-include="'./html/header.html'" id="include-wrapper" class="fixed-top"></div>
 </div>
 
 <div class="row justify-content-center pad50">
@@ -68,6 +67,7 @@
     <div ng-include="'./html/footer.html'"></div>
 </div>
 
-
+<script src="./module/landing/landing.component.js"></script>
+<script src="./js/function.js"></script>
 </body>
 </html>

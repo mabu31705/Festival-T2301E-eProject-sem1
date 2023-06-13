@@ -30,6 +30,28 @@ angular.module('store').component('store', {
                 $window.localStorage.removeItem('books');
             }
 
+            const exsitingUser = JSON.parse(localStorage.getItem('users')) || [];
+
+            //
+            let userIndex = 0;
+            let userCart =exsitingUser[userIndex].listItem;
+            $scope.addToCart = function(cartItem) {
+                userCart.push(cartItem);
+                localStorage.setItem('users', JSON.stringify(exsitingUser));
+            };
+            $scope.removeItemCart = function(index) {
+                userCart.splice(index, 1);
+            };
+
+
+
+
+
+
+
+
+
+            //
             $scope.searchText = '';
             $scope.suggestions = [];
             $scope.showSuggestions = false;
