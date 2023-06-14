@@ -1,7 +1,18 @@
 angular.module('landing').component('landing', {
     templateUrl: 'module/landing/landing.template.html',
-    controller: ['$routeParams', '$scope', '$window', '$interval', '$http', '$timeout',
-        function landingController($routeParams, $scope, $window, $interval, $http, $timeout) {
+    controller: ['$routeParams', '$scope', '$window', '$interval', '$http',
+        function landingController($routeParams, $scope, $window, $interval, $http) {
+            $http.get("./data/users.json").then(function (response) {
+                $scope.users = response.data;
+                let jsonData = angular.toJson($scope.users)
+                let storedData = localStorage.getItem('users');
+                if(storedData) {
+
+                } else {
+                    $window.localStorage.setItem('users', jsonData);
+                }
+
+            })
             $scope.scrollToSection = function (sectionId) {
                 let element = document.getElementById(sectionId);
                 if (element) {
@@ -24,14 +35,6 @@ angular.module('landing').component('landing', {
                 $scope.previousSlide = $scope.activeSlide;
                 $scope.activeSlide = ($scope.activeSlide + 1) % $scope.images.length;
             }, 30000);
-            $http.get("./data/users.json").then(function (response) {
-
-                $scope.users = response.data;
-                $scope.numCartItem = $scope.users[0].listItem;
-                let jsonData = angular.toJson($scope.users)
-                $window.localStorage.setItem('users', jsonData);
-            })
-
             // slideshow
             let images = [
                 {
@@ -184,18 +187,24 @@ angular.module('landing').component('landing', {
                 let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                document.getElementById("dayss").innerHTML = days;
-                document.getElementById("hourss").innerHTML = hours+"";
-                document.getElementById("minutess").innerHTML = minutes+"";
-                document.getElementById("secondss").innerHTML = seconds+"";
-                // If the count down is over, write some text
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("days").innerHTML = "Festival";
-                    document.getElementById("hours").innerHTML = "Has";
-                    document.getElementById("minutes").innerHTML = "Ended";
-                    document.getElementById("seconds").innerHTML = "";
+                let a=document.getElementById("dayss");
+                let b=document.getElementById("hourss");
+                let c=document.getElementById("minutess");
+                let d=document.getElementById("secondss");
+                if(a!=null || b!=null || c!=null || d!=null ){
+                    a.innerHTML=days;
+                    b.innerHTML=hours;
+                    c.innerHTML=minutes;
+                    d.innerHTML=seconds;
+                    if (distance < 0) {
+                        clearInterval(x);
+                        a.innerHTML = "Festival";
+                        b.innerHTML = "Has";
+                        c.innerHTML = "Ended";
+                        d.innerHTML = "";
+                    }
                 }
+                // If the count down is over, write some text
             }, 1000);
 
         }

@@ -18,7 +18,7 @@
                   <a href="#!/christian">Christian <i
                           class="fa fa-solid fa-caret-right padicon1"></i></a>
                   <ul class="sub-menu">
-                    <li class="custom-dropdown"><a href="#!/christmas" class="custom-dropdown">Christmas</a></li>
+                    <li class="custom-dropdown "><a href="#!/christmas" class="custom-dropdown">Christmas</a></li>
                     <li class="custom-dropdown"><a href="#!/easter" class="custom-dropdown">Easter</a></li>
                     <li class="custom-dropdown"><a href="#!/lent" class="custom-dropdown">Lent</a></li>
                   </ul>
@@ -66,19 +66,37 @@
               <div class="btn btn-outline-info">Register</div>
             </div>
             <div class="nav-item m-1">
-              <div class="btn">
-                <a href="#" ><i
-                        class="fa fa-shopping-cart cart-icon btn-primary-gradient">
+              <div class="">
+                <button class="btn" type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight">
+                  <i class="fa fa-shopping-cart cart-icon btn-primary-gradient">
                 </i>
-                </a>
-                <span class="number-icon">{{numCartItem}}</span>
+                </button>
+                <div class="notification-cart">
+                  <span class="number-icon" id="user-item-number"></span>
+                </div>
+
               </div>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">Your Cart</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div id="canvasOffContent">
+                  </div>
+                </div>
+              </div>
+
+
+
 
 
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
