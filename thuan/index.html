@@ -9,6 +9,7 @@
     <link href="./app.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/religion.css">
     <link rel="stylesheet" type="text/css" href="./css/festival.css">
+    <link rel="stylesheet" type="text/css" href="./css/modal.css">
     <script src="./lib/angular/angularjs.js"></script>
     <script src="./lib/angular/angularRoute.js"></script>
     <script src="./lib/angular/angular-resource.js"></script>
@@ -56,18 +57,25 @@
 
 </head>
 <body>
+
+
 <div class="row justify-content-center">
     <div ng-include="'./html/header.html'" id="include-wrapper" class="fixed-top"></div>
+
 </div>
 
 <div class="row justify-content-center pad50">
-    <div ng-view></div>
+
+    <div ng-view>
+
+    </div>
 </div>
 
 <div class="row justify-content-center">
-    <div ng-include="'./html/footer.html'"></div>
-</div>
+    <div ng-include="'./html/footer.html'">
 
+    </div>
+</div>
 
 <script src="./js/function.js"></script>
 </body>

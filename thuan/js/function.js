@@ -23,6 +23,7 @@ if (storedDataJS) {
 }
 
 let userIndexJS = 0;
+//take data from json and show off canvas
 window.onload = function () {
     // Check if the include is loaded
     const checkIncludeLoaded = function () {
@@ -105,4 +106,43 @@ window.onload = function () {
 
     // Initial check
     checkIncludeLoaded();
+};
+
+//function take data from json
+let dataFromJson;
+let userFromJson;
+getDataFromJson = () => {
+    fetch("./data/data.json")
+        .then(res=> res.json())
+        .then(data=>{
+            dataFromJson=data;
+        })
+        .catch(err=>{
+            console.error("error get data from json");
+        });
+    fetch("./data/users.json")
+        .then(res=>res.json())
+        .then(data=>{
+            userFromJson=data
+        });
+}
+getDataFromJson();
+
+//modal register and login
+function openModal() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}
+
+// Close the modal when clicking outside the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById('myModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
 };
