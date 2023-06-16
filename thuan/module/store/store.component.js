@@ -30,14 +30,14 @@ angular.module('store').component('store', {
                 $window.localStorage.removeItem('books');
             }
 
-            const exsitingUser = JSON.parse(localStorage.getItem('users')) || [];
+            const exsitingUser = JSON.parse(localStorage.getItem('currentUser')) || [];
 
             //
             let userIndex = 0;
-            let userCart =exsitingUser[userIndex].listItem;
+            let userCart =exsitingUser.listItem;
             $scope.addToCart = function(cartItem) {
                 userCart.push(cartItem);
-                localStorage.setItem('users', JSON.stringify(exsitingUser));
+                localStorage.setItem('currentUser', JSON.stringify(exsitingUser));
                 location.reload();
             };
             $scope.removeItemCart = function(index) {

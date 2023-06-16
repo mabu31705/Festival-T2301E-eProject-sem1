@@ -1,4 +1,4 @@
-.custom-modal {
+.custom-modal-login-register {
     display: none;
     position: fixed;
     z-index: 1;
@@ -6,10 +6,12 @@
     top: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    animation: fade-in-custom-modal 0.3s ease-in;
 }
 
-.modal-content {
+.custom-modal-content {
     background-color: #fefefe;
     margin: 10% auto;
     padding: 20px;
@@ -18,16 +20,18 @@
     max-width: 500px;
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+@keyframes fade-in-custom-modal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+.f-g-p:hover{
+    color: #bebebf;
+    background-color: lightcyan;
+}
+.d-none {
+    display: none !important;
 }
