@@ -90,6 +90,7 @@ angular.module('landing').component('landing', {
 
             let currentIndex = 0;
             let slideshow = document.getElementById('slideShow');
+            slideshow.classList.add("cssShadow");
             let dotContainer = document.getElementById('dotContainer');
             let prevBtn = document.getElementById('prevBtn');
             let nextBtn = document.getElementById('nextBtn');

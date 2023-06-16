@@ -1790,38 +1790,40 @@ a:hover {
 #imageDescription {
     position: absolute;
     bottom: 26%;
-    left: 5%;
+    left: 15%;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
-    width: 90%;
+    width: 70%;
 }
 #des{
     position: absolute;
     top: 75%;
-    left: 5%;
+    left: 15%;
     color: #fff;
-    width: 90%;
+    width: 70%;
     font-size: small;
-    font-weight: lighter;
+    font-weight: lighter; 
+  
+
 }
 #prevBtn,
 #nextBtn {
     color: #fff;
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
     border: none;
     background: none;
     cursor: pointer;
     position: absolute;
 }
-#prevBtn{
+/* #prevBtn{
     top: 35%;
-    left: -1.2%;
+    left: -3%;
 }
 #nextBtn{
     top: 35%;
     left: 98.5%;
-}
+} */
 .ic{
     position: absolute;
     font-size: 100px;
@@ -2003,4 +2005,16 @@ a:hover {
 .title-offcanvas{
     font-size: 16px;
     font-weight: bold;
+}
+
+.cssShadow{
+  
+}
+
+.duclogo {
+
+}
+
+.truongvanduc {
+    margin-top: 5%;
 }
