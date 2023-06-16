@@ -118,7 +118,7 @@ getDataFromJson = () => {
             dataFromJson = data;
         })
         .catch(err => {
-            console.error("error get data from json");
+            console.error("error get data from json"+err);
         });
     fetch("./data/users.json")
         .then(res => res.json())
@@ -220,6 +220,8 @@ function loginUser() {
     let hasLogin = document.getElementById('hasLogin');
     let name = document.getElementById('login-name').value;
     let password = document.getElementById('login-password').value;
+    let imgElement = document.getElementById('accountAvatar');
+    let accountName = document.getElementById('accountName');
     let arrUser = userFromJson;
     let userData = {};
     for (let i = 0; i < arrUser.length; i++) {
@@ -233,6 +235,10 @@ function loginUser() {
                 userImage: "1.png"
             };
             success = "success";
+            hasLogin.classList.remove('d-none');
+            notLogin.classList.add('d-none');
+            imgElement.src = '../images/pngs/' + userData.userImage;
+            accountName.textContent=userData.userName;
             document.getElementById('login-name').value="";
             document.getElementById('login-password').value="";
             closeLoginModal();
@@ -249,20 +255,7 @@ function loginUser() {
     }
 
 }
-window.onload=function (){
-    const storedUser = localStorage.getItem('currentUser');
-    if (storedUser) {
-        let userData = JSON.parse(storedUser);
-        let notLogin = document.getElementById('notLogin');
-        let hasLogin = document.getElementById('hasLogin');
-        let imageUrl = '../images/pngs/'+userData.userImage;
-        let imgElement = document.getElementById('accountAvatar');
-        let accountName = document.getElementById('accountName');
-        hasLogin.classList.remove('d-none');
-        notLogin.classList.add('d-none');
-        imgElement.src = imageUrl;
-        accountName.textContent=userData.userName;
-    }
-}
+
+
 
 
