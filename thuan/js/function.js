@@ -95,6 +95,9 @@ window.onload = function () {
                 }
                 canvasOffContent.innerHTML = htmlContent;
 
+
+                let notLogin = document.getElementById("#notLogin");
+                let hasLogin = document.getElementById("#hasLogin");
             }
 
         } else {
@@ -118,7 +121,7 @@ getDataFromJson = () => {
             dataFromJson = data;
         })
         .catch(err => {
-            console.error("error get data from json"+err);
+            console.error("error get data from json" + err);
         });
     fetch("./data/users.json")
         .then(res => res.json())
@@ -191,6 +194,8 @@ function registerUser() {
             successRegister.classList.add('d-none');
             rePasswordError.classList.add('d-none');
             unm = "error"
+        } else {
+            localStorage.setItem('users', JSON.stringify(arrUser));
         }
     }
     if (password !== rePassword) {
@@ -203,7 +208,7 @@ function registerUser() {
     // Store user data in localStorage
     if ((unm !== 'error') && (pnm !== 'error')) {
         successRegister.classList.remove('d-none');
-        localStorage.setItem('users', JSON.stringify(arrUser));
+
         rePasswordError.classList.add('d-none');
         existUserError.classList.add('d-none');
     }
@@ -216,46 +221,49 @@ function registerUser() {
 let success = "";
 
 function loginUser() {
-    let notLogin = document.getElementById('notLogin');
-    let hasLogin = document.getElementById('hasLogin');
     let name = document.getElementById('login-name').value;
     let password = document.getElementById('login-password').value;
     let imgElement = document.getElementById('accountAvatar');
     let accountName = document.getElementById('accountName');
     let arrUser = userFromJson;
     let userData = {};
-    for (let i = 0; i < arrUser.length; i++) {
-        if ((name === arrUser[i].userName) && (password === arrUser[i].password)) {
-            userData = {
-                userId: arrUser[i].userId,
-                userName: arrUser[i].userName,
-                email: arrUser[i].email,
-                password: arrUser[i].password,
-                listItem: arrUser[i].listItem,
-                userImage: "1.png"
-            };
-            success = "success";
-            hasLogin.classList.remove('d-none');
-            notLogin.classList.add('d-none');
-            imgElement.src = '../images/pngs/' + userData.userImage;
-            accountName.textContent=userData.userName;
-            document.getElementById('login-name').value="";
-            document.getElementById('login-password').value="";
-            closeLoginModal();
-
+    if(userFromJson){
+        console.log("hello login")
+        localStorage.removeItem("currentUser");
+        location.reload();
+    } else {
+        console.log("hello not login")
+        for (let i = 0; i < arrUser.length; i++) {
+            if ((name === arrUser[i].userName) && (password === arrUser[i].password)) {
+                userData = {
+                    userId: arrUser[i].userId,
+                    userName: arrUser[i].userName,
+                    email: arrUser[i].email,
+                    password: arrUser[i].password,
+                    listItem: arrUser[i].listItem,
+                    userImage: "1.png"
+                };
+                success = "success";
+                localStorage.setItem('currentUser', JSON.stringify(userData));
+                imgElement.src = '../images/pngs/' + userData.userImage + '';
+                accountName.textContent = userData.userName;
+                document.getElementById('login-name').value = "";
+                document.getElementById('login-password').value = "";
+                let notLogin = document.getElementById("#notLogin");
+                let hasLogin = document.getElementById("#hasLogin");
+                hasLogin.classList.remove('d-none');
+                notLogin.classList.add('d-none');
+                closeLoginModal();
+            }
         }
     }
-    if(success==="success"){
-        localStorage.setItem('currentUser', JSON.stringify(userData));
-        notLogin.classList.add('d-none');
-        hasLogin.classList.remove('d-none');
-    } else {
-        notLogin.classList.remove('d-none');
-        hasLogin.classList.add('d-none');
-    }
+
 
 }
 
-
+function logOutAcc() {
+    localStorage.removeItem("currentUser");
+    location.reload();
+}
 
 

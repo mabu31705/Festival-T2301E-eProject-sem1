@@ -57,8 +57,8 @@
                             <a class="nav-link px-4 py-2 c" href="#!/store">Books</a>
                         </li>
                         <li class="nav-item m-1">
-                            <a class="nav-link px-4 py-2 c" href="#"
-                               ng-click="scrollToSection('gallery')">Gallery</a>
+                            <a class="nav-link px-4 py-2 c" href="#!/gallery"
+                              >Gallery</a>
                         </li>
                         <li class="nav-item m-1">
                             <a class="nav-link px-4 py-2 c" href="#!/about"
@@ -68,24 +68,32 @@
                 </div>
                 <div class="col-4">
                     <div class="nav nav-pill justify-content-end">
-                        <div class="nav-item m-1 d-flex" id="notLogin">
-                            <div>
-                                <button class="btn btn-outline-info m-1" onclick="openLoginModal()">Login</button>
+
+                            <div class="nav-item m-1 d-flex d-none hasLogin" id="hasLogin">
+                                <div>
+                                    <img src="" alt="" class="btn m-1 pngAvatar" id="accountAvatar">
+                                </div>
+                                <div class="border border-light">
+                                    <a href="">
+                                        <span class="text-center btn m-1 text-capitalize" id="accountName"></span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-info m-1" onclick="logOutAcc()">Logout</button>
+                                </div>
                             </div>
-                            <div>
-                                <button class="btn btn-outline-info m-1" onclick="openRegisterModal()">Register</button>
+
+
+                            <div class="nav-item m-1 d-flex notLogin" id="notLogin">
+                                <div>
+                                    <button class="btn btn-outline-info m-1" onclick="openLoginModal()">Login</button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-info m-1" onclick="openRegisterModal()">Register</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="nav-item m-1 d-flex d-none" id="hasLogin">
-                            <div>
-                                <img src="" alt="" class="btn m-1 pngAvatar" id="accountAvatar">
-                            </div>
-                            <div class="border border-light">
-                                <a href="">
-                                    <span class="text-center btn m-1 text-capitalize" id="accountName"></span>
-                                </a>
-                            </div>
-                        </div>
+
+
                         <div class="nav-item m-1">
                             <div class="m-1">
                                 <button class="btn" type="button"
@@ -211,5 +219,4 @@
         </form>
     </div>
 </div>
-
 
