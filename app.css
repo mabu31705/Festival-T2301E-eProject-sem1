@@ -1110,7 +1110,7 @@ body.fixed-header .page {
 
 #back-to-top {
     color: #fff;
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 20px;
     display: none;
@@ -1590,6 +1590,15 @@ a:hover {
 .cart-hover a i:hover{
     color: cyan;
 }
+.pngAvatar{
+    width: 60px;
+    height: 50px;
+  position: relative;
+    bottom: 10px;
+}
+.cart-hover a i:hover{
+    color: cyan;
+}
 
 .section {
     padding: 70px 0;
@@ -1803,8 +1812,8 @@ a:hover {
     color: #fff;
     width: 70%;
     font-size: small;
-    font-weight: lighter; 
-  
+    font-weight: lighter;
+
 
 }
 #prevBtn,
@@ -2008,7 +2017,7 @@ a:hover {
 }
 
 .cssShadow{
-  
+
 }
 
 .duclogo {

@@ -6,18 +6,13 @@ angular.module('storeDetail').component('storeDetail', {
             $http.get("./data/data.json").then(function (response) {
                 $scope.books=response.data;
                 $scope.bookId = $routeParams.bookId;
-                let userIndex = 0;
-                const exsitingUser = JSON.parse(localStorage.getItem('users')) || [];
-                let userCart =exsitingUser[userIndex].listItem;
+                const exsitingUser = JSON.parse(localStorage.getItem('currentUser')) || [];
+                let userCart =exsitingUser.listItem;
                 $scope.addToCart = function(cartItem) {
                     userCart.push(cartItem);
-                    localStorage.setItem('users', JSON.stringify(exsitingUser));
+                    localStorage.setItem('currentUser', JSON.stringify(exsitingUser));
                     location.reload();
                 };
-
-
-
-
                 let slideIndex = 0;
                 const slideStore = document.getElementsByClassName("slideStore");
 

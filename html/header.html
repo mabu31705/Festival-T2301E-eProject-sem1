@@ -59,12 +59,29 @@
         </div>
         <div class="col-4">
           <div class="nav nav-pill justify-content-end">
-            <div class="nav-item m-1">
-              <div class="btn btn-outline-info">Login</div>
-            </div>
-            <div class="nav-item m-1">
-              <div class="btn btn-outline-info">Register</div>
-            </div>
+              <div class="nav-item m-1 d-flex d-none hasLogin" id="hasLogin">
+                  <div>
+                      <img src="" alt="" class="btn m-1 pngAvatar" id="accountAvatar">
+                  </div>
+                  <div class="border border-light">
+                      <a href="">
+                          <span class="text-center btn m-1 text-capitalize" id="accountName"></span>
+                      </a>
+                  </div>
+                  <div>
+                      <button class="btn btn-outline-info m-1" onclick="logOutAcc()">Logout</button>
+                  </div>
+              </div>
+
+
+              <div class="nav-item m-1 d-flex notLogin" id="notLogin">
+                  <div>
+                      <button class="btn btn-outline-info m-1" onclick="openLoginModal()">Login</button>
+                  </div>
+                  <div>
+                      <button class="btn btn-outline-info m-1" onclick="openRegisterModal()">Register</button>
+                  </div>
+              </div>
             <div class="nav-item m-1">
               <div class="">
                 <button class="btn" type="button"
@@ -101,4 +118,108 @@
     </div>
   </div>
 </section>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+     aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Your Cart</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div id="canvasOffContent">
+        </div>
+    </div>
+</div>
+<div id="loginModal" class="custom-modal-login-register">
+    <div class="custom-modal-content fade-in-custom-modal">
+        <!--    <div class="d-flex justify-content-end"> <button type="button" class="btn-close text-reset" onclick="closeLoginModal()" aria-label="Close"></button></div>-->
+        <h2>Login</h2>
+        <hr>
+        <form>
+            <!-- Login form fields -->
+            <div class="form-group d-flex pt-4">
+                <label for="login-name" class="col-4">User Name:</label>
+                <input type="text" id="login-name" placeholder="Name" autocomplete="off"
+                       class="col-8 border border-info" required>
+            </div>
+            <div class="form-group d-flex pt-2">
+                <label for="login-password" class="col-4">Password:</label>
+                <input type="password" id="login-password" placeholder="Password" autocomplete="off"
+                       class="col-8 border border-info" required>
+            </div>
+            <div class="pt-3 d-flex">
+                <div class="col-4"></div>
+                <div class="col-8">
+                    <span><a href="#" class="text-secondary text-capitalize f-g-p">Forgot your password !</a></span>
+                </div>
+            </div>
+            <div class="pt-3 d-flex">
+                <div class="col-4"></div>
+                <div class="col-8 d-flex">
+                    <button type="button" class="btn btn-outline-info m-1 col" onclick="loginUser()">Login</button>
+                    <button type="button" class="btn btn-outline-info m-1 col" onclick="closeLoginModal()">Cancel
+                    </button>
+                </div>
+            </div>
+            <!-- Add more fields as needed -->
+
+        </form>
+    </div>
+</div>
+<div id="registerModal" class="custom-modal-login-register">
+    <div class="custom-modal-content fade-in-custom-modal">
+        <!--    <div class="d-flex justify-content-end"> <button type="button" class="btn-close text-reset" onclick="closeLoginModal()" aria-label="Close"></button></div>-->
+        <h2>Register</h2>
+        <hr>
+        <form>
+            <!-- Login form fields -->
+            <div class="form-group d-flex pt-4" id="registerForm">
+                <label for="register-name" class="col-4">User Name:</label>
+                <input type="text" id="register-name" placeholder="Name" class="col-8 border border-info">
+            </div>
+            <div class="d-flex">
+                <div id="existUserError" class="col-12 alert-warning d-none text-center">
+                    Account Name 's already exist !
+                </div>
+            </div>
+            <div class="form-group d-flex pt-2">
+                <label for="register-email" class="col-4">Email:</label>
+                <input type="email" id="register-email" placeholder="Email" class="col-8 border border-info">
+            </div>
+            <div class="form-group d-flex pt-2">
+                <label for="register-password" class="col-4">Password:</label>
+                <input type="password" id="register-password" placeholder="Password" autocomplete="off"
+                       class="col-8 border border-info">
+            </div>
+            <div class="form-group d-flex pt-2">
+                <label for="register-re-password" class="col-4"></label>
+                <input type="password" id="register-re-password" placeholder="Retype password" autocomplete="off"
+                       class="col-8 border border-info">
+            </div>
+            <div class="d-flex">
+                <div class="col-4"></div>
+                <div id="rePasswordError" class="col-8 alert-warning d-none text-center">
+                    Passwords don't match
+                </div>
+            </div>
+            <div class="d-flex pt-3">
+                <div id="successRegister" class="col-12 alert-warning d-none text-center">
+                    Successful register account !
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="col-4"></div>
+                <div class="col-8 d-flex">
+                    <button type="submit" class="btn btn-outline-info m-1 col" onclick="registerUser()">Register
+                    </button>
+                    <button type="button" class="btn btn-outline-info m-1 col" onclick="closeRegisterModal()">Cancel
+                    </button>
+                </div>
+            </div>
+            <!-- Add more fields as needed -->
+
+        </form>
+    </div>
+</div>
 
