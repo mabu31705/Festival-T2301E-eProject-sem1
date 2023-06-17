@@ -157,10 +157,13 @@
                                                 <li><a href="javascript:void(0)" class="btn btn-danger"><i
                                                         class="fe fe-x"></i></a></li>
                                             </ul>
-                                            <a ng-href="#!/store/{{b.bookId}}">
-                                                <img class="img-fluid br-7 w-100 wov"
-                                                     ng-src="./images/books/{{b.image}}" alt="img">
-                                            </a>
+                                            <div class="d-flex justify-content-center col-12">
+                                                <a ng-href="#!/store/{{b.bookId}}">
+                                                    <img class="img-fluid br-7 w-100 wov"
+                                                         ng-src="./images/books/{{b.image}}" alt="img">
+                                                </a>
+                                            </div>
+
                                         </div>
                                         <div class="card-body pt-0">
                                             <div class="product-content text-center">
@@ -173,8 +176,13 @@
                                                     <i class="fa fa-star-half-o text-warning"></i>
                                                     <i class="fa fa-star-o text-warning"></i>
                                                 </div>
-                                                <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <div class="price">${{b.price}} </div>
+                                                    <div class="price">
+                                                        <span class="text-decoration-line-through">${{b.price}}0</span>
+                                                    </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                         <div class="card-footer text-center">
@@ -185,12 +193,8 @@
                                                     class="fe fe-heart mx-2 wishlist-icon"></i>Add to wishlist</a>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
 
@@ -309,9 +313,9 @@
                     <div class="row">
                         <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in christian">
                             <div class="card">
-                                <div class="product-grid6">
-                                    <div class="product-image6 p-5">
-                                        <ul class="icons">
+                                <div class="">
+                                    <div class="product-image p-5 d-flex justify-content-end">
+                                        <ul class="icons position-absolute">
                                             <li>
                                                 <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i
                                                         class="fe fe-eye"> </i> </a>
@@ -321,15 +325,18 @@
                                             <li><a href="javascript:void(0)" class="btn btn-danger"><i
                                                     class="fe fe-x"></i></a></li>
                                         </ul>
-                                        <a ng-href="#!/store/{{b.bookId}}">
-                                            <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}"
-                                                 alt="img">
-                                        </a>
+                                        <div class="d-flex justify-content-center col-12">
+                                            <a ng-href="#!/store/{{b.bookId}}">
+                                                <img class="img-fluid br-7 w-100 wov"
+                                                     ng-src="./images/books/{{b.image}}" alt="img">
+                                            </a>
+                                        </div>
+
                                     </div>
                                     <div class="card-body pt-0">
                                         <div class="product-content text-center">
-                                            <h2 class="title fw-bold fs-20 tov"><a
-                                                    ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
+                                            <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a>
+                                            </h2>
                                             <div class="mb-2 text-warning">
                                                 <i class="fa fa-star text-warning"></i>
                                                 <i class="fa fa-star text-warning"></i>
@@ -337,8 +344,13 @@
                                                 <i class="fa fa-star-half-o text-warning"></i>
                                                 <i class="fa fa-star-o text-warning"></i>
                                             </div>
-                                            <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <div class="price">${{b.price}} </div>
+                                                <div class="price">
+                                                    <span class="text-decoration-line-through">${{b.price}}0</span>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
@@ -376,9 +388,9 @@
                     <div class="row">
                         <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in hindu">
                             <div class="card">
-                                <div class="product-grid6">
-                                    <div class="product-image6 p-5">
-                                        <ul class="icons">
+                                <div class="">
+                                    <div class="product-image p-5 d-flex justify-content-end">
+                                        <ul class="icons position-absolute">
                                             <li>
                                                 <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i
                                                         class="fe fe-eye"> </i> </a>
@@ -388,15 +400,18 @@
                                             <li><a href="javascript:void(0)" class="btn btn-danger"><i
                                                     class="fe fe-x"></i></a></li>
                                         </ul>
-                                        <a ng-href="#!/store/{{b.bookId}}">
-                                            <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}"
-                                                 alt="img">
-                                        </a>
+                                        <div class="d-flex justify-content-center col-12">
+                                            <a ng-href="#!/store/{{b.bookId}}">
+                                                <img class="img-fluid br-7 w-100 wov"
+                                                     ng-src="./images/books/{{b.image}}" alt="img">
+                                            </a>
+                                        </div>
+
                                     </div>
                                     <div class="card-body pt-0">
                                         <div class="product-content text-center">
-                                            <h2 class="title fw-bold fs-20 tov"><a
-                                                    ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
+                                            <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a>
+                                            </h2>
                                             <div class="mb-2 text-warning">
                                                 <i class="fa fa-star text-warning"></i>
                                                 <i class="fa fa-star text-warning"></i>
@@ -404,8 +419,13 @@
                                                 <i class="fa fa-star-half-o text-warning"></i>
                                                 <i class="fa fa-star-o text-warning"></i>
                                             </div>
-                                            <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <div class="price">${{b.price}} </div>
+                                                <div class="price">
+                                                    <span class="text-decoration-line-through">${{b.price}}0</span>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
@@ -443,9 +463,9 @@
                     <div class="row">
                         <div class="col-md-6 col-xl-4 col-sm-6" ng-repeat="b in islam">
                             <div class="card">
-                                <div class="product-grid6">
-                                    <div class="product-image6 p-5">
-                                        <ul class="icons">
+                                <div class="">
+                                    <div class="product-image p-5 d-flex justify-content-end">
+                                        <ul class="icons position-absolute">
                                             <li>
                                                 <a ng-href="#!/store/{{b.bookId}}" class="btn btn-primary"> <i
                                                         class="fe fe-eye"> </i> </a>
@@ -455,15 +475,18 @@
                                             <li><a href="javascript:void(0)" class="btn btn-danger"><i
                                                     class="fe fe-x"></i></a></li>
                                         </ul>
-                                        <a ng-href="#!/store/{{b.bookId}}">
-                                            <img class="img-fluid br-7 w-100 wov" ng-src="./images/books/{{b.image}}"
-                                                 alt="img">
-                                        </a>
+                                        <div class="d-flex justify-content-center col-12">
+                                            <a ng-href="#!/store/{{b.bookId}}">
+                                                <img class="img-fluid br-7 w-100 wov"
+                                                     ng-src="./images/books/{{b.image}}" alt="img">
+                                            </a>
+                                        </div>
+
                                     </div>
                                     <div class="card-body pt-0">
                                         <div class="product-content text-center">
-                                            <h2 class="title fw-bold fs-20 tov"><a
-                                                    ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a></h2>
+                                            <h2 class="title fw-bold fs-20 tov"><a ng-href="#!/store/{{b.bookId}}">{{b.bookName}}</a>
+                                            </h2>
                                             <div class="mb-2 text-warning">
                                                 <i class="fa fa-star text-warning"></i>
                                                 <i class="fa fa-star text-warning"></i>
@@ -471,8 +494,13 @@
                                                 <i class="fa fa-star-half-o text-warning"></i>
                                                 <i class="fa fa-star-o text-warning"></i>
                                             </div>
-                                            <div class="price">${{b.price}}<span class="ms-4">${{b.price}}0</span>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <div class="price">${{b.price}} </div>
+                                                <div class="price">
+                                                    <span class="text-decoration-line-through">${{b.price}}0</span>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
