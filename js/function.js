@@ -7,37 +7,78 @@ if (typeof (Storage) !== 'undefined') {
     console.log('Trình duyệt của bạn không hỗ trợ Storage');
 }
 
-const storedDataJS = localStorage.getItem('currentUser');
+//function take data from json
+let dataFromJson;
+let userFromJson;
+let currentUserLocalStorage;
+let successLogin;
+getDataFromJson = () => {
+    fetch("./data/data.json")
+        .then(res => res.json())
+        .then(data => {
+            dataFromJson = data;
+            let updateData = JSON.stringify(dataFromJson);
+            localStorage.setItem("books", updateData);
+        })
+        .catch(err => {
+            console.error("error get data from json" + err);
+        });
+    fetch("./data/users.json")
+        .then(res => res.json())
+        .then(data => {
+            userFromJson = data
+            let updateData = JSON.stringify(userFromJson);
+            localStorage.setItem("users", updateData);
+        })
+        .catch(err => {
+            console.error("error get data from json" + err);
+        });
+}
+noData = () => {
+    let getBook = localStorage.getItem('books');
+    let getUser = localStorage.getItem('users');
+    if (getBook == null && getUser == null) {
+        getDataFromJson();
+    }
+}
+noData();
 
 // Check if data exists
-if (storedDataJS) {
-    // Convert the retrieved string back into its original form (e.g., JSON.parse for JSON data)
-    const data = JSON.parse(storedDataJS);
-
-    function removeItem(index) {
+function removeItem(index) {
+    currentUserLocalStorage = localStorage.getItem('currentUser');
+    if (typeof (currentUserLocalStorage) !== 'undefined' && currentUserLocalStorage !== null) {
+        const data = JSON.parse(currentUserLocalStorage);
         data.listItem.splice(index, 1);
         let updateData = JSON.stringify(data);
         localStorage.setItem('currentUser', updateData);
         location.reload();
     }
-
+}
+function saveCart(){
+    currentUserLocalStorage = localStorage.getItem('currentUser');
+    let userLocalStorage =localStorage.getItem('users');
+    let data = JSON.parse(userLocalStorage);
+    let dataCurrent = JSON.parse(currentUserLocalStorage);
+    if (typeof (currentUserLocalStorage) !== 'undefined' && currentUserLocalStorage !== null) {
+        data.push(dataCurrent);
+        localStorage.setItem('users', JSON.stringify(data));
+    }
 }
 
-
-//take data from json and show off canvas
+//show off canvas
 window.onload = function () {
     // Check if the include is loaded
     const checkIncludeLoaded = function () {
         const includeWrapper = document.getElementById('include-wrapper');
         if (includeWrapper && includeWrapper.children.length > 0) {
-            const storedData = localStorage.getItem('currentUser');
-            const dataContainer = document.getElementById('user-item-number');
+            let storedData = localStorage.getItem('currentUser');
+            let dataContainer = document.getElementById('user-item-number');
             // Check if data exists in localStorage
-            if (storedData) {
+            if (typeof (storedData) !=='null') {
                 // Convert the stored data from string to its original form (e.g., JSON.parse for JSON data)
-                const data = JSON.parse(storedData);
+                let data = JSON.parse(storedData);
                 // Access the HTML element where you want to display the data
-                const canvasOffContent = document.getElementById('canvasOffContent');
+                let canvasOffContent = document.getElementById('canvasOffContent');
                 // Create an empty string to store the HTML content
                 let htmlContent = '';
                 let userCart = data.listItem;
@@ -94,10 +135,8 @@ window.onload = function () {
                     ;
                 }
                 canvasOffContent.innerHTML = htmlContent;
-
-
-                let notLogin = document.getElementById("#notLogin");
-                let hasLogin = document.getElementById("#hasLogin");
+            } else {
+                console.log("do nothing");
             }
 
         } else {
@@ -110,26 +149,6 @@ window.onload = function () {
     // Initial check
     checkIncludeLoaded();
 };
-
-//function take data from json
-let dataFromJson;
-let userFromJson;
-getDataFromJson = () => {
-    fetch("./data/data.json")
-        .then(res => res.json())
-        .then(data => {
-            dataFromJson = data;
-        })
-        .catch(err => {
-            console.error("error get data from json" + err);
-        });
-    fetch("./data/users.json")
-        .then(res => res.json())
-        .then(data => {
-            userFromJson = data
-        });
-}
-getDataFromJson();
 
 //modal register and login
 function openLoginModal() {
@@ -175,9 +194,10 @@ function registerUser() {
     let successRegister = document.getElementById('successRegister');
     let rePasswordError = document.getElementById('rePasswordError');
     let existUserError = document.getElementById('existUserError');
-
+    userFromJson = localStorage.getItem('users');
+    let data = JSON.parse(userFromJson);
     // Create an object to store the registration data
-    let userIdAi = userFromJson.length + 1;
+    let userIdAi = data.length + 1;
     let userData = {
         userId: userIdAi,
         userName: name,
@@ -185,17 +205,15 @@ function registerUser() {
         password: password,
         listItem: []
     };
-    let arrUser = userFromJson;
+    let arrUser = data;
     let unm = "";
     let pnm = "";
     for (let i = 0; i < arrUser.length; i++) {
-        if (name === userFromJson[i].userName) {
+        if (name === arrUser[i].userName) {
             existUserError.classList.remove('d-none');
             successRegister.classList.add('d-none');
             rePasswordError.classList.add('d-none');
             unm = "error"
-        } else {
-            localStorage.setItem('users', JSON.stringify(arrUser));
         }
     }
     if (password !== rePassword) {
@@ -204,13 +222,13 @@ function registerUser() {
         successRegister.classList.add('d-none');
         existUserError.classList.add('d-none');
     }
-    arrUser.push(userData);
     // Store user data in localStorage
-    if ((unm !== 'error') && (pnm !== 'error')) {
+    if ((unm !== 'error') && (pnm !== 'error') && name !== "" && email !== "" && password !== "") {
         successRegister.classList.remove('d-none');
-
         rePasswordError.classList.add('d-none');
         existUserError.classList.add('d-none');
+        arrUser.push(userData);
+        localStorage.setItem('users', JSON.stringify(arrUser));
     }
     document.getElementById('register-name').value = "";
     document.getElementById('register-email').value = "";
@@ -218,52 +236,55 @@ function registerUser() {
     document.getElementById('register-re-password').value = "";
 }
 
-let success = "";
 
 function loginUser() {
     let name = document.getElementById('login-name').value;
     let password = document.getElementById('login-password').value;
     let imgElement = document.getElementById('accountAvatar');
     let accountName = document.getElementById('accountName');
-    let arrUser = userFromJson;
+    let loginUser = localStorage.getItem("currentUser");
+    userFromJson = localStorage.getItem('users');
+    let data = JSON.parse(userFromJson);
+    let arrUser = data;
     let userData = {};
-    if(userFromJson){
-        console.log("hello login")
-        localStorage.removeItem("currentUser");
-        location.reload();
-    } else {
-        console.log("hello not login")
-        for (let i = 0; i < arrUser.length; i++) {
-            if ((name === arrUser[i].userName) && (password === arrUser[i].password)) {
-                userData = {
-                    userId: arrUser[i].userId,
-                    userName: arrUser[i].userName,
-                    email: arrUser[i].email,
-                    password: arrUser[i].password,
-                    listItem: arrUser[i].listItem,
-                    userImage: "1.png"
-                };
-                success = "success";
-                localStorage.setItem('currentUser', JSON.stringify(userData));
-                imgElement.src = '../images/pngs/' + userData.userImage + '';
-                accountName.textContent = userData.userName;
-                document.getElementById('login-name').value = "";
-                document.getElementById('login-password').value = "";
-                let notLogin = document.getElementById("#notLogin");
-                let hasLogin = document.getElementById("#hasLogin");
-                hasLogin.classList.remove('d-none');
-                notLogin.classList.add('d-none');
-                closeLoginModal();
-            }
+    for (let i = 0; i < arrUser.length; i++) {
+        if ((name === arrUser[i].userName) && (password === arrUser[i].password)) {
+            userData = {
+                userId: arrUser[i].userId,
+                userName: arrUser[i].userName,
+                email: arrUser[i].email,
+                password: arrUser[i].password,
+                listItem: arrUser[i].listItem,
+                userImage: "1.png"
+            };
+            localStorage.setItem('currentUser', JSON.stringify(userData));
+            imgElement.src = '../images/pngs/' + userData.userImage + '';
+            accountName.textContent = userData.userName;
+            document.getElementById('login-name').value = "";
+            document.getElementById('login-password').value = "";
+            closeLoginModal();
         }
     }
-
-
+    if(typeof (loginUser) !== 'null'){
+        setLogin();
+    }
 }
+
+setLogin = () =>{
+    let notLogin = document.getElementById("notLogin");
+    let hasLogin = document.getElementById("hasLogin");
+    if (hasLogin.classList.contains('d-none')){
+        hasLogin.classList.remove('d-none');
+    }
+    if (notLogin.classList.contains('d-none')){
+        console.log("d-none notlogin");
+    } else {
+        notLogin.classList.add('d-none');
+    }
+}
+
 
 function logOutAcc() {
     localStorage.removeItem("currentUser");
     location.reload();
 }
-
-

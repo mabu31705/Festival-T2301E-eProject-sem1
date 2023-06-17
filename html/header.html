@@ -59,7 +59,7 @@
         </div>
         <div class="col-4">
           <div class="nav nav-pill justify-content-end">
-              <div class="nav-item m-1 d-flex d-none hasLogin" id="hasLogin">
+              <div class="nav-item m-1 d-flex d-none" id="hasLogin">
                   <div>
                       <img src="" alt="" class="btn m-1 pngAvatar" id="accountAvatar">
                   </div>
@@ -74,7 +74,7 @@
               </div>
 
 
-              <div class="nav-item m-1 d-flex notLogin" id="notLogin">
+              <div class="nav-item m-1 d-flex" id="notLogin">
                   <div>
                       <button class="btn btn-outline-info m-1" onclick="openLoginModal()">Login</button>
                   </div>
@@ -98,7 +98,8 @@
               </div>
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
-                  <h5 id="offcanvasRightLabel">Your Cart</h5>
+                    <button class="border-light btn btn-outline-info d-flex justify-content-center align-items-center" onclick="saveCart()"><h5 class="text-capitalize text-center" id="offcanvasRightLabel">Save Your Cart</h5></button>
+
                   <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -106,11 +107,6 @@
                   </div>
                 </div>
               </div>
-
-
-
-
-
             </div>
           </div>
         </div>

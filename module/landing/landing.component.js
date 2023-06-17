@@ -2,6 +2,7 @@ angular.module('landing').component('landing', {
     templateUrl: 'module/landing/landing.template.html',
     controller: ['$routeParams', '$scope', '$window', '$interval', '$http',
         function landingController($routeParams, $scope, $window, $interval, $http) {
+
             $http.get("./data/users.json").then(function (response) {
                 $scope.users = response.data;
                 let jsonData = angular.toJson($scope.users)
@@ -9,7 +10,7 @@ angular.module('landing').component('landing', {
                 if(storedData) {
 
                 } else {
-                    $window.localStorage.setItem('users', jsonData);
+                    // $window.localStorage.setItem('users', jsonData);
                 }
 
             })
@@ -86,8 +87,6 @@ angular.module('landing').component('landing', {
                     button: 'Button 6'
                 }
             ];
-
-
             let currentIndex = 0;
             let slideshow = document.getElementById('slideShow');
             slideshow.classList.add("cssShadow");
@@ -154,7 +153,7 @@ angular.module('landing').component('landing', {
                     createSlide(dotIndex);
                     updateActiveDot(dotIndex);
                     currentIndex = dotIndex;
-                });
+                },{passive:true });
                 dot.dataset.index = i;
                 dotContainer.appendChild(dot);
             }
@@ -162,8 +161,8 @@ angular.module('landing').component('landing', {
             createSlide(currentIndex);
             updateActiveDot(currentIndex);
 
-            prevBtn.addEventListener('click', prevSlide,{passive:true});
-            nextBtn.addEventListener('click', nextSlide,{passive:true});
+            prevBtn.addEventListener('click', prevSlide,{passive:true });
+            nextBtn.addEventListener('click', nextSlide,{passive:true });
 
             startSlideshow();
 
@@ -207,6 +206,9 @@ angular.module('landing').component('landing', {
                 }
                 // If the count down is over, write some text
             }, 1000);
+
+            //
+
 
         }
     ]

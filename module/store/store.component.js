@@ -44,14 +44,6 @@ angular.module('store').component('store', {
                 userCart.splice(index, 1);
             };
 
-
-
-
-
-
-
-
-
             //
             $scope.searchText = '';
             $scope.suggestions = [];
@@ -87,7 +79,5 @@ angular.module('store').component('store', {
             $scope.insertC = function(content) {
                 $scope.buttonText  = content;
             };
-
-
         }]
 });
