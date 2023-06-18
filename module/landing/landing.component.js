@@ -89,7 +89,6 @@ angular.module('landing').component('landing', {
             ];
             let currentIndex = 0;
             let slideshow = document.getElementById('slideShow');
-            slideshow.classList.add("cssShadow");
             let dotContainer = document.getElementById('dotContainer');
             let prevBtn = document.getElementById('prevBtn');
             let nextBtn = document.getElementById('nextBtn');
@@ -100,12 +99,10 @@ angular.module('landing').component('landing', {
                 let image = images[index];
                 let slide = document.createElement('div');
                 slide.classList.add('slideS');
-
                 let img = document.createElement('img');
                 img.src = image.src;
                 img.alt = 'Slideshow Image';
                 slide.appendChild(img);
-
                 slideshow.innerHTML = '';
                 slideshow.appendChild(slide);
                 imageDescription.textContent = image.title;

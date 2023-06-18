@@ -62,20 +62,31 @@
                                     <div class="card-body ">
                                         <div class="row">
                                             <div class="d-flex">
-                                                <div class="col d-flex justify-content-center align-items-center">
-                                                    <button id="prevBtn" onclick="prevSlide()"><i
-                                                            class="fa fa-caret-left ic"></i></button>
+                                                <div class="col-10">
+                                                    <div id="slideShow" class="" style="width: 1600px;height: 800px">
+                                                    </div>
+                                                    <div class="overlay-slide " style="width: 1600px;">
+                                                        <div id="imageDescription"></div>
+                                                        <div id="des"></div>
+                                                    </div>
+                                                    <div class="overlay-slide-2" style="width: 1600px;">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <button id="prevBtn" onclick="prevSlide()"><i
+                                                                    class="fa fa-caret-left"></i></button>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end align-items-center">
+                                                            <button id="nextBtn" onclick="nextSlide()"><i
+                                                                    class="fa fa-caret-right"></i></button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div id="slideShow" class="col-10 h-100 w-100"></div>
-                                                <div class="col d-flex justify-content-start align-items-center">
-                                                    <button id="nextBtn" onclick="nextSlide()"><i
-                                                            class="fa fa-caret-right ic"></i></button>
-                                                </div>
+
+
                                             </div>
+
                                             <div id="dotContainer"></div>
-                                            <div id="imageDescription">
-                                            </div>
-                                            <div id="des"></div>
+
+
                                         </div>
                                     </div>
                                 </div>
