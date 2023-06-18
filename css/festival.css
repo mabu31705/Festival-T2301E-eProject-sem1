@@ -1,231 +1,466 @@
-.allh{
-    font-family:'Times New Roman', Times, serif;
-    font-style: italic;
-    border: 5px solid black;
-    border-radius: 20px;
+* {
+    box-sizing: border-box;
 }
-.h1hh{
+.all{
     color: white;
-    font-size: 300%;
-    text-align: center;
-    margin: 0 0;
-    border-bottom: 4px solid black;
-}
-.fesc1h1h{
-    background-image: url("../images/christianFes/christianBanner.jpg");
-}
-.fesc1exp{
-    background-image: url("../images/christianFes/christianBG.jpg");
-}
-.fesc1titleh{
-    background-image: url("../images/christianFes/christianPattern.jpg");
-}
-.fesc1jsc{
-    background-image: url("../images/christianFes/ChristFes/Christmas/ChristmasCD.jpeg");
-}
-.fesc1buttonh{
-    background-image: url("../images/christianFes/christianPattern.jpg");
-}
-
-.fesc2h1h{
-    background-image: url("../images/christianFes/christianBanner.jpg");
-}
-.fesc2exp{
-    background-image: url("../images/christianFes/christianBG.jpg");
-}
-.fesc2titleh{
-    background-image: url("../images/christianFes/christianPattern.jpg");
-}
-.fesc2jsc{
-    background-image: url("../images/christianFes/ChristFes/Easter/easterCD.jpg");
-}
-.fesc2buttonh{
-    background-image: url("../images/christianFes/christianPattern.jpg");
-}
-
-.fesc3h1h{
-    background-image: url("../images/christianFes/christianBanner.jpg");
-}
-.fesc3exp{
-    background-image: url("../images/christianFes/christianBG.jpg");
-}
-.fesc3titleh{
-    background-image: url("../images/christianFes/christianPattern.jpg");
-}
-.fesc3jsc{
-    background-image: url("../images/christianFes/ChristFes/Lent/LentCD.jpg");
-}
-.fesc3buttonh{
-    background-image: url("../images/christianFes/christianPattern.jpg");
-}
-
-
-/**/
-.fesh1h1h{
-    background-image: url("../images/hinduFes/hinduBanner.jpg");
-}
-.fesh1exp{
-    background-image: url("../images/hinduFes/hinduBG.jpg");
-}
-.fesh1titleh{
-    background-image: url("../images/hinduFes/hinduPattern.jpg");
-}
-.fesh1jsc{
-    background-image: url("../images/hinduFes/hinduFes/diwali/diwaliCD.jpeg");
-}
-.fesh1buttonh{
-    background-image: url("../images/hinduFes/hinduPattern.jpg");
-}
-/**/
-.fesh2h1h{
-    background-image: url("../images/hinduFes/hinduBanner.jpg");
-}
-.fesh2exp{
-    background-image: url("../images/hinduFes/hinduBG.jpg");
-}
-.fesh2titleh{
-    background-image: url("../images/hinduFes/hinduPattern.jpg");
-}
-.fesh2jsc{
-    background-image: url("../images/hinduFes/hinduFes/holi/HoliCD.jpeg");
-}
-.fesh2buttonh{
-    background-image: url("../images/hinduFes/hinduPattern.jpg");
-}
-/**/
-.fesh3h1h{
-    background-image: url("../images/hinduFes/hinduBanner.jpg");
-}
-.fesh3exp{
-    background-image: url("../images/hinduFes/hinduBG.jpg");
-}
-.fesh3titleh{
-    background-image: url("../images/hinduFes/hinduPattern.jpg");
-}
-.fesh3jsc{
-    background-image: url("../images/hinduFes/hinduFes/kumbhMela/KumbhMelaCD.jpeg");
-}
-.fesh3buttonh{
-    background-image: url("../images/hinduFes/hinduPattern.jpg");
-}
-/**/
-.fesh4h1h{
-    background-image: url("../images/hinduFes/hinduBanner.jpg");
-}
-.fesh4exp{
-    background-image: url("../images/hinduFes/hinduBG.jpg");
-}
-.fesh4titleh{
-    background-image: url("../images/hinduFes/hinduPattern.jpg");
-}
-.fesh4jsc{
-    background-image: url("../images/hinduFes/hinduFes/mahashivaratri/shivaratriCD.jpeg");
-}
-.fesh4buttonh{
-    background-image: url("../images/hinduFes/hinduPattern.jpg");
-}
-/**/
-.fesi1h1h{
-    background-image: url("../images/IslamFes/islamBanner.jpg");
-}
-.fesi1exp{
-    background-image: url("../images/IslamFes/islamBG.jpeg");
-}
-.fesi1titleh{
-    background-image: url("../images/IslamFes/islamPattern.jpg");
-}
-.fesi1jsc{
-    background-image: url("../images/IslamFes/IslamFes/EidAlAdha/EidAlAdhaCD.jpeg");
-}
-.fesi1buttonh{
-    background-image: url("../images/IslamFes/islamPattern.jpg");
-}
-/**/
-.fesi2h1h{
-    background-image: url("../images/IslamFes/islamBanner.jpg");
-}
-.fesi2exp{
-    background-image: url("../images/IslamFes/islamBG.jpeg");
-}
-.fesi2titleh{
-    background-image: url("../images/IslamFes/islamPattern.jpg");
-}
-.fesi2jsc{
-    background-image: url("../images/IslamFes/IslamFes/EidAlFitr/EidAlFitrCD.png");
-}
-.fesi2buttonh{
-    background-image: url("../images/IslamFes/islamPattern.jpg");
-}
-/**/
-.fesi3h1h{
-    background-image: url("../images/IslamFes/islamBanner.jpg");
-}
-.fesi3exp{
-    background-image: url("../images/IslamFes/islamBG.jpeg");
-}
-.fesi3titleh{
-    background-image: url("../images/IslamFes/islamPattern.jpg");
-}
-.fesi3jsc{
-    background-image: url("../images/IslamFes/IslamFes/Ramadan/ramadanCD.jpeg");
-}
-.fesi3buttonh{
-    background-image: url("../images/IslamFes/islamPattern.jpg");
-}
-/**/
-
-.contenthh{
-    width: 70%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0 auto;
-    border-left: 4px solid black;
-    border-right: 4px solid black;
+    border: 3px solid black;
+    border-radius: 10px;
 }
-.titlehh{
-    color: white;
-    font-size: 250%;
-    padding: 22px;
+.fesName{
+    background-image: url(./../images/christianFes/christianBanner.jpg);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.fesName2{
+    background-image: url(./../images/hinduFes/hinduBanner.jpg);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.fesName3{
+    background-image: url(./../images/IslamFes/islamBanner.jpg);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.fesContent::after{
+    content: "";
+    clear: both;
+}
+.fesContent{
+    display: flex;
+    flex-wrap: wrap;
+}
+.title{
     display: flex;
     flex-direction: column;
-}
-.phh{
-    font-size: 62.5%;
-    color: cyan;
-}
-#demoh{
-    margin: 0 0;
-    color: cyan;
-    font-size: 32px;
-}
-.imghh{
-    width: 50%;
-    height: 300px;
-    margin: 11px auto;
-}
-.jshh{
-    color: white;
-    font-size: 300%;
     text-align: center;
-    margin: 0 0;
-    border-top: 4px solid black;
+    padding: 15px;
 }
-.buttonhh{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 15px;
+.explanatory{
+    background-image: url(./../images/christianFes/christianPattern.jpg);
+    border-right: 1px dashed black;
 }
-.dlh a {
+.explanatory2{
+    background-image: url(./../images/hinduFes/hinduPattern.jpg);
+    border-right: 1px dashed black;
+}
+.explanatory3{
+    background-image: url(./../images/IslamFes/islamPattern.jpg);
+    border-right: 1px dashed black;
+}
+.fesImg{
+    width: 75%;
+    padding: 5px;
+    margin: 0 auto;
+}
+.p{
+    text-align: justify;
+}
+.button{
+    padding-top: 15px;
+}
+.button a {
     background-color: darkslateblue;
     color: #fff;
     display: inline-block;
-    font-size: 17px;
-    height: 50px;
-    line-height: 50px;
-    padding: 0 60px;
-    text-align: center;
+    line-height: 250%;
+    padding: 0 30px;
     text-decoration: none;
     transition: 0.1s all;
     border-radius: 10px;
 }
-.dlh a:hover {
+.button a:hover {
     background-color: orange;
+}
+.side{
+    background-image: url(./../images/christianFes/christianPattern.jpg);
+}
+.side2{
+    background-image: url(./../images/hinduFes/hinduPattern.jpg);
+}
+.side3{
+    background-image: url(./../images//IslamFes/islamPattern.jpg);
+}
+.bookAds{
+    height: 100%;
+}
+.ad{
+    height: 33.33%;
+    position: relative;
+}
+.book{
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0;
+}
+.book1{
+    position: sticky;
+    top: 0;
+}
+.book2{
+    position: sticky;
+    top: 0;
+}
+.book3{
+    position: sticky;
+    top: 0;
+}
+.sideImg{
+    width: 100%;
+}
+#demo{
+    margin: 0 0;
+}
+.js{
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0;
+    border-top: 3px solid black;
+    background-size: cover;
+    padding: 0;
+}
+.jsC{
+    background-image: url("./../images/christianFes/ChristFes/Christmas/ChristmasCD.jpeg");
+
+}
+.jsE{
+    background-image: url(./../images/christianFes/ChristFes/Easter/easterCD.jpg);
+}
+.jsL{
+    background-image: url(./../images/christianFes/ChristFes/Lent/LentCD.jpg);
+}
+.jsD{
+    background-image: url(./../images/hinduFes/hinduFes/diwali/diwaliCD.jpeg);
+}
+.jsH{
+    background-image: url(./../images/hinduFes/hinduFes/holi/HoliCD.jpeg);
+}
+.jsK{
+    background-image: url(./../images/hinduFes/hinduFes/kumbhMela/KumbhMelaCD.jpeg);
+}
+.jsM{
+    background-image: url(./../images/hinduFes/hinduFes/mahashivaratri/shivaratriCD.jpeg);
+}
+.jsAl{
+    background-image: url(./../images/IslamFes/IslamFes/EidAlFitr/AlCD.png);
+}
+.jsR{
+    background-image: url(./../images/IslamFes/IslamFes/Ramadan/ramadanCD.jpeg);
+    background-size: contain;
+}
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 1px) {
+    .col- {
+        width: 100%;
+    }
+    .fesName{
+        font-size: 1.5rem;
+    }
+    .fesName2{
+        font-size: 1.5rem;
+    }
+    .fesName3{
+        font-size: 1.5rem;
+    }
+    .title{
+        font-size: 1.125rem;
+    }
+    .p{
+        font-size: 0.75rem;
+    }
+    .js{
+        font-size: 1.5rem;
+    }
+    .button{
+        font-size: 0.75rem;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .fesName{
+        font-size: 1.75rem;
+    }
+    .fesName2{
+        font-size: 1.75rem;
+    }
+    .fesName3{
+        font-size: 1.75rem;
+    }
+    .title{
+        font-size: 1.3125rem;
+    }
+    .p{
+        font-size: 0.875rem;
+    }
+    .js{
+        font-size: 1.75rem;
+    }
+    .button{
+        font-size: 0.875rem;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .fesName{
+        font-size: 2rem;
+    }
+    .fesName2{
+        font-size: 2rem;
+    }
+    .fesName3{
+        font-size: 2rem;
+    }
+    .title{
+        font-size: 1.5rem;
+    }
+    .p{
+        font-size: 1rem;
+    }
+    .js{
+        font-size: 2rem;
+    }
+    .button{
+        font-size: 1rem;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+.all{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.listName{
+    background-image: url(./../images/christianFes/christianBanner.jpg);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.listName2{
+    background-image: url(./../images/hinduFes/hinduBanner.jpg);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.listName3{
+    background-image: url(./../images/IslamFes/islamBanner.jpg);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.content::after{
+    content: "";
+    clear: both;
+}
+.listContainer{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("./../images/christianFes/christianBG.jpg");
+}
+.listContainer2{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("./../images/hinduFes/hinduBG.jpg");
+}
+.listContainer3{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("./../images/IslamFes/islamBG.jpeg");
+}
+.fesList{
+    margin: 0 auto;
+}
+.fes{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 30px 0;
+    background-image: url("./../images/christianFes/christianPattern.jpg");
+}
+.fes2{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 30px 0;
+    background-image: url("./../images/hinduFes/hinduPattern.jpg");
+}
+.fes3{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 30px 0;
+    background-image: url("./../images/IslamFes/islamPattern.jpg");
+}
+.content{
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.left{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+.fesImg{
+    width: 90%;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.right{
+    height: 100%;
+    padding: 15px;
+    margin: auto 0;
+}
+.right-top{
+    height: 12.5%;
+}
+.right-top a{
+    text-decoration: none;
+    color: wheat;
+}
+.part{
+    padding: 10px;
+}
+.p{
+    height: 75%;
+}
+.button{
+    height: 12.5%;
+}
+a:hover{
+    color: orange;
+}
+.button a {
+    background-color: darkslateblue;
+    color: #fff;
+    display: inline-block;
+    line-height: 250%;
+    padding: 0 60px;
+    text-decoration: none;
+    transition: 0.1s all;
+    border-radius: 10px;
+}
+.button a:hover {
+    background-color: orange;
+}
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 1px) {
+    .col- {
+        width: 100%;
+    }
+    .listName{
+        font-size: 1.5rem;
+    }
+    .listName2{
+        font-size: 1.5rem;
+    }
+    .listName3{
+        font-size: 1.5rem;
+    }
+    .title{
+        font-size: 1.125rem;
+    }
+    .p{
+        font-size: 0.75rem;
+    }
+    .button{
+        font-size: 0.75rem;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .listName{
+        font-size: 1.75rem;
+    }
+    .listName2{
+        font-size: 1.75rem;
+    }
+    .listName3{
+        font-size: 1.75rem;
+    }
+    .title{
+        font-size: 1.3125rem;
+    }
+    .p{
+        font-size: 0.75rem;
+    }
+    .button{
+        font-size: 0.5rem;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .listName{
+        font-size: 2rem;
+    }
+    .listName2{
+        font-size: 2rem;
+    }
+    .listName3{
+        font-size: 2rem;
+    }
+    .title{
+        font-size: 1.5rem;
+    }
+    .p{
+        font-size: 1.125rem;
+    }
+    .button{
+        font-size: 1rem;
+    }
 }
