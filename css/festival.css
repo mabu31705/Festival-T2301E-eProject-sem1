@@ -86,6 +86,7 @@
     background-image: url(./../images//IslamFes/islamPattern.jpg);
 }
 .bookAds{
+    margin-top: 5%;
     height: 100%;
 }
 .ad{
@@ -100,15 +101,15 @@
 }
 .book1{
     position: sticky;
-    top: 0;
+    top: 15%;
 }
 .book2{
     position: sticky;
-    top: 0;
+    top: 15%;
 }
 .book3{
     position: sticky;
-    top: 0;
+    top: 15%;
 }
 .sideImg{
     width: 100%;
