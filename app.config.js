@@ -52,6 +52,9 @@ angular.module('myApp').config(['$routeProvider',
         when('/ramadan',{
             template: '<ramadan></ramadan>'
         }).
+        when('/gallery',{
+            template: '<gallery></gallery>'
+        }).
         otherwise('/landing');
     }
 ]);

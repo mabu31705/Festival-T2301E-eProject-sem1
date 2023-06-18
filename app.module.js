@@ -17,6 +17,7 @@ let app = angular.module("myApp",
         "mahashivaratri",
         "eidaladha",
         "eidalfitr",
-        "ramadan"
+        "ramadan",
+        "gallery"
     ]);
 

@@ -1,0 +1,17 @@
+
+<section id="gallery">
+    <div class="col-9 all ">
+        <div class="d-flex flex-wrap" >
+            <div class="gallery-1 col-2 mt-5" ng-repeat="img in listImg">
+                <div class="gallery-2 d-flex justify-content-center align-items-center gallery-shadow">
+                    <div class="thumbnail gallery-shadow" ng-style="{'background-image': 'url(./images/pngs/slide/' + img.img + ')'}">
+                        <div class="thumbnail-overlay">
+                            <span class="thumbnail-text">{{img.des}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5"></div>
+</section>
