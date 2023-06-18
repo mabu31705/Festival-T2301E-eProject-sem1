@@ -54,9 +54,10 @@ function removeItem(index) {
         location.reload();
     }
 }
-function saveCart(){
+
+function saveCart() {
     currentUserLocalStorage = localStorage.getItem('currentUser');
-    let userLocalStorage =localStorage.getItem('users');
+    let userLocalStorage = localStorage.getItem('users');
     let data = JSON.parse(userLocalStorage);
     let dataCurrent = JSON.parse(currentUserLocalStorage);
     if (typeof (currentUserLocalStorage) !== 'undefined' && currentUserLocalStorage !== null) {
@@ -74,7 +75,7 @@ window.onload = function () {
             let storedData = localStorage.getItem('currentUser');
             let dataContainer = document.getElementById('user-item-number');
             // Check if data exists in localStorage
-            if (typeof (storedData) !=='null') {
+            if (typeof (storedData) !== 'null') {
                 // Convert the stored data from string to its original form (e.g., JSON.parse for JSON data)
                 let data = JSON.parse(storedData);
                 // Access the HTML element where you want to display the data
@@ -258,25 +259,25 @@ function loginUser() {
                 userImage: "1.png"
             };
             localStorage.setItem('currentUser', JSON.stringify(userData));
-            imgElement.src = '../images/pngs/' + userData.userImage + '';
+            imgElement.src = './images/pngs/' + userData.userImage + '';
             accountName.textContent = userData.userName;
             document.getElementById('login-name').value = "";
             document.getElementById('login-password').value = "";
             closeLoginModal();
         }
     }
-    if(typeof (loginUser) !== 'null'){
+    if (typeof (loginUser) !== 'null') {
         setLogin();
     }
 }
 
-setLogin = () =>{
+setLogin = () => {
     let notLogin = document.getElementById("notLogin");
     let hasLogin = document.getElementById("hasLogin");
-    if (hasLogin.classList.contains('d-none')){
+    if (hasLogin.classList.contains('d-none')) {
         hasLogin.classList.remove('d-none');
     }
-    if (notLogin.classList.contains('d-none')){
+    if (notLogin.classList.contains('d-none')) {
         console.log("d-none notlogin");
     } else {
         notLogin.classList.add('d-none');
