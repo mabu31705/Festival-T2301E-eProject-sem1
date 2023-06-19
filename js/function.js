@@ -315,3 +315,7 @@ function logOutAcc() {
     localStorage.removeItem("currentUser");
     location.reload();
 }
+
+function countdown(){
+
+}

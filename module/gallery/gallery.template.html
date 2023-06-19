@@ -1,12 +1,23 @@
 <section id="gallery">
-    <div class="col-9 all ">
-        <div class="d-flex flex-wrap">
-            <div class="gallery-1 col-3 mt-5" ng-repeat="img in listImg">
-                <div class="gallery-2 d-flex justify-content-center align-items-center gallery-shadow ">
-                    <div class="thumbnail gallery-shadow"
-                         ng-style="{'background-image': 'url(./images/pngs/slide/' + img.img + ')'}">
+    <div class="col-9 all mt-5">
+        <div class="d-flex flex-wrap ">
+            <div class="gallery-1 col-4  gallery-margin-1" ng-repeat="img in listImg" >
+                <div class="gallery-2 d-flex justify-content-center align-items-center gallery-shadow img-gallery fc-img-s">
+                    <div class="thumbnail gallery-shadow img-gallery"
+                         ng-style="{
+                         'background-image': 'url(./images/pngs/slide/' + img.img + ')',
+                         'background-size': 'cover',
+                         'object-fit':'cover'
+                         }">
                         <div class="thumbnail-overlay">
-                            <span class="thumbnail-text">{{img.des}}</span>
+                            <div class="d-flex">
+                                <div class="col-6 m-l-5 text-center d-flex align-items-center">
+                                    {{img.des2}}
+                                </div>
+                                <div class="col-6 festival-border-vertical m-l-5 text-white d-flex align-items-center justify-content-center">
+                                            <a type="button" ng-href="#!/{{img.des}}" class="btn btn-outline-light">Detail</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

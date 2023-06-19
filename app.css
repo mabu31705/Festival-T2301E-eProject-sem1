@@ -1447,18 +1447,11 @@ figure {
     position: relative;
 }
 
-img {
-    vertical-align: middle;
-    border-style: none;
-}
 
 .figure {
     display: inline-block;
 }
 
-img {
-    max-width: 100%;
-}
 
 
 .fe-shopping-cart:before {
@@ -1893,26 +1886,27 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    /*width: 100px;*/
+    /*height: 100px;*/
 
 }
 
 .countdown-number {
     font-weight: bold;
     color: coral;
-    font-size: 32px;
+    /*font-size: 32px;*/
     top: 10px;
-    animation: countdown-number 0.3s ease infinite alternate;
+    animation: countdown-number 0.4s ease infinite alternate;
 }
 
 .countdown-unit {
     font-weight: bold;
-    color: olive;
-    font-size: 32px;
+    position: relative;
+    color: whitesmoke;
+    /*font-size: 32px;*/
     text-shadow: 1px 5px 0 lightskyblue,
-    15px 5px 0 lightskyblue,
-    1px 15px 0 lightskyblue,
+    1px 5px 0 lightskyblue,
+    1px 5px 0 lightskyblue,
     5px 5px 0 0 lightskyblue;
 }
 
@@ -1920,8 +1914,7 @@ a:hover {
     100% {
         top: -10px;
         text-shadow: 0 1px coral,
-        0 1px coral,
-        0 40px 25px rgba(0, 0, 0, 0.2);
+        0 1px coral
     }
 }
 

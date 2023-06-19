@@ -1,0 +1,35 @@
+.overlay-festival-countdown{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    transition: opacity 0.3s ease;
+    bottom: 25px;
+    width: 320px;
+    height: 110px;
+    opacity: 0;
+}
+.fc-outer:hover .overlay-festival-countdown{
+    opacity: 1;
+}
+.image-festival-countdown{
+    width: 320px;
+    height: 480px;
+}
+.festival-border-vertical{
+    border-left: 1px solid white;
+    height: 110px;
+}
+.m-r-5{
+    margin-right: 5%;
+}
+.m-l-5{
+    margin-left: 5%;
+}
+.fc-img-s{
+    box-shadow: 0 14px 16px rgba(0, 0, 0, 10);
+}
+.m-t-20{
+    margin-top: 20%;
+}
+.m-l-20{
+    margin-left: 20%;
+}

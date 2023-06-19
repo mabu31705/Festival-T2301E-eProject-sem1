@@ -163,18 +163,10 @@ angular.module('landing').component('landing', {
 
             startSlideshow();
 
-            //  Set the date we're counting down to
-            const date = new Date();
-
-            let day = date.getDate();
-            let month = date.getMonth() + 1;
-            let year = date.getFullYear();
-
-            let currentDate = `${day}-${month}-${year}`;
-            let countDownDates = new Date("Dec 25, 2023 00:00:00").getTime();
 
             // Update the count down every 1 second
-            let x = setInterval(function () {
+            let countDownDates = new Date("Dec 25, 2023 00:00:00").getTime();
+            let countdown=setInterval(function () {
                 let nows = new Date().getTime();
                 let distance = countDownDates - nows;
 
@@ -203,7 +195,6 @@ angular.module('landing').component('landing', {
                 }
                 // If the count down is over, write some text
             }, 1000);
-
             //
 
 

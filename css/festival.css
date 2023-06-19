@@ -75,6 +75,7 @@
 }
 .button a:hover {
     background-color: orange;
+    color: black;
 }
 .side{
     background-image: url(./../images/christianFes/christianPattern.jpg);
