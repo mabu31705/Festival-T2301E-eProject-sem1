@@ -5,7 +5,7 @@ angular.module('storeDetail').component('storeDetail', {
         function storeDetail($routeParams,$scope,$window,$http) {
             $http.get("./data/data.json").then(function (response) {
                 $scope.books=response.data;
-                $scope.bookId = $routeParams.bookId;
+                $scope.bookId = $routeParams.bookId-1;
                 const exsitingUser = JSON.parse(localStorage.getItem('currentUser')) || [];
                 let userCart =exsitingUser.listItem;
                 $scope.addToCart = function(cartItem) {

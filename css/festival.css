@@ -114,8 +114,12 @@
 .sideImg{
     width: 100%;
 }
+.text-justify{
+    text-align: justify;
+}
 #demo{
     margin: 0 0;
+    font-size: 34px;
 }
 .js{
     font-size: 2rem;

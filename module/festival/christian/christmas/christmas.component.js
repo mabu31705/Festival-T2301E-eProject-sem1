@@ -20,13 +20,13 @@ angular.module('christmas').component('christmas', {
                 let secondss = Math.floor((distance % (1000 * 60)) / 1000);
 
                 // Output the result in an element with id="demo"
-                document.getElementById("demoh").innerHTML = dayss + "d " + hourss + "h "
+                document.getElementById("demo").innerHTML = dayss + "d " + hourss + "h "
                     + minutess + "m " + secondss + "s ";
 
                 // If the count down is over, write some text 
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById("demoh").innerHTML = "EXPIRED";
+                    document.getElementById("demo").innerHTML = "EXPIRED";
                 }
             }, 1000);
 
