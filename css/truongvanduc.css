@@ -45,6 +45,7 @@
     font-size: 30px;
     line-height: 1.29;
     color: #000339;
+    
 }
 .tdImage{
     margin-top: 5%;
@@ -110,6 +111,32 @@
     object-fit: cover;
 }
 
+.col-4 .sub-title {
+    font-weight: bold;
+}
 
+.d-flex .title {
+    text-align: center;
+    font-weight: 600;
+}
 
+.d-flex .desc1 {
+    text-align: center;
+}
 
+.col-12 .title {
+    font-weight: 600;
+}
+
+.col-12 .page-section .content .list .item .body .desc2 {
+    size: 5px;
+}
+
+.col-12 .item .desc2 {
+    border-top: 50px;
+}
+
+.col-12 .item .desc1 {
+    style="display: inline-block; text-align: center; width: 100%;"
+}
+}
