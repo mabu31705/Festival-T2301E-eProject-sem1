@@ -38,7 +38,7 @@ angular.module('store').component('store', {
             $scope.addToCart = function(cartItem) {
                 userCart.push(cartItem);
                 localStorage.setItem('currentUser', JSON.stringify(exsitingUser));
-                location.reload();
+                // location.reload();
             };
             $scope.removeItemCart = function(index) {
                 userCart.splice(index, 1);

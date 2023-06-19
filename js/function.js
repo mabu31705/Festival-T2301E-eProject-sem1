@@ -125,6 +125,14 @@ window.onload = function () {
                         '                            <div class="content-offcanvas">' + item.price + '</div>\n' +
                         '                          </div>\n' +
                         '                        </div>\n' +
+                        '                        <div class="d-flex">\n' +
+                        '                          <div class="col-4">\n' +
+                        '                            <div class="title-offcanvas">Quantity</div>\n' +
+                        '                          </div>\n' +
+                        '                          <div class="col-8">\n' +
+                        '                            <div class="content-offcanvas">' + item.quantity + '</div>\n' +
+                        '                          </div>\n' +
+                        '                        </div>\n' +
                         '                      </div>\n' +
                         '                    </div>\n' +
                         '                    <div class="d-flex justify-content-evenly mt-3">\n' +
@@ -237,6 +245,21 @@ function registerUser() {
     document.getElementById('register-re-password').value = "";
 }
 
+function findDuplicates(users) {
+    let duplicates = [];
+    let seen = {};
+
+    for (let i = 0; i < users.listItem.length; i++) {
+        let currentItem = users.listItem[i];
+        let itemKey = currentItem.bookId + '-' + currentItem.name;
+        if (seen[itemKey]) {
+            duplicates.push(currentItem);
+        } else {
+            seen[itemKey] = true;
+        }
+    }
+    return duplicates;
+}
 
 function loginUser() {
     let name = document.getElementById('login-name').value;
@@ -250,6 +273,8 @@ function loginUser() {
     let userData = {};
     for (let i = 0; i < arrUser.length; i++) {
         if ((name === arrUser[i].userName) && (password === arrUser[i].password)) {
+            let quantityItem;
+            if (arrUser[i])
             userData = {
                 userId: arrUser[i].userId,
                 userName: arrUser[i].userName,
@@ -258,7 +283,8 @@ function loginUser() {
                 listItem: arrUser[i].listItem,
                 userImage: "1.png"
             };
-            localStorage.setItem('currentUser', JSON.stringify(userData));
+            findDuplicates(userData.listItem)
+            localStorage.setItem("currentUser",JSON.stringify(userData));
             imgElement.src = './images/pngs/' + userData.userImage + '';
             accountName.textContent = userData.userName;
             document.getElementById('login-name').value = "";

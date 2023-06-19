@@ -11,7 +11,7 @@ angular.module('storeDetail').component('storeDetail', {
                 $scope.addToCart = function(cartItem) {
                     userCart.push(cartItem);
                     localStorage.setItem('currentUser', JSON.stringify(exsitingUser));
-                    location.reload();
+                    // location.reload();
                 };
                 let slideIndex = 0;
                 const slideStore = document.getElementsByClassName("slideStore");
