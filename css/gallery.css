@@ -1,6 +1,6 @@
 .thumbnail {
-    /*background-size: cover;*/
-
+    background-size: cover;
+    position: relative;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -31,7 +31,6 @@
     font-size: 16px;
 }
 .gallery-1{
-
 }
 .gallery-2{
     background-color: white;
