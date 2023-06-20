@@ -1886,15 +1886,13 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*width: 100px;*/
-    /*height: 100px;*/
 
 }
 
 .countdown-number {
     font-weight: bold;
+    font-size: 10px;
     color: coral;
-    /*font-size: 32px;*/
     top: 10px;
     animation: countdown-number 0.4s ease infinite alternate;
 }
@@ -1903,7 +1901,7 @@ a:hover {
     font-weight: bold;
     position: relative;
     color: whitesmoke;
-    /*font-size: 32px;*/
+    font-size: 10px;
     text-shadow: 1px 5px 0 lightskyblue,
     1px 5px 0 lightskyblue,
     1px 5px 0 lightskyblue,
@@ -1937,8 +1935,6 @@ a:hover {
 
 .box {
     position: relative;
-    display: flex;
-    justify-content: center;
 
 }
 
@@ -1947,7 +1943,7 @@ a:hover {
     top: 10px;
     display: inline-block;
     animation: bounce 0.3s ease infinite alternate;
-    font-size: 48px;
+    font-size: 12px;
     color: yellowgreen;
 }
 

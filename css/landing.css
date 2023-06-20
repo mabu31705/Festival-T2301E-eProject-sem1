@@ -2,21 +2,71 @@
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     transition: opacity 0.3s ease;
-    bottom: 25px;
-    width: 320px;
-    height: 110px;
+    bottom: 3.4%;
+    width: 210px;
+    height: 70px;
+    opacity: 0;
+}
+.overlay-festival-countdown-4{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    transition: opacity 0.3s ease;
+    bottom: 3%;
+    width: 210px;
+    height: 70px;
+    opacity: 0;
+}
+.overlay-festival-image-1{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    transition: opacity 0.3s ease;
+    width: 255px;
+    height: 350px;
+    opacity: 0;
+}
+.overlay-festival-image-2{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    transition: opacity 0.3s ease;
+    width: 255px;
+    height: 350px;
     opacity: 0;
 }
 .fc-outer:hover .overlay-festival-countdown{
     opacity: 1;
 }
+.fc-outer:hover .overlay-festival-countdown-4{
+    opacity: 1;
+}
+.fc-img-s:hover .overlay-festival-image-1{
+    opacity: 1;
+}
+.fc-img-s:hover .overlay-festival-image-2{
+    opacity: 1;
+}
 .image-festival-countdown{
-    width: 320px;
-    height: 480px;
+    width: 210px;
+    height: 350px;
+}
+.image-festival-countdown-2{
+    width: 245px;
+    height: 350px;
+}
+.parallax {
+    background: url("../images/pngs/bg1.jpg") no-repeat fixed 100%;
+    text-align: center;
+    background-size: cover;
 }
 .festival-border-vertical{
     border-left: 1px solid white;
+    height: 70px;
+}
+.festival-border-vertical-gallery{
+    border-left: 1px solid white;
     height: 110px;
+}
+.festival-border-vertical div .a {
+    font-size: 12px;
 }
 .m-r-5{
     margin-right: 5%;
@@ -31,5 +81,5 @@
     margin-top: 20%;
 }
 .m-l-20{
-    margin-left: 20%;
+    margin-left: 10%;
 }

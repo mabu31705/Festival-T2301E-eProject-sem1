@@ -1,7 +1,6 @@
 .thumbnail {
-    /*background-image: url('../images/pngs/slide/1.jpg');*/
-    background-size: cover;
-    position: relative;
+    /*background-size: cover;*/
+
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -48,7 +47,7 @@
         height: 200px;
     }
     .gallery-margin-1{
-        margin: 7%;
+        margin: 20px;
     }
 }
 
@@ -60,7 +59,7 @@
         height: 350px;
     }
     .gallery-margin-1{
-        margin:5%;
+        margin: 20px;
     }
 }
 @media screen and (min-width: 1441px){
@@ -70,7 +69,8 @@
         height: 500px;
     }
     .gallery-margin-1{
-        margin:5%;
+        margin: 20px;
+
     }
 }
 
@@ -82,6 +82,7 @@
         height: 225px;
     }
     .gallery-margin-1{
-        margin: 5%;
+        margin: 20px;
+
     }
 }

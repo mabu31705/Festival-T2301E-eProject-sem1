@@ -176,15 +176,32 @@ angular.module('landing').component('landing', {
                 let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+
                 let a=document.getElementById("dayss");
                 let b=document.getElementById("hourss");
                 let c=document.getElementById("minutess");
                 let d=document.getElementById("secondss");
+                let a1=document.getElementById("dayss1");
+                let b1=document.getElementById("hourss1");
+                let c1=document.getElementById("minutess1");
+                let d1=document.getElementById("secondss1");
+                let a2=document.getElementById("dayss2");
+                let b2=document.getElementById("hourss2");
+                let c2=document.getElementById("minutess2");
+                let d2=document.getElementById("secondss2");
                 if(a!=null || b!=null || c!=null || d!=null ){
                     a.innerHTML=days;
                     b.innerHTML=hours;
                     c.innerHTML=minutes;
                     d.innerHTML=seconds;
+                    a1.innerHTML=days+100;
+                    b1.innerHTML=hours+100;
+                    c1.innerHTML=minutes+100;
+                    d1.innerHTML=seconds+100;
+                    a2.innerHTML=days+50;
+                    b2.innerHTML=hours+50;
+                    c2.innerHTML=minutes+50;
+                    d2.innerHTML=seconds+50;
                     if (distance < 0) {
                         clearInterval(x);
                         a.innerHTML = "Festival";
