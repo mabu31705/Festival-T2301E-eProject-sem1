@@ -1,118 +1,134 @@
 <section id="header">
-  <div class="row justify-content-center">
-    <div class="card col-12 ">
-      <div class="card-body d-flex ">
-        <div class="col-8">
-          <ul class="nav nav-pill">
-            <li class="nav-item m-1">
-              <a href="#!/home"><img alt="logo"
-                                     class="duclogo" src="./images/pngs/logo.png"></a>
-            </li>
-            <li class="nav-item m-1">
-              <a class="nav-link active px-4 py-2 c" href="#!/home">Home</a>
-            </li>
-            <li class="dropdown nav-item m-1 ">
-              <a class="nav-link px-4 py-2" style="font-size: 24px" href="#">Religion</a>
-              <ul class="sub-menu dropdown-menu">
-                <li class="dropdown custom-dropdown">
-                  <a href="#!/christian">Christian <i
-                          class="fa fa-solid fa-caret-right padicon1"></i></a>
-                  <ul class="sub-menu">
-                    <li class="custom-dropdown "><a href="#!/christmas" class="custom-dropdown">Christmas</a></li>
-                    <li class="custom-dropdown"><a href="#!/easter" class="custom-dropdown">Easter</a></li>
-                    <li class="custom-dropdown"><a href="#!/lent" class="custom-dropdown">Lent</a></li>
-                  </ul>
+    <div class="row justify-content-center ">
+        <div class="card col-12 gallery-shadow">
+            <div class="card-body d-flex ">
+                <div class="col-8 ">
+                    <ul class="nav nav-pill">
+                        <li class="nav-item m-1">
+                            <a href="#!/home"><img alt="logo"
+                                                   class="pngLogo gallery-shadow" src="./images/pngs/logo.jpg"></a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link active px-4 py-2 c" href="#!/home">Home</a>
+                        </li>
+                        <li class="dropdown nav-item m-1 ">
+                            <a class="nav-link px-4 py-2" style="font-size: 24px" href="#">Religion</a>
+                            <ul class="sub-menu dropdown-menu">
+                                <li class="dropdown custom-dropdown">
+                                    <a href="#!/christian">Christian <i
+                                            class="fa fa-solid fa-caret-right padicon1"></i></a>
+                                    <ul class="sub-menu">
+                                        <li class="custom-dropdown "><a href="#!/christmas" class="custom-dropdown">Christmas</a>
+                                        </li>
+                                        <li class="custom-dropdown"><a href="#!/easter"
+                                                                       class="custom-dropdown">Easter</a></li>
+                                        <li class="custom-dropdown"><a href="#!/lent" class="custom-dropdown">Lent</a>
+                                        </li>
+                                    </ul>
 
-                </li>
-                <li class="dropdown custom-dropdown">
-                  <a href="#!/hindu">Hindu <i class="fa fa-solid fa-caret-right padicon2"></i></a>
-                  <ul class="sub-menu">
-                    <li class="custom-dropdown"><a href="#!/diwali" class="custom-dropdown">Diwali</a></li>
-                    <li class="custom-dropdown"><a href="#!/holi" class="custom-dropdown">Holi</a></li>
-                    <li class="custom-dropdown"><a href="#!/kumbhmela" class="custom-dropdown">KumbhMela</a></li>
-                    <li class="custom-dropdown"><a href="#!/mahashivaratri" class="custom-dropdown">Mahashivaratri</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="dropdown custom-dropdown">
-                  <a href="#!/islam">Islam <i class="fa fa-solid fa-caret-right padicon3"></i></a>
-                  <ul class="sub-menu">
-                    <li class="custom-dropdown"><a href="#!/eidaladha" class="custom-dropdown">EidAlAdha</a></li>
-                    <li class="custom-dropdown"><a href="#!/eidalfitr" class="custom-dropdown">EidAlFitr</a></li>
-                    <li class="custom-dropdown"><a href="#!/ramadan" class="custom-dropdown">Ramadan</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item m-1">
-              <a class="nav-link px-4 py-2 c" href="#!/store">Books</a>
-            </li>
-            <li class="nav-item m-1">
-              <a class="nav-link px-4 py-2 c" href="#!/gallery"
-                 ng-click="scrollToSection('gallery')">Gallery</a>
-            </li>
-            <li class="nav-item m-1">
-              <a class="nav-link px-4 py-2 c" href="#!/about"
-                 ng-click="scrollToSection('about')">About us</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-4">
-          <div class="nav nav-pill justify-content-end">
-              <div class="nav-item m-1 d-flex d-none" id="hasLogin">
-                  <div>
-                      <img src="" alt="" class="btn m-1 pngAvatar" id="accountAvatar">
-                  </div>
-                  <div class="border border-light">
-                      <a href="">
-                          <span class="text-center btn m-1 text-capitalize" id="accountName"></span>
-                      </a>
-                  </div>
-                  <div>
-                      <button class="btn btn-outline-info m-1" onclick="logOutAcc()">Logout</button>
-                  </div>
-              </div>
+                                </li>
+                                <li class="dropdown custom-dropdown">
+                                    <a href="#!/hindu">Hindu <i class="fa fa-solid fa-caret-right padicon2"></i></a>
+                                    <ul class="sub-menu">
+                                        <li class="custom-dropdown"><a href="#!/diwali"
+                                                                       class="custom-dropdown">Diwali</a></li>
+                                        <li class="custom-dropdown"><a href="#!/holi" class="custom-dropdown">Holi</a>
+                                        </li>
+                                        <li class="custom-dropdown"><a href="#!/kumbhmela" class="custom-dropdown">KumbhMela</a>
+                                        </li>
+                                        <li class="custom-dropdown"><a href="#!/mahashivaratri" class="custom-dropdown">Mahashivaratri</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown custom-dropdown">
+                                    <a href="#!/islam">Islam <i class="fa fa-solid fa-caret-right padicon3"></i></a>
+                                    <ul class="sub-menu">
+                                        <li class="custom-dropdown"><a href="#!/eidaladha" class="custom-dropdown">EidAlAdha</a>
+                                        </li>
+                                        <li class="custom-dropdown"><a href="#!/eidalfitr" class="custom-dropdown">EidAlFitr</a>
+                                        </li>
+                                        <li class="custom-dropdown"><a href="#!/ramadan"
+                                                                       class="custom-dropdown">Ramadan</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link px-4 py-2 c" href="#!/store">Books</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link px-4 py-2 c" href="#!/gallery">Gallery</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link px-4 py-2 c" href="#!/about">About us</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link px-4 py-2 c" href="#!/queries">Queries link</a>
+                        </li>
 
-
-              <div class="nav-item m-1 d-flex" id="notLogin">
-                  <div>
-                      <button class="btn btn-outline-info m-1" onclick="openLoginModal()">Login</button>
-                  </div>
-                  <div>
-                      <button class="btn btn-outline-info m-1" onclick="openRegisterModal()">Register</button>
-                  </div>
-              </div>
-            <div class="nav-item m-1">
-              <div class="">
-                <button class="btn" type="button"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasRight"
-                        aria-controls="offcanvasRight">
-                  <i class="fa fa-shopping-cart cart-icon btn-primary-gradient">
-                </i>
-                </button>
-                <div class="notification-cart">
-                  <span class="number-icon" id="user-item-number"></span>
+                    </ul>
                 </div>
+                <div class="col-4">
+                    <div class="nav nav-pill justify-content-end">
+                        <div class="nav-item m-1 d-flex d-none" id="hasLogin">
+                            <div>
+                                <img src="" alt="" class="btn m-1 pngAvatar" id="accountAvatar">
+                            </div>
+                            <div class="border border-light">
+                                <a href="">
+                                    <span class="text-center btn m-1 text-capitalize" id="accountName"></span>
+                                </a>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-info m-1" onclick="logOutAcc()">Logout</button>
+                            </div>
+                        </div>
 
-              </div>
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                    <button class="border-light btn btn-outline-info d-flex justify-content-center align-items-center" onclick="saveCart()"><h5 class="text-capitalize text-center" id="offcanvasRightLabel">Save Your Cart</h5></button>
 
-                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <div class="nav-item m-1 d-flex" id="notLogin">
+                            <div>
+                                <button class="btn btn-outline-info m-1" onclick="openLoginModal()">Login</button>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-info m-1" onclick="openRegisterModal()">Register</button>
+                            </div>
+                        </div>
+                        <div class="nav-item m-1">
+                            <div class="">
+                                <button class="btn" type="button"
+                                        data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasRight"
+                                        aria-controls="offcanvasRight">
+                                    <i class="fa fa-shopping-cart cart-icon btn-primary-gradient">
+                                    </i>
+                                </button>
+                                <div class="notification-cart">
+                                    <span class="number-icon" id="user-item-number"></span>
+                                </div>
+
+                            </div>
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                                 aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header">
+                                    <button class="border-light btn btn-outline-info d-flex justify-content-center align-items-center"
+                                            onclick="saveCart()"><h5 class="text-capitalize text-center"
+                                                                     id="offcanvasRightLabel">Save Your Cart</h5>
+                                    </button>
+
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <div id="canvasOffContent">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="offcanvas-body">
-                  <div id="canvasOffContent">
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"

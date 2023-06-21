@@ -4,14 +4,11 @@ angular.module('landing').component('landing', {
         function landingController($routeParams, $scope, $window, $interval, $http) {
             let book=localStorage.getItem("books");
             $scope.books=JSON.parse(book);
-            console.log("123");
-            console.log($scope.books + "1");
             $http.get("./data/users.json").then(function (response) {
                 $scope.users = response.data;
                 let jsonData = angular.toJson($scope.users)
                 let storedData = localStorage.getItem('users');
                 if(storedData) {
-
                 } else {
                     // $window.localStorage.setItem('users', jsonData);
                 }

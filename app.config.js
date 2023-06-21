@@ -55,6 +55,9 @@ angular.module('myApp').config(['$routeProvider',
         when('/gallery',{
             template: '<gallery></gallery>'
         }).
+        when('/queries',{
+            template: '<queries></queries>'
+        }).
         otherwise('/landing');
     }
 ]);

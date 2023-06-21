@@ -18,6 +18,7 @@ let app = angular.module("myApp",
         "eidaladha",
         "eidalfitr",
         "ramadan",
-        "gallery"
+        "gallery",
+        "queries"
     ]);
 

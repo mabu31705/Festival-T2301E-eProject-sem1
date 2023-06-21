@@ -12,6 +12,8 @@ let dataFromJson;
 let userFromJson;
 let currentUserLocalStorage;
 let successLogin;
+
+
 getDataFromJson = () => {
     fetch("./data/data.json")
         .then(res => res.json())
@@ -29,6 +31,7 @@ getDataFromJson = () => {
             userFromJson = data
             let updateData = JSON.stringify(userFromJson);
             localStorage.setItem("users", updateData);
+
         })
         .catch(err => {
             console.error("error get data from json" + err);
@@ -45,12 +48,12 @@ noData();
 
 // Check if data exists
 function removeItem(index) {
-    currentUserLocalStorage = localStorage.getItem('currentUser');
+    currentUserLocalStorage = localStorage.getItem('users');
     if (typeof (currentUserLocalStorage) !== 'undefined' && currentUserLocalStorage !== null) {
         const data = JSON.parse(currentUserLocalStorage);
         data.listItem.splice(index, 1);
         let updateData = JSON.stringify(data);
-        localStorage.setItem('currentUser', updateData);
+        localStorage.setItem('users', updateData);
         location.reload();
     }
 }
@@ -72,7 +75,7 @@ window.onload = function () {
     const checkIncludeLoaded = function () {
         const includeWrapper = document.getElementById('include-wrapper');
         if (includeWrapper && includeWrapper.children.length > 0) {
-            let storedData = localStorage.getItem('currentUser');
+            let storedData = localStorage.getItem('users');
             let dataContainer = document.getElementById('user-item-number');
             // Check if data exists in localStorage
             if (typeof (storedData) !== 'null') {
@@ -94,15 +97,15 @@ window.onload = function () {
                     }
                     const item = userCart[i];
                     let imgSrc = "./images/books/" + item.image;
-                    htmlContent += '<div class="d-flex ">\n' +
-                        '                      <div class="col-4">\n' +
+                    htmlContent += '<div class="d-flex col-12">\n' +
+                        '                      <div class="col-6">\n' +
                         '                        <div class="p-1">\n' +
                         '<img src="' + imgSrc + '" style="width: 150px;height: 150px" alt="">\n' +
                         '                        </div>\n' +
                         '                      </div>\n' +
-                        '                      <div class="col-8">\n' +
-                        '                        <div class="d-flex">\n' +
-                        '                          <div class="col-4">\n' +
+                        '                      <div class="col-7" >\n' +
+                        '                        <div class="d-flex" >\n' +
+                        '                          <div class="col-4" >\n' +
                         '                            <div class="title-offcanvas">Title</div>\n' +
                         '                          </div>\n' +
                         '                          <div class="col-8">\n' +
@@ -266,11 +269,11 @@ function loginUser() {
     let password = document.getElementById('login-password').value;
     let imgElement = document.getElementById('accountAvatar');
     let accountName = document.getElementById('accountName');
-    let loginUser = localStorage.getItem("currentUser");
     userFromJson = localStorage.getItem('users');
     let data = JSON.parse(userFromJson);
     let arrUser = data;
-    let userData = {};
+    let userData;
+
     for (let i = 0; i < arrUser.length; i++) {
         if ((name === arrUser[i].userName) && (password === arrUser[i].password)) {
             let quantityItem;
@@ -283,15 +286,18 @@ function loginUser() {
                 listItem: arrUser[i].listItem,
                 userImage: "1.png"
             };
-            findDuplicates(userData.listItem)
+            // findDuplicates(userData.listItem);
             localStorage.setItem("currentUser",JSON.stringify(userData));
-            imgElement.src = './images/pngs/' + userData.userImage + '';
+            console.log("hello");
+            imgElement.src = '../images/pngs/' + userData.userImage + '';
             accountName.textContent = userData.userName;
             document.getElementById('login-name').value = "";
             document.getElementById('login-password').value = "";
             closeLoginModal();
         }
     }
+
+    let loginUser = localStorage.getItem("currentUser");
     if (typeof (loginUser) !== 'null') {
         setLogin();
     }
@@ -314,8 +320,4 @@ setLogin = () => {
 function logOutAcc() {
     localStorage.removeItem("currentUser");
     location.reload();
-}
-
-function countdown(){
-
 }
