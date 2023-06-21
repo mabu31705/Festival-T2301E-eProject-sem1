@@ -32,6 +32,43 @@
     height: 350px;
     opacity: 0;
 }
+.overlay-book-1{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    transition: opacity 0.7s ease;
+    width: 750px;
+    height: 950px;
+    opacity: 0;
+}
+.overlay-book-2{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    transition: opacity 0.7s ease;
+    width: 375px;
+    height: 475px;
+    opacity: 0;
+}
+.overlay-history-1{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    transition: opacity 0.7s ease;
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+}
+.img-history-landing-2{
+    width: 500px;
+    height: 500px;
+}
+.img-book-landing-size-3:hover .overlay-book-2{
+    opacity: 1;
+}
+.img-book-landing-size-1:hover .overlay-book-1{
+    opacity: 1;
+}
+.outer-ov-h-1:hover .overlay-history-1{
+    opacity: 1;
+}
 .fc-outer:hover .overlay-festival-countdown{
     opacity: 1;
 }
@@ -51,6 +88,25 @@
 .image-festival-countdown-2{
     width: 245px;
     height: 350px;
+}
+.img-book-landing-size-1{
+    width: 800px;
+    height: 1000px;
+}
+.img-book-landing-size-2{
+    width: 750px;
+    height: 950px;
+}
+.img-book-landing-size-3{
+    width: 400px;
+    height: 500px;
+}
+.img-book-landing-size-4{
+    width: 375px;
+    height: 475px;
+}
+.padding10px{
+    padding: 10px;
 }
 .parallax {
     background: url("../images/pngs/bg1.jpg") no-repeat fixed 100%;
@@ -82,4 +138,8 @@
 }
 .m-l-20{
     margin-left: 10%;
+}
+.img-history-landing-1{
+    width: 300px;
+    height: 500px;
 }

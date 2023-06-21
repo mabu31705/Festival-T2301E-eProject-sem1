@@ -2,7 +2,10 @@ angular.module('landing').component('landing', {
     templateUrl: 'module/landing/landing.template.html',
     controller: ['$routeParams', '$scope', '$window', '$interval', '$http',
         function landingController($routeParams, $scope, $window, $interval, $http) {
-
+            let book=localStorage.getItem("books");
+            $scope.books=JSON.parse(book);
+            console.log("123");
+            console.log($scope.books + "1");
             $http.get("./data/users.json").then(function (response) {
                 $scope.users = response.data;
                 let jsonData = angular.toJson($scope.users)
@@ -14,6 +17,7 @@ angular.module('landing').component('landing', {
                 }
 
             })
+
             $scope.scrollToSection = function (sectionId) {
                 let element = document.getElementById(sectionId);
                 if (element) {
