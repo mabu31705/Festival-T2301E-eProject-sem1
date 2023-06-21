@@ -1,69 +1,67 @@
 * {
     box-sizing: border-box;
 }
-.all{
+.allqq{
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0 auto;
-    /*border: 3px solid black;*/
-    /*border-radius: 10px;*/
 }
-.fesName{
+.fesNameqq{
     background-image: url(./../images/christianFes/christianBanner.jpg);
     text-align: center;
     padding: 10px;
     border-bottom: 3px solid black;
 }
-.fesName2{
+.fesName2qq{
     background-image: url(./../images/hinduFes/hinduBanner.jpg);
     text-align: center;
     padding: 10px;
     border-bottom: 3px solid black;
 }
-.fesName3{
+.fesName3qq{
     background-image: url(./../images/IslamFes/islamBanner.jpg);
     text-align: center;
     padding: 10px;
     border-bottom: 3px solid black;
 }
-.fesContent::after{
+.fesContentqq::after{
     content: "";
     clear: both;
 }
-.fesContent{
+.fesContentqq{
     display: flex;
     flex-wrap: wrap;
 }
-.title{
+.titleqq{
     display: flex;
     flex-direction: column;
     text-align: center;
     padding: 15px;
 }
-.explanatory{
+.explanatoryqq{
     background-image: url(./../images/christianFes/christianPattern.jpg);
     border-right: 1px dashed black;
 }
-.explanatory2{
+.explanatory2qq{
     background-image: url(./../images/hinduFes/hinduPattern.jpg);
     border-right: 1px dashed black;
 }
-.explanatory3{
+.explanatory3qq{
     background-image: url(./../images/IslamFes/islamPattern.jpg);
     border-right: 1px dashed black;
 }
-.fesImg{
+.fesImgqq{
     width: 75%;
     padding: 5px;
     margin: 0 auto;
 }
-.p{
+.pqq{
     text-align: justify;
 }
-.button{
+.buttonqq{
     padding-top: 15px;
 }
-.button a {
+.buttonqq a {
     background-color: darkslateblue;
     color: #fff;
     display: inline-block;
@@ -72,57 +70,51 @@
     text-decoration: none;
     transition: 0.1s all;
     border-radius: 10px;
-}
-.button a:hover {
+  }
+.buttonqq a:hover {
     background-color: orange;
-    color: black;
 }
-.side{
+.sideqq{
     background-image: url(./../images/christianFes/christianPattern.jpg);
 }
-.side2{
+.side2qq{
     background-image: url(./../images/hinduFes/hinduPattern.jpg);
 }
-.side3{
+.side3qq{
     background-image: url(./../images//IslamFes/islamPattern.jpg);
 }
-.bookAds{
-    margin-top: 5%;
+.bookAdsqq{
     height: 100%;
 }
-.ad{
+.adqq{
     height: 33.33%;
     position: relative;
 }
-.book{
+.bookqq{
     width: 75%;
     margin: 0 auto;
     text-align: center;
     padding: 30px 0;
 }
-.book1{
+.book1qq{
     position: sticky;
-    top: 15%;
+    top: 0;
 }
-.book2{
+.book2qq{
     position: sticky;
-    top: 15%;
+    top: 0;
 }
-.book3{
+.book3qq{
     position: sticky;
-    top: 15%;
+    top: 0;
 }
-.sideImg{
+.sideImgqq{
     width: 100%;
 }
-.text-justify{
-    text-align: justify;
-}
-#demo{
+#demoqq{
     margin: 0 0;
-    font-size: 34px;
 }
-.js{
+.jsqq{
     font-size: 2rem;
     text-align: center;
     margin: 0 0;
@@ -166,25 +158,25 @@
     .col- {
         width: 100%;
     }
-    .fesName{
+    .fesNameqq{
         font-size: 1.5rem;
     }
-    .fesName2{
+    .fesName2qq{
         font-size: 1.5rem;
     }
-    .fesName3{
+    .fesName3qq{
         font-size: 1.5rem;
     }
-    .title{
+    .titleqq{
         font-size: 1.125rem;
     }
-    .p{
+    .pqq{
         font-size: 0.75rem;
     }
-    .js{
+    .jsqq{
         font-size: 1.5rem;
     }
-    .button{
+    .buttonqq{
         font-size: 0.75rem;
     }
 }
@@ -201,25 +193,25 @@
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
-    .fesName{
+    .fesNameqq{
         font-size: 1.75rem;
     }
-    .fesName2{
+    .fesName2qq{
         font-size: 1.75rem;
     }
-    .fesName3{
+    .fesName3qq{
         font-size: 1.75rem;
     }
-    .title{
+    .titleqq{
         font-size: 1.3125rem;
     }
-    .p{
+    .pqq{
         font-size: 0.875rem;
     }
-    .js{
+    .jsqq{
         font-size: 1.75rem;
     }
-    .button{
+    .buttonqq{
         font-size: 0.875rem;
     }
 }
@@ -236,235 +228,26 @@
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
-    .fesName{
+    .fesNameqq{
         font-size: 2rem;
     }
-    .fesName2{
+    .fesName2qq{
         font-size: 2rem;
     }
-    .fesName3{
+    .fesName3qq{
         font-size: 2rem;
     }
-    .title{
+    .titleqq{
         font-size: 1.5rem;
     }
-    .p{
+    .pqq{
         font-size: 1rem;
     }
-    .js{
+    .jsqq{
         font-size: 2rem;
     }
-    .button{
-        font-size: 1rem;
-    }
-}
-* {
-    box-sizing: border-box;
-}
-.all{
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0 auto;
-}
-.listName{
-    background-image: url(./../images/christianFes/christianBanner.jpg);
-    text-align: center;
-    padding: 10px;
-    border-bottom: 3px solid black;
-}
-.listName2{
-    background-image: url(./../images/hinduFes/hinduBanner.jpg);
-    text-align: center;
-    padding: 10px;
-    border-bottom: 3px solid black;
-}
-.listName3{
-    background-image: url(./../images/IslamFes/islamBanner.jpg);
-    text-align: center;
-    padding: 10px;
-    border-bottom: 3px solid black;
-}
-.content::after{
-    content: "";
-    clear: both;
-}
-.listContainer{
-    display: flex;
-    flex-wrap: wrap;
-    background-image: url("./../images/christianFes/christianBG.jpg");
-}
-.listContainer2{
-    display: flex;
-    flex-wrap: wrap;
-    background-image: url("./../images/hinduFes/hinduBG.jpg");
-}
-.listContainer3{
-    display: flex;
-    flex-wrap: wrap;
-    background-image: url("./../images/IslamFes/islamBG.jpeg");
-}
-.fesList{
-    margin: 0 auto;
-}
-.fes{
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: 30px 0;
-    background-image: url("./../images/christianFes/christianPattern.jpg");
-}
-.fes2{
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: 30px 0;
-    background-image: url("./../images/hinduFes/hinduPattern.jpg");
-}
-.fes3{
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: 30px 0;
-    background-image: url("./../images/IslamFes/islamPattern.jpg");
-}
-.content{
-    padding: 15px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.left{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-}
-.fesImg{
-    width: 90%;
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: 0 auto;
-}
-.right{
-    height: 100%;
-    padding: 15px;
-    margin: auto 0;
-}
-.right-top{
-    height: 12.5%;
-}
-.right-top a{
-    text-decoration: none;
-    color: wheat;
-}
-.part{
-    padding: 10px;
-}
-.p{
-    height: 75%;
-}
-.button{
-    height: 12.5%;
-}
-a:hover{
-    color: orange;
-}
-.button a {
-    background-color: darkslateblue;
-    color: #fff;
-    display: inline-block;
-    line-height: 250%;
-    padding: 0 60px;
-    text-decoration: none;
-    transition: 0.1s all;
-    border-radius: 10px;
-}
-.button a:hover {
-    background-color: orange;
-}
-[class*="col-"] {
-    width: 100%;
-}
-@media only screen and (min-width: 1px) {
-    .col- {
-        width: 100%;
-    }
-    .listName{
-        font-size: 1.5rem;
-    }
-    .listName2{
-        font-size: 1.5rem;
-    }
-    .listName3{
-        font-size: 1.5rem;
-    }
-    .title{
-        font-size: 1.125rem;
-    }
-    .p{
-        font-size: 0.75rem;
-    }
-    .button{
-        font-size: 0.75rem;
-    }
-}
-@media only screen and (min-width: 600px) {
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-    .listName{
-        font-size: 1.75rem;
-    }
-    .listName2{
-        font-size: 1.75rem;
-    }
-    .listName3{
-        font-size: 1.75rem;
-    }
-    .title{
-        font-size: 1.3125rem;
-    }
-    .p{
-        font-size: 0.75rem;
-    }
-    .button{
-        font-size: 0.5rem;
-    }
-}
-@media only screen and (min-width: 1024px) {
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-    .listName{
-        font-size: 2rem;
-    }
-    .listName2{
-        font-size: 2rem;
-    }
-    .listName3{
-        font-size: 2rem;
-    }
-    .title{
-        font-size: 1.5rem;
-    }
-    .p{
-        font-size: 1.125rem;
-    }
-    .button{
+    .buttonqq{
         font-size: 1rem;
     }
 }
+
