@@ -1,115 +1,211 @@
-.contenth{
-    font-family:'Times New Roman', Times, serif;
-    border-style: solid;
-    border: 5px solid black;
-    border-radius: 15px;
+* {
+    box-sizing: border-box;
 }
-.christcontent{
-    background-image: url("../images/christianFes/christianBG.jpg");
-}
-.christh1{
-    background-image: url("../images/christianFes/christianBanner.jpg");
-}
-.christfes{
-    background-image: url("../images/christianFes/christianPattern.jpg");
-}
-.hinducontent{
-    background-image: url("../images/hinduFes/hinduBG.jpg");
-}
-.hinduh1{
-    background-image: url("../images/hinduFes/hinduBanner.jpg");
-}
-.hindufes{
-    background-image: url("../images/hinduFes/hinduPattern.jpg");
-}
-.islamcontent{
-    background-image: url("../images/IslamFes/islamBG.jpeg");
-}
-.islamh1{
-    background-image: url("../images/IslamFes/islamBanner.jpg");
-}
-.islamfes{
-    background-image: url("../images/IslamFes/islamPattern.jpg");
-}
-
-.h1h{
-    color:wheat;
-    font-size: 44px;
-    text-align: center;
-    padding: 5px 0;
-    margin: 0 auto;
-    border-bottom: 5px solid black;
-}
-
-.mainContainer{
-    display: flex;
-    align-items: center ;
-    margin: 0 auto;
-}
-.fesList{
-    width: 70%;
-    margin: 0 auto;
-}
-.fes{
-    height:359px;
-    width: 100%;
+.allhh{
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 55px;
-    margin-bottom: 55px;
-    border-style: solid;
-    border-width: 4px;
-    border-color: black;
-    border-radius: 10px;
+    margin: 0 auto;
 }
-.lefth{
-    width: 28%;
+.listNamehh{
+    background-image: url(./../images/christianFes/christianBanner.jpg);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.listName2hh{
+    background-image: url(./../images/hinduFes/hinduBanner.jpg);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.listName3hh{
+    background-image: url(./../images/IslamFes/islamBanner.jpg);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.contenthh::after{
+    content: "";
+    clear: both;
+}
+.listContainerhh{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(./../images/christianFes/christianBG.jpg);
+}
+.listContainer2hh{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(./../images/hinduFes/hinduBG.jpg);
+}
+.listContainer3hh{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(./../images/IslamFes/islamBG.jpeg);
+}
+.fesListhh{
+    margin: 0 auto;
+}
+.feshh{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 30px 0;
+    background-image: url(./../images/christianFes/christianPattern.jpg);
+}
+.fes2hh{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 30px 0;
+    background-image: url(./../images/hinduFes/hinduPattern.jpg);
+}
+.fes3hh{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 30px 0;
+    background-image: url(./../images/IslamFes/islamPattern.jpg);
+}
+.contenthh{
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.lefthh{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+.fesImghh{
+    width: 90%;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.righthh{
     height: 100%;
-    float: left;
+    padding: 15px;
+    margin: auto 0;
+}
+.right-tophh{
+    height: 12.5%;
+}
+.right-tophh a{
+    text-decoration: none;
+    color: wheat;
+}
+.parthh{
     padding: 10px;
 }
-.imageh{
-    border-style: solid;
-    border: 3px solid black;
-    border-radius: 10px;
-    width: 277px;
-    height: 333px;
+.phh{
+    height: 75%;
 }
-.righth{
-    width: 67%;
-    float: right;
-    display: flex;
-    flex-direction: column;
-}
-.titleh{
-    float: left;
-    color: wheat;
-    font-style: italic;
-    text-decoration: none;
-    padding-bottom: 25px;
-}
-.ph{
-    padding-right: 50px;
-    color: white;
-    font-style: italic;
-    padding-bottom: 40px;
+.buttonhh{
+    height: 12.5%;
 }
 a:hover{
     color: orange;
 }
-.moreh a {
+.buttonhh a {
     background-color: darkslateblue;
-    color: #fff;
+    color: white;
     display: inline-block;
-    font-size: 17px;
-    height: 50px;
-    line-height: 50px;
+    line-height: 250%;
     padding: 0 60px;
-    text-align: center;
     text-decoration: none;
     transition: 0.1s all;
     border-radius: 10px;
   }
-.moreh a:hover {
-    background-color: orange;
+.buttonhh a:hover {
     color: black;
+    background-color: orange;
+}
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 1px) {
+    .col- {
+        width: 100%;
+    }
+    .listNamehh{
+        font-size: 1.5rem;
+    }
+    .listName2hh{
+        font-size: 1.5rem;
+    }
+    .listName3hh{
+        font-size: 1.5rem;
+    }
+    .titlehh{
+        font-size: 1.125rem;
+    }
+    .phh{
+        font-size: 0.75rem;
+    }
+    .buttonhh{
+        font-size: 0.75rem;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .listNamehh{
+        font-size: 1.75rem;
+    }
+    .listName2hh{
+        font-size: 1.75rem;
+    }
+    .listName3hh{
+        font-size: 1.75rem;
+    }
+    .titlehh{
+        font-size: 1.3125rem;
+    }
+    .phh{
+        font-size: 0.75rem;
+    }
+    .buttonhh{
+        font-size: 0.5rem;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .listNamehh{
+        font-size: 2rem;
+    }
+    .listName2hh{
+        font-size: 2rem;
+    }
+    .listName3hh{
+        font-size: 2rem;
+    }
+    .titlehh{
+        font-size: 1.5rem;
+    }
+    .phh{
+        font-size: 1.125rem;
+    }
+    .buttonhh{
+        font-size: 1rem;
+    }
 }
